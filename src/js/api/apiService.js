@@ -16,7 +16,7 @@ export default class ApiService {
     };
 
     let res = await axios(config);
-
+    console.log('#####');
     console.log(res.status);
   }
 }
