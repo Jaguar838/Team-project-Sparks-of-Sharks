@@ -1,9 +1,9 @@
 import axios from 'axios'; // дока https://github.com/klesarev/axios-rus-docs/tree/master/docs
 
-const KEY = 'e0f5a2b3f12c3f7ea9352edce7e33432';
-const BASE_URL = 'https://developers.themoviedb.org/3/';
+const API_KEY = 'e0f5a2b3f12c3f7ea9352edce7e33432';
+axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
-export default class apiService {
+export default class ApiService {
   constructor() {
     this.searchQuery = '';
   }
@@ -11,7 +11,8 @@ export default class apiService {
   async makeRequest() {
     const config = {
       method: 'get',
-      url: 'http://webcode.me',
+      url: '/trending/movie/day?api_key=e0f5a2b3f12c3f7ea9352edce7e33432&page=1',
+      // url: '/trending/movie/day?api_key=${API_KEY}&page=1',
     };
 
     let res = await axios(config);
