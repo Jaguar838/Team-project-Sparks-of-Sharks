@@ -1,0 +1,36 @@
+{
+  "name": "parcel-project-template",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://Jaguar838.github.io/parcel",
+  "scripts": {
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /parcel/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaguar838/parcel.git"
+  },
+  "keywords": [],
+  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaguar838/parcel/issues"
+  },
+  "devDependencies": {
+    "axios": "^0.21.1",
+    "normalize.css": "^8.0.1",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-clean-easy": "^1.0.2",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "posthtml-include": "^1.6.2",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {},
+  "parcelCleanPaths": [
+    "dist",
+    ".cache"
+  ]
+}

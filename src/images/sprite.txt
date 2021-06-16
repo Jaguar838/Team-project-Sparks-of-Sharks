@@ -1,0 +1,46 @@
+
+Иконка логотипа
+<svg class="icon-film" width="24" height="24"><use href="./images/sprite.svg#icon-film"></use></svg>
+
+Иконки поиска
+<svg class="icon-search" width="" height=""><use href="./images/sprite.svg#icon-search"></use></svg>
+<i class="material-icons white search-icon">search</i>
+
+Для шрифта material-icons добавляем стили
+.icon-search {
+color: #545454;
+font-size: 18px;
+}
+
+Иконка сердечка для footer
+<i class="material-icons">favorite</i>
+
+Для шрифта material-icons добавляем стили
+.icon-favorite {
+color: #ff6b08;
+font-size: 18px;
+}
+Иконки соцсетей
+Гитхаб
+<i class="material-icons">github</i>
+<svg class="github" width="" height=""><use href="./images/sprite.svg#github"></use></svg>
+
+Фейсбук
+<i class="material-icons">facebook</i>
+<svg class="facebook" width="" height=""><use href="./images/sprite.svg#facebook"></use></svg>
+
+Инстаграм
+<i class="material-icons">instagram</i>
+<svg class="instagram" width="" height=""><use href="./images/sprite.svg#instagram"></use></svg>
+
+Линкедин
+<i class="material-icons">linkedin</i>
+<svg class="linkedin" width="" height=""><use href="./images/sprite.svg#linkedin"></use></svg>
+
+
+Для шрифта material-icons добавляем стили
+.icon-social {
+color: #545454;
+font-size: 18px;
+}
+
