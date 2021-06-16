@@ -1,13 +1,13 @@
 $page-max-width: 1600px;
 
-$main-font: 'Titan One', sans-serif;
-$secondary-font: 'DM Sans', sans-serif;
+$main-font: 'Roboto', sans-serif;
+// $secondary-font: 'DM Sans', sans-serif;
 
 // Breakpoints
 
 $phone: 480px;
 $tablet: 768px;
-$desktop: 1280px;
+$desktop: 1024px;
 $max-tablet: $desktop - 1px;
 $max-phone: $tablet - 1px;
 $responsive: $phone - 1px;
