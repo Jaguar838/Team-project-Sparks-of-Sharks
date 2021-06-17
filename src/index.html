@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Заголовок страницы</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <title>Filmoteka</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -27,28 +27,32 @@ font-size: 44px;
   <body>
      <body>
     <header>
-      <h1>
-        <i class="material-icons icon-favorite">favorite</i>
-      <i class="material-icons icon-social">facebook</i>
-      <i class="material-icons icon-favorite">navigate_next</i>
-      <i class="material-icons icon-favorite">navigate_before</i>
-
-      </h1>
-      <include src="./partials/header.html"></include>
+     
+      <!-- <include src="./partials/header.html"></include> -->
     </header>
 
     <main>
       <!-- 🍅Так добавляются фрагменты в главные HTML-файлы страниц. -->
       <div class="container"></div>
 
-    <include src="./partials/example.html"></include>
-    <include src="./partials/example.html"></include>
+    <!-- <include src="./partials/example.html"></include> -->
+    <!-- <include src="./partials/example.html"></include> -->
 
     </div>
 </main>
       <footer class="footer" id="contacts">
     <include src="./partials/footer.html"></include>
   </footer>
+
+
+   <h1>
+        <i class="material-icons icon-favorite">favorite</i>
+      <i class="material-icons icon-social">facebook</i>
+      <i class="material-icons icon-favorite">navigate_next</i>
+      <i class="material-icons icon-favorite">navigate_before</i>
+
+      </h1>
+
     <!-- 🍅Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
   </body>
