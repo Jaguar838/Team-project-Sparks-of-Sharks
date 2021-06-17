@@ -11,11 +11,11 @@
   }
   @include for-size(tablet) {
     width: 768px;
-    padding-right: 34px;
-    padding-left: 34px;
+    padding-right: 76px;
+    padding-left: 76px;
   }
   @include for-size(desktop) {
     width: 1024px;
-    padding-right: 115px;
-    padding-left: 115px;
+    padding-right: 71px;
+    padding-left: 71px;
   }
