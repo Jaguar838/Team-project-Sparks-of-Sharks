@@ -1,52 +1,51 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Заголовок страницы</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <title>Filmoteka</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
       rel="stylesheet">
-      <style>
-.icon-favorite {
-  color: #ff6b08;
-  font-size: 100px;
-}
-.icon-social {
-color: #545454;
-font-size: 44px;
-}
-</style>
+
   </head>
   <body>
      <body>
     <header>
-      <h1>
-        <i class="material-icons icon-favorite">favorite</i>
-      <i class="material-icons icon-social">facebook</i>
-      <i class="material-icons icon-favorite">navigate_next</i>
-      <i class="material-icons icon-favorite">navigate_before</i>
-
-      </h1>
+      <!-- 🍅Так добавляются фрагменты в главные HTML-файлы страниц. -->
       <include src="./partials/header.html"></include>
     </header>
 
     <main>
-      <!-- 🍅Так добавляются фрагменты в главные HTML-файлы страниц. -->
-      <div class="container"></div>
+          
+          <div class="container">
+        
+        <ul id="gallery" class="gallery">
 
-    <include src="./partials/example.html"></include>
-    <include src="./partials/example.html"></include>
+          <!-- Сюда Сергей Богуш   выводит filmCards<li> -->
 
-    </div>
-</main>
-      <footer class="footer" id="contacts">
+            <li class="card-item">
+            <img class="card-image" src='https://image.tmdb.org'>
+            <h2 class="movie-title"></h2>
+            <p class="genre">
+                <span class="genre-title"></span>
+                <span>|</span>
+                <span class="movie-vote"></span>
+            </p>
+            </li>
+        </ul>
+        <include src="./partials/pagination.html"></include>
+        </div>
+    </main>
+      <footer class="footer">
     <include src="./partials/footer.html"></include>
   </footer>
     <!-- 🍅Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->

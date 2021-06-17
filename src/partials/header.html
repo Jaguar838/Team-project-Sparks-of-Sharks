@@ -1,1 +1,30 @@
-<div class="container"></div>
+<div class="container">
+  <div class="wrapper">
+    <div class="logo-wrapper">
+      <a class="logo-link" href="index.html">
+        <img class="logo-img" src="./images/header/logo.svg" width="50" height="50" alt="film" />
+        <span class="logo-text">Filmoteka</span>
+      </a>
+    </div>
+
+    <div class="page-header">
+      <a class="home activ-link" href="index.html">Home</a>
+      <a class="library" href="#library">MY Library</a>
+      <!-- Заготовка под кнопки аутентификации -->
+      <div class="auth"></div>
+    </div>
+  </div>
+  <form class="search-form" id="search-form">
+    <input
+      type="text"
+      name="search"
+      autocomplete="off"
+      placeholder="Search movies"
+      class="search-field"
+    />
+    <p class="erorr-message"></p>
+    <button type="submit" class="search-btn">
+      <i class="material-icons icon-search">search</i>
+    </button>
+  </form>
+</div>

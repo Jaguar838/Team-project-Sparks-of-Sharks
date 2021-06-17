@@ -1,9 +1,5 @@
 @mixin for-size($size) {
-  @if $size == responsive {
-    @media (max-width: $responsive) {
-      @content;
-    }
-  } @else if $size == phone {
+  @if $size == phone {
     @media (min-width: $phone) {
       @content;
     }
@@ -59,24 +55,4 @@
   }
   $transition: str-slice($transition, 1, -2);
   transition: unquote($transition);
-}
-
-@mixin animateMainButtonWhite {
-  animation-name: animateMainButton;
-  animation-duration: 500ms;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  animation-fill-mode: forwards;
-  animation-delay: 0s;
-}
-
-@mixin animateMainButtonRed {
-  animation-name: animateMainButtonRed;
-  animation-duration: 500ms;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  animation-fill-mode: forwards;
-  animation-delay: 0s;
 }
