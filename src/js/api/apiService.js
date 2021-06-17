@@ -8,16 +8,26 @@ export default class ApiService {
     this.searchQuery = '';
     // this.page = page;
   }
+  //трендовые фильмы дня
+  async getTrendingMovies(pageNumber) {
+    const { data } = await axios.get(`/trending/movie/day?api_key=${API_KEY}&page=${pageNumber}`);
+    const { results, total_pages, page, total_results } = data;
+    return { results, total_pages, page, total_results };
+  }
 
-  async getTrendingMovies(page) {
-    const config = {
-      method: 'get',
-      url: `/trending/movie/day?api_key=${API_KEY}&page=${page}`,
-    };
+  // поиск по ключевому слову
+  async getMovieByQuery(searchQuery, pageNumber) {
+    const { data } = await axios.get(
+      `/search/movie?api_key=${API_KEY}&page=${pageNumber}&query=${searchQuery}`,
+    );
+    const { results, total_pages, page, total_results } = data;
+    return { results, total_pages, page, total_results };
+  }
 
-    let res = await axios(config).then(data => {
-      console.log(data.data.results);
-      return data.data.results;
-    });
+  //полная информация о фильме по ID
+  async getMovieById(id) {
+    const { data } = await axios.get(`/movie/${id}?api_key=${API_KEY}`);
+
+    return data;
   }
 }
