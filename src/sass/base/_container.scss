@@ -5,18 +5,22 @@
   padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
-
-  @include for-size(phone) {
+}
+  @include for-size($phone) {
     width: 480px;
   }
-  @include for-size(tablet) {
+
+  @include for-size($tablet) {
     width: 768px;
     padding-right: 76px;
     padding-left: 76px;
   }
-  @include for-size(desktop) {
+
+  @include for-size($desktop) {
     width: 1024px;
     padding-right: 71px;
     padding-left: 71px;
+
   }
 }
+
