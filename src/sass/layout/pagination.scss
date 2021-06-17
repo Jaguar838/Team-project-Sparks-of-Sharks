@@ -38,12 +38,17 @@
     font-style: normal;
     border-radius: 5px;
 }
+.pagenumbers button:hover {
+    background-color: $accent-icon;
+    color: $white;
+    border-radius: 5px;
+}
 .btn-dots {
     width: 40px;
     height: 40px;
     margin: 5px;
     border: none;
-    background-color: #fff;
+    background-color: $white;
     text-align: center;
     line-height: 65px;
 }
