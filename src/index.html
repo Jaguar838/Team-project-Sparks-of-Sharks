@@ -20,20 +20,32 @@
   <body>
      <body>
     <header>
-     
-      <!-- <include src="./partials/header.html"></include> -->
+      <!-- 🍅Так добавляются фрагменты в главные HTML-файлы страниц. -->
+      <include src="./partials/header.html"></include>
     </header>
 
     <main>
-      <!-- 🍅Так добавляются фрагменты в главные HTML-файлы страниц. -->
-      <div class="container"></div>
+          
+          <div class="container">
+        
+        <ul id="gallery" class="gallery">
 
-    <!-- <include src="./partials/example.html"></include> -->
-    <!-- <include src="./partials/example.html"></include> -->
+          <!-- Сюда Сергей Богуш   выводит filmCards<li> -->
 
-    </div>
-</main>
-      <footer class="footer" id="contacts">
+            <li class="card-item">
+            <img class="card-image" src='https://image.tmdb.org'>
+            <h2 class="movie-title"></h2>
+            <p class="genre">
+                <span class="genre-title"></span>
+                <span>|</span>
+                <span class="movie-vote"></span>
+            </p>
+            </li>
+        </ul>
+        <include src="./partials/pagination.html"></include>
+        </div>
+    </main>
+      <footer class="footer">
     <include src="./partials/footer.html"></include>
   </footer>
     <!-- 🍅Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->

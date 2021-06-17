@@ -1,13 +1,16 @@
-/*
- * Главный файл стилей.
- * Все паршалы подключаются сюда.
- */
-
-// Стили для файла с примером HTML-фрагмента
-
+// ===========  BASE block
 @import './base/colors';
 @import './base/base';
 
+// ===========  LAYOUT block
 @import './layout/header/header';
-
 @import './layout/footer/footer';
+
+// ===========  INDEX block
+@import './layout/index/filmCards';
+@import './layout/index/fullPosterFilm';
+@import './layout/index/libraryFilm';
+@import './layout/index/pagination';
+
+// ===========  COMPONENTS block
+@import './components/basiclightbox';
