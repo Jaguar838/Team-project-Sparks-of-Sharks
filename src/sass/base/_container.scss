@@ -6,7 +6,6 @@
   margin-right: auto;
   margin-left: auto;
 }
-
   @include for-size($phone) {
     width: 480px;
   }
