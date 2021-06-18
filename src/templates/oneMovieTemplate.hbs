@@ -1,16 +1,35 @@
 {{#each this}}
-<li class="movie-card" data-movieId="{{id}}>
-    <img class=" movie-poster" src="https://image.tmdb.org/t/p/w300{{poster_path}}" loading="lazy"
-    alt="Film {{title}} poster">
-    <h1 class="movie-title">{{title}}</h1>
-    <div class="card-content">
-            <ul class="card-movie_genres">
-                {{#each genres}}
-                     <li>{{name}}</li>
-                 {{/each}}
-            </ul>
-             <p>| {{year}}</p>
-            <span class="card-movie_rating">{{vote_average}}</span>
-        </div>
-   </li>
+  <li class='movie-card' data-movieId='{{id}}'>
+
+    {{#if poster_path}}
+      <img
+        class='movie-image'
+        src='https://image.tmdb.org/t/p/w300{{poster_path}}'
+        loading='lazy'
+        alt='Movie {{title}} poster'
+      />
+    {{else}}
+      <img
+        class='movie-image'
+        src='../images/no-poster.jpg'
+        loading='lazy'
+        alt='Movie {{title}} poster'
+      />
+    {{/if}}
+
+    <div class='movie-content'>
+      <h2 class='movie-title'> {{title}} </h2>
+      <p class='genre'>
+        {{genre_ids}}Пока не готово
+        {{!-- {{#if genres}}{{genres}}{{/if}} --}}
+      </p>
+
+      <p class='movie-release-date'> {{release_date}} </p>
+
+      <p class='movie-vote'>
+        {{vote_average}}
+      </p>
+
+    </div>
+  </li>
 {{/each}}
