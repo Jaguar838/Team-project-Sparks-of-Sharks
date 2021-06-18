@@ -66,7 +66,6 @@ powerful forces of nature on the planet collide in a spectacular battle for the 
 vs. Kong" video: false vote_average: 8 vote_count: 6002
 
 Метод 2. Поиск фильма по ID
-
 apiService.getMovieById(id)
 
 Пример вывода
