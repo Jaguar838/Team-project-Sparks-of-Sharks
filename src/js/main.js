@@ -1,20 +1,23 @@
 import ApiService from './api/apiService';
-import createMarkup from '../js/markup';
+import createMarkup from './createMarkup';
+// import oneMovieTemplate from '../templates/oneMovieTemplate.hbs';
+import getRefs from './getRef';
+
+const refs = getRefs();
 
 const apiService = new ApiService();
 
 const page = 1;
-getTrendingMovies();
 
-const markup = createMarkup(getTrendingMovies());
-console.log(markup);
+getTrendingMovies(page);
 
-function getTrendingMovies() {
+function getTrendingMovies(page) {
+  let arrayOfMovies;
   apiService.getTrendingMovies(page).then(res => {
-    const arrayOfMovies = res.results;
-    console.log(arrayOfMovies);
-    return arrayOfMovies;
+    arrayOfMovies = res.results;
+    createMarkup.movieMarkup(arrayOfMovies);
   });
+  return arrayOfMovies;
 }
 
 const movieID = 399566;
