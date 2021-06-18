@@ -7,7 +7,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   // background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
-  // // url(.../images/header/header_d_x1.jpg);
+  // // url(.../images/header/home_d_x1.jpg);
 
   padding-top: 46px;
   padding-bottom: 118px;
@@ -143,26 +143,26 @@
 
 .header__background-home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(/images/header/home/header_d_x1.jpg);
+    url(/images/header/home/home_d_x1.jpg);
   background-color: $black;
 }
 
 .header__background-myLibrary {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(/images/header/home/header_d_x1.jpg);
+    url(/images/header/home/home_d_x1.jpg);
   background-color: $black;
 }
 
 @include to-size($tablet, $max-tablet) {
   .header__background-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/home/header_d_x1.jpg);
+      url(/images/header/home/home_d_x1.jpg);
     background-color: $black;
   }
 
   .header__background-myLibrary {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/home/header_d_x1.jpg);
+      url(/images/header/home/home_d_x1.jpg);
     background-color: $black;
   }
 }
@@ -170,13 +170,13 @@
 @include for-size($desktop) {
   .header__background-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/home/header_d_x1.jpg);
+      url(/images/header/home/home_d_x1.jpg);
     background-color: $black;
   }
 
   .header__background-myLibrary {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/home/header_d_x1.jpg);
+      url(/images/header/home/home_d_x1.jpg);
     background-color: $black;
   }
 }
