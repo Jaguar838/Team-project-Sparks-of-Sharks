@@ -29,7 +29,8 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
-    "basiclightbox": "^5.0.4"
+    "basiclightbox": "^5.0.4",
+    "lodash.debounce": "^4.0.8"
   },
   "parcelCleanPaths": [
     "dist",
