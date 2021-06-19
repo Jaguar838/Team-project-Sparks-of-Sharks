@@ -56,11 +56,12 @@
   }
 }
 .movie-title{
+  
   width: 113px;
 height: 31px;
 
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 
 text-transform: uppercase;
 
@@ -82,5 +83,9 @@ text-align: left;
 }
  .movie-vote {
   color: $accent-text;
+
+}
+.orangeText{
+  @include flexBox($w:nowrap,$jc:start);  
 
 }
