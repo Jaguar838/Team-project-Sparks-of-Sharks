@@ -1,5 +1,8 @@
 export default function getRefs() {
-    return {
-        moviesList: document.querySelector('#gallery'),
-    };
+  return {
+    moviesContainer: document.querySelector('#gallery'),
+    logo: document.querySelector('.nav-logo'),
+    homeBtn: document.querySelector('[data-index="home"]'),
+    searchForm: document.querySelector('.film-search'),
+  };
 }
