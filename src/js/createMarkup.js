@@ -6,11 +6,11 @@ const refs = getRefs();
 function movieMarkup(data) {
   const markup = oneMovieTemplate(data);
 
-  refs.moviesList.insertAdjacentHTML('beforeend', markup);
+  refs.moviesContainer.insertAdjacentHTML('beforeend', markup);
 }
 
 function clearMarkup() {
-  refs.moviesList.innerHTML = '';
+  refs.moviesContainer.innerHTML = '';
 }
 
 export default { movieMarkup, clearMarkup };

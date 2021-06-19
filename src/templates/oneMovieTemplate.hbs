@@ -19,12 +19,13 @@
 
     <div class='movie-content'>
       <h2 class='movie-title'> {{title}} </h2>
-      <div class='orangeText'>
-      <p class='genre'>
-        {{genre_ids}}Пока не готово
-        {{!-- {{#if genres}}{{genres}}{{/if}} --}}
-      </p>
-
+      <div class='genre-release-date'>
+        {{#each genres}}
+          <p class='genre'>
+            {{name}}
+          </p>
+        {{/each}}
+      </div>
       <p class='movie-release-date'> {{release_date}} </p>
 
       <p class='movie-vote'>

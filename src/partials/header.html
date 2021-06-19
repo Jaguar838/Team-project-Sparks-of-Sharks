@@ -1,36 +1,29 @@
-<div class="container">
-  <div class="wrapper">
-    <div class="logo-wrapper">
-      <a class="logo-link" href="index.html">
-        <img
-          class="logo-img"
-          src="./images/header/logo-min.svg"
-          width="50"
-          height="50"
-          alt="film"
-        />
-        <span class="logo-text">Filmoteka</span>
-      </a>
+<div class="container header header__background-home container" data-index="header">
+  <nav class="nav">
+    <a href="" class="nav-logo logo-style">
+      <img class="nav-logo-icon" src="./images/header/logo.svg" alt="film" />
+      <span class="logo-text">Filmoteka</span>
+    </a>
+    <!-- <div class=""> -->
+    <!-- место для личного кабинета -->
+    <!-- </div>  -->
+    <div class="flex">
+      <button class="nav-btn current" data-index="home" id="homeBtn">HOME</button>
+      <button class="nav-btn" data-index="mylibrary">MY LIBRARY</button>
     </div>
-
-    <div class="page-header">
-      <a class="home activ-link" href="index.html">Home</a>
-      <a class="library" href="#library">MY Library</a>
-      <!-- Заготовка под кнопки аутентификации -->
-      <div class="auth"></div>
-    </div>
+  </nav>
+  <div data-index="headerDinamicContent">
+    <form class="film-search" action="">
+      <input
+        class="film-search-input"
+        type="text"
+        placeholder="Search films"
+        autocomplete="off"
+      /><i class="material-icons white search-icon">search</i>
+      <p>
+        <!-- fetch status -->
+      </p>
+      <ul></ul>
+    </form>
   </div>
-  <form class="search-form" id="search-form">
-    <input
-      type="text"
-      name="search"
-      autocomplete="off"
-      placeholder="Search movies"
-      class="search-field"
-    />
-    <p class="erorr-message"></p>
-    <button type="submit" class="search-btn">
-      <i class="material-icons icon-search">search</i>
-    </button>
-  </form>
 </div>
