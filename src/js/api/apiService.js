@@ -1,4 +1,4 @@
-import axios from 'axios'; // дока https://github.com/klesarev/axios-rus-docs/tree/master/docs
+import axios from 'axios';
 
 const API_KEY = 'e0f5a2b3f12c3f7ea9352edce7e33432';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
@@ -6,28 +6,39 @@ axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 export default class ApiService {
   constructor() {
     this.searchQuery = '';
-    // this.page = page;
-  }
-  //трендовые фильмы дня
-  async getTrendingMovies(pageNumber) {
-    const { data } = await axios.get(`/trending/movie/day?api_key=${API_KEY}&page=${pageNumber}`);
-    const { results, total_pages, page, total_results } = data;
-    return { results, total_pages, page, total_results };
+    this.page = 1;
   }
 
-  // поиск по ключевому слову
-  async getMovieByQuery(searchQuery, pageNumber) {
-    const { data } = await axios.get(
-      `/search/movie?api_key=${API_KEY}&page=${pageNumber}&query=${searchQuery}`,
-    );
-    const { results, total_pages, page, total_results } = data;
-    return { results, total_pages, page, total_results };
+  getTrendingMoviesPage(page = 1) {
+    const trendingFilms = axios
+      .get(`/trending/movie/day?api_key=${API_KEY}&page=${page}`)
+      .then(({ data }) => data);
+    return trendingFilms;
   }
 
-  //полная информация о фильме по ID
-  async getMovieById(id) {
-    const { data } = await axios.get(`/movie/${id}?api_key=${API_KEY}`);
+  getGenres() {
+    const genresIds = axios
+      .get(`/genre/movie/list?api_key=${API_KEY}&language=en-US`)
+      .then(({ data }) => data.genres);
+    console.log('Genres', genresIds);
 
-    return data;
+    return genresIds;
+  }
+
+  getMovieByQuery() {
+    const filmsByQuery = axios
+      .get(
+        `/search/movie?api_key=${API_KEY}&language=en-US&page=${this.page}&query=${this.searchQuery}`,
+      )
+      .then(({ data }) => data);
+
+    return filmsByQuery;
+  }
+
+  get pageNum() {
+    return this.page;
+  }
+  set pageNum(newPageNum) {
+    this.page = newPageNum;
   }
 }

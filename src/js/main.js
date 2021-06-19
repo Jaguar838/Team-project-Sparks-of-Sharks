@@ -1,40 +1,42 @@
 import ApiService from './api/apiService';
 import createMarkup from './createMarkup';
-// import oneMovieTemplate from '../templates/oneMovieTemplate.hbs';
+import oneMovieTemplate from '../templates/oneMovieTemplate.hbs';
 import getRefs from './getRef';
-
-const refs = getRefs();
 
 const apiService = new ApiService();
 
+const refs = getRefs();
+
+refs.logo.addEventListener('click', renderHomePage);
+refs.homeBtn.addEventListener('click', renderHomePage);
 const page = 1;
 
-getTrendingMovies(page);
+renderPage();
 
-function getTrendingMovies(page) {
-  let arrayOfMovies;
-  apiService.getTrendingMovies(page).then(res => {
-    arrayOfMovies = res.results;
-    createMarkup.movieMarkup(arrayOfMovies);
-  });
-  return arrayOfMovies;
+function renderHomePage() {
+  createMarkup.clearMarkup();
+  renderPage();
 }
 
-const movieID = 399566;
-getMovieById(movieID);
-
-function getMovieById(movieId) {
-  apiService.getMovieById(movieId).then(res => {
-    console.log('Результат', res);
-  });
+function trendingFilms() {
+  return apiService
+    .getTrendingMoviesPage()
+    .then(data => data.results)
+    .then(data => {
+      return apiService.getGenres().then(genresArray => {
+        return data.map(film => ({
+          ...film,
+          release_date: film.release_date.slice(0, 4),
+          genres: film.genre_ids
+            .map(id => genresArray.filter(elem => elem.id === id))
+            .flat()
+            .slice(0, 3),
+        }));
+      });
+    });
 }
 
-const searchQuery = 'about';
-const pageNumber = 1;
-getMovieByQuery(searchQuery, pageNumber);
-
-function getMovieByQuery(searchQuery, pageNumber) {
-  apiService.getMovieByQuery(searchQuery, pageNumber).then(res => {
-    console.log('Результат', res);
-  });
+function renderPage() {
+  apiService.page = 1;
+  trendingFilms().then(createMarkup.movieMarkup);
 }
