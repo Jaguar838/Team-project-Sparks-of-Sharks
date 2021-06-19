@@ -13,7 +13,7 @@ const page = 1;
 
 renderPage();
 
-function renderHomePage() {
+export function renderHomePage() {
   createMarkup.clearMarkup();
   renderPage();
 }
@@ -28,7 +28,7 @@ function trendingFilms() {
           ...film,
           release_date: film.release_date.slice(0, 4),
           genres: film.genre_ids
-            .map(id => genresArray.filter(elem => elem.id === id))
+            .map(id => genresArray.filter(el => el.id === id))
             .flat()
             .slice(0, 3),
         }));
@@ -36,7 +36,7 @@ function trendingFilms() {
     });
 }
 
-function renderPage() {
+export function renderPage() {
   apiService.page = 1;
   trendingFilms().then(createMarkup.movieMarkup);
 }
