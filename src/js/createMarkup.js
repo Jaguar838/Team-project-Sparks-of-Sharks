@@ -5,7 +5,7 @@ const refs = getRefs();
 
 function movieMarkup(data) {
   const markup = oneMovieTemplate(data);
-
+  console.log(markup);
   refs.moviesContainer.insertAdjacentHTML('beforeend', markup);
 }
 

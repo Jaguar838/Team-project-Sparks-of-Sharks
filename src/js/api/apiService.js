@@ -20,7 +20,6 @@ export default class ApiService {
     const genresIds = axios
       .get(`/genre/movie/list?api_key=${API_KEY}&language=en-US`)
       .then(({ data }) => data.genres);
-    console.log('Genres', genresIds);
 
     return genresIds;
   }
@@ -40,5 +39,13 @@ export default class ApiService {
   }
   set pageNum(newPageNum) {
     this.page = newPageNum;
+  }
+
+  get query() {
+    return this.searchQuery;
+  }
+
+  set query(newQuery) {
+    this.searchQuery = newQuery;
   }
 }
