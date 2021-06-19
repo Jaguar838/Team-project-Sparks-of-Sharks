@@ -19,21 +19,17 @@
 
     <div class='movie-content'>
       <h2 class='movie-title'> {{title}} </h2>
-
       <div class='genre-release-date'>
         {{#each genres}}
           <p class='genre'>
             {{name}}
           </p>
         {{/each}}
+        <p class='movie-release-date'> {{release_date}} </p>
+        <p class='movie-vote'>
+          {{vote_average}}
+        </p>
       </div>
-
-      <p class='movie-release-date'> {{release_date}} </p>
-
-      <p class='movie-vote'>
-        {{vote_average}}
-      </p>
-
     </div>
   </li>
 {{/each}}
