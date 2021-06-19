@@ -1,6 +1,7 @@
 //Gallery Films
 
 .gallery{
+   
   @include flexBox($w:wrap);
 } 
 
@@ -39,6 +40,7 @@
   }
 }
 .container{
+
   @include for-size (phone){
     width:280px;
     
@@ -85,7 +87,8 @@ text-align: left;
   color: $accent-text;
 
 }
-.orangeText{
-  @include flexBox($w:nowrap,$jc:start);  
+
+.genre-release-date{
+  @include flexBox($w:nowrap,$jc:start);
 
 }
