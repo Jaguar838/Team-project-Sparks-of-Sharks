@@ -43,7 +43,7 @@ function renderSearchMovies(searchQuery) {
         refs.moviesContainer.innerHTML = '';
       } else {
         createMarkup.clearMarkup();
-        createMarkup.movieMarkup(data);
+        createMarkup.moviesMarkup(data);
         notify.successMessage(`Что-то нашли)`);
       }
     })

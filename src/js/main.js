@@ -1,6 +1,7 @@
 import ApiService from './api/apiService';
 import createMarkup from './createMarkup';
 import getRefs from './getRef';
+import oneMovieTemplate from '../templates/oneMovieTemplate.hbs';
 
 const apiService = new ApiService();
 
@@ -25,9 +26,11 @@ function trendingFilms() {
     .then(data => renderGenres(data));
 }
 
-export function renderPage() {
+export function renderPage(data) {
   apiService.page = 1;
-  trendingFilms().then(createMarkup.movieMarkup);
+  trendingFilms(data)
+    .then(data => data)
+    .then(createMarkup.moviesMarkup);
 }
 
 export function renderGenres(data) {

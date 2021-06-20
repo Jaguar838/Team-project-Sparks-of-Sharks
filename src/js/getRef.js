@@ -7,5 +7,6 @@ export default function getRefs() {
     posterImage: document.querySelector('.movie-image'),
     lightBoxContainerRef: document.querySelector('.js-lightbox'),
     lightBoxCloseRef: document.querySelector('.lightbox__button'),
+    lightBoxContentRef: document.querySelector('.lightbox__content'),
   };
 }

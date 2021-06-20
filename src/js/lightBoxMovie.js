@@ -1,6 +1,7 @@
 import ApiService from './api/apiService';
 import getRefs from './getRef';
 import notify from './error';
+import createMarkup from './createMarkup';
 
 const apiService = new ApiService();
 
@@ -9,20 +10,9 @@ const refs = getRefs();
 refs.moviesContainer.addEventListener('click', onGalleryContainerClick);
 refs.lightBoxCloseRef.addEventListener('click', onBtnCloseLightBox);
 
-const movieId = 602063;
+// const movieId = 602063;
 
-function movieInfoById() {
-  return (
-    apiService
-      .getMovieById(movieId)
-      .then(data => console.log(data))
-      // .then(data => console.log(data.results))
-      .catch(error => {
-        console.log('error in ID');
-        notify.errorMessage(`Ничего не нашли По ИД(`);
-      })
-  );
-}
+// movieInfoById(movieId);
 
 function onGalleryContainerClick(evt) {
   evt.preventDefault();
@@ -38,8 +28,10 @@ function onGalleryContainerClick(evt) {
 
 function lightBoxOpen(image) {
   refs.lightBoxContainerRef.classList.add('is-open');
-  //   lightBoxImageRef.src = image.dataset.source;
-  //   lightBoxImageRef.dataset.index = galleryImagesList.indexOf(image);
+  const movieId = image.dataset.id;
+  console.log(movieId);
+  const dataModalMovie = movieInfoById(movieId);
+  createMarkup.lightBoxMarkup(dataModalMovie);
   window.addEventListener('keydown', onKeyPress);
 }
 
@@ -55,4 +47,17 @@ function onKeyPress(evt) {
   }
   onBtnCloseLightBox();
   return;
+}
+
+function movieInfoById(movieId) {
+  return (
+    apiService
+      .getMovieById(movieId)
+      .then(data => console.log(data))
+      // .then(data => console.log(data.results))
+      .catch(error => {
+        console.log('error in ID');
+        notify.errorMessage(`Ничего не нашли По ИД(`);
+      })
+  );
 }
