@@ -129,7 +129,7 @@ $basicLightbox__timing: ease !default;
   margin: 0;
   border: none;
   border-radius: 50%;
-  background-color: transparent;
+  // background-color: transparent;
   color: #fff;
   cursor: pointer;
   transition: background-color var(--animation-duration) var(--timing-function);
