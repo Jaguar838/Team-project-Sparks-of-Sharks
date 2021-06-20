@@ -6,5 +6,6 @@ export default function getRefs() {
     searchForm: document.querySelector('.film-search'),
     posterImage: document.querySelector('.movie-image'),
     lightBoxContainerRef: document.querySelector('.js-lightbox'),
+    lightBoxCloseRef: document.querySelector('.lightbox__button'),
   };
 }

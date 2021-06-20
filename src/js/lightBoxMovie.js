@@ -7,10 +7,9 @@ const apiService = new ApiService();
 const refs = getRefs();
 
 refs.moviesContainer.addEventListener('click', onGalleryContainerClick);
+refs.lightBoxCloseRef.addEventListener('click', onBtnCloseLightBox);
 
 const movieId = 602063;
-
-console.log(movieInfoById(movieId));
 
 function movieInfoById() {
   return (
