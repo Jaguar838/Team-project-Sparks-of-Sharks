@@ -2,10 +2,6 @@
 @import './base/colors';
 @import './base/base';
 
-// ===========  LAYOUT block
-@import './layout/header/header';
-@import './layout/footer/footer';
-
 // ===========  INDEX block
 @import './layout/index/filmCards';
 @import './layout/index/fullPosterFilm';
@@ -14,3 +10,7 @@
 
 // ===========  COMPONENTS block
 @import './components/basiclightbox';
+
+// ===========  LAYOUT block
+@import './layout/header/header';
+@import './layout/footer/footer';
