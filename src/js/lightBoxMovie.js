@@ -30,8 +30,9 @@ function lightBoxOpen(image) {
   refs.lightBoxContainerRef.classList.add('is-open');
   const movieId = image.dataset.id;
   console.log(movieId);
-  const dataModalMovie = movieInfoById(movieId);
-  createMarkup.lightBoxMarkup(dataModalMovie);
+  const dataModalMovie = movieInfoById(movieId).then(data => data);
+  // console.log(dataModalMovie);
+  // createMarkup.lightBoxMarkup(dataModalMovie);
   window.addEventListener('keydown', onKeyPress);
 }
 
@@ -50,14 +51,12 @@ function onKeyPress(evt) {
 }
 
 function movieInfoById(movieId) {
-  return (
-    apiService
-      .getMovieById(movieId)
-      .then(data => console.log(data))
-      // .then(data => console.log(data.results))
-      .catch(error => {
-        console.log('error in ID');
-        notify.errorMessage(`Ничего не нашли По ИД(`);
-      })
-  );
+  return apiService
+    .getMovieById(movieId)
+    .then(data => data)
+    .then(data => createMarkup.lightBoxMarkup(data))
+    .catch(error => {
+      console.log('error in ID');
+      notify.errorMessage(`Ничего не нашли По ИД(`);
+    });
 }

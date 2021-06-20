@@ -14,8 +14,10 @@ function clearMarkup() {
 }
 
 function lightBoxMarkup(data) {
+  console.log(data);
   const markup = modalMarkup(data);
 
+  refs.lightBoxContentRef.innerHTML = '';
   refs.lightBoxContentRef.insertAdjacentHTML('beforeend', markup);
 }
 
