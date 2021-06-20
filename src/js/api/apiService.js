@@ -7,6 +7,7 @@ export default class ApiService {
   constructor() {
     this.searchQuery = '';
     this.page = 1;
+    // this.Id = movieId;
   }
 
   getTrendingMoviesPage(page = 1) {
@@ -32,6 +33,11 @@ export default class ApiService {
       .then(({ data }) => data);
 
     return filmsByQuery;
+  }
+
+  getMovieById(movieId) {
+    const filmById = axios.get(`/movie/${movieId}?api_key=${API_KEY}`).then(({ data }) => data);
+    return filmById;
   }
 
   get pageNum() {

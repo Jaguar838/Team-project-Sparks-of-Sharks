@@ -1,11 +1,12 @@
 {{#each this}}
-  <li class='movie-card' data-movieId='{{id}}'>
+  <li class='movie-card'>
 
     {{#if poster_path}}
       <img
         class='movie-image'
         src='https://image.tmdb.org/t/p/w300{{poster_path}}'
         loading='lazy'
+        data-id='{{id}}'
         alt='Movie {{title}} poster'
       />
     {{else}}
