@@ -4,5 +4,6 @@ export default function getRefs() {
     logo: document.querySelector('.nav-logo'),
     homeBtn: document.querySelector('[data-index="home"]'),
     searchForm: document.querySelector('.film-search'),
+    posterImage: document.querySelector('.movie-image'),
   };
 }
