@@ -1,1 +1,35 @@
-// UUU
+.footer {
+  background-color: $page-footer-color;
+  color: $secondary-text-color;
+  font-weight: 400;
+
+  &-favorite {
+    margin: 0 5px;
+
+    color: $accent-icon;
+    font-size: 16px;
+  }
+
+  &-page {
+    // margin: 0 auto;
+    padding-top: 30px;
+    height: 100px;
+    @include for-size(tablet) {
+      @include flexBox();
+      height: 77px;
+    }
+  }
+
+  &-text {
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+    @include for-size(tablet) {
+      font-size: 16px;
+    }
+  }
+  &-link {
+    color: $secondary-text-color;
+    text-decoration: solid;
+  }
+}
