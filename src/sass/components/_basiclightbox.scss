@@ -6,67 +6,141 @@ $basicLightbox__duration: 0.4s !default;
 $basicLightbox__timing: ease !default;
 
 // basicLightbox ------------------------------------------------------- //
-.basicLightbox {
-  position: fixed;
+// .basicLightbox {
+//   position: fixed;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100vh;
+//   background: $basicLightbox__background;
+//   opacity: 0.01; // Start with .01 to avoid the repaint that happens from 0 to .01
+//   transition: opacity $basicLightbox__duration $basicLightbox__timing;
+//   z-index: $basicLightbox__zIndex;
+//   will-change: opacity;
+
+//   &--visible {
+//     opacity: 1;
+//   }
+
+//   &__placeholder {
+//     max-width: 100%;
+//     transform: scale(0.9);
+//     transition: transform $basicLightbox__duration $basicLightbox__timing;
+//     z-index: 1;
+//     will-change: transform;
+
+//     > img:first-child:last-child,
+//     > video:first-child:last-child,
+//     > iframe:first-child:last-child {
+//       display: block;
+//       position: absolute;
+//       top: 0;
+//       right: 0;
+//       bottom: 0;
+//       left: 0;
+//       margin: auto;
+//       max-width: 95%;
+//       max-height: 95%;
+//     }
+
+//     > video:first-child:last-child,
+//     > iframe:first-child:last-child {
+//       pointer-events: auto;
+//     }
+
+//     > img:first-child:last-child,
+//     > video:first-child:last-child {
+//       width: auto;
+//       height: auto;
+//     }
+//   }
+
+//   &--img &__placeholder,
+//   &--video &__placeholder,
+//   &--iframe &__placeholder {
+//     width: 100%;
+//     height: 100%;
+//     pointer-events: none;
+//   }
+
+//   &--visible &__placeholder {
+//     transform: scale(1);
+//   }
+// }
+
+.lightbox {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background: $basicLightbox__background;
-  opacity: 0.01; // Start with .01 to avoid the repaint that happens from 0 to .01
-  transition: opacity $basicLightbox__duration $basicLightbox__timing;
-  z-index: $basicLightbox__zIndex;
-  will-change: opacity;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) var(--timing-function);
+}
 
-  &--visible {
-    opacity: 1;
-  }
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
 
-  &__placeholder {
-    max-width: 100%;
-    transform: scale(0.9);
-    transition: transform $basicLightbox__duration $basicLightbox__timing;
-    z-index: 1;
-    will-change: transform;
+.lightbox__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
-    > img:first-child:last-child,
-    > video:first-child:last-child,
-    > iframe:first-child:last-child {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      max-width: 95%;
-      max-height: 95%;
-    }
+.lightbox__content {
+  transform: scale(0.95);
+  transition: transform var(--animation-duration) var(--timing-function);
+}
 
-    > video:first-child:last-child,
-    > iframe:first-child:last-child {
-      pointer-events: auto;
-    }
+.lightbox.is-open .lightbox__content {
+  transform: scale(1);
+}
 
-    > img:first-child:last-child,
-    > video:first-child:last-child {
-      width: auto;
-      height: auto;
-    }
-  }
+.lightbox__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 100vh;
+  max-width: 100vw;
+}
 
-  &--img &__placeholder,
-  &--video &__placeholder,
-  &--iframe &__placeholder {
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
+.lightbox__button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  // background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color var(--animation-duration) var(--timing-function);
+  outline: none;
+  background-color: tomato;
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
 
-  &--visible &__placeholder {
-    transform: scale(1);
-  }
+.lightbox__button:hover,
+.lightbox__button:focus {
+  background-color: rgba(0, 0, 0, 0.5);
 }

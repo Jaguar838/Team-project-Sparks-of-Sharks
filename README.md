@@ -52,7 +52,7 @@ npm run dev
 
   Метод 1. трендовые фильмы дня.
 
-  apiService.getTrendingMovies(pageNumber) - Принимает номер страницы и отдает объект {results:
+  apiService.getTrendingMoviesPage(pageNumber) - Принимает номер страницы и отдает объект {results:
   Array(20), total_pages: 1000, page: 1, total_results: 20000}
 
 Пример объекта - 1 элемента массива
@@ -65,8 +65,7 @@ powerful forces of nature on the planet collide in a spectacular battle for the 
 1259.819 poster_path: "/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg" release_date: "2021-03-24" title: "Godzilla
 vs. Kong" video: false vote_average: 8 vote_count: 6002
 
-Метод 2. Поиск фильма по ID
-apiService.getMovieById(id)
+Метод 2. Поиск фильма по ID apiService.getMovieById(id)
 
 Пример вывода
 

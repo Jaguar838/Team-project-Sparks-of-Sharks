@@ -1,11 +1,11 @@
 import oneMovieTemplate from '../templates/oneMovieTemplate.hbs';
+import modalMarkup from '../templates/movieDetail.hbs';
 import getRefs from './getRef';
 
 const refs = getRefs();
 
-function movieMarkup(data) {
+function moviesMarkup(data) {
   const markup = oneMovieTemplate(data);
-  console.log(markup);
   refs.moviesContainer.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -13,4 +13,12 @@ function clearMarkup() {
   refs.moviesContainer.innerHTML = '';
 }
 
-export default { movieMarkup, clearMarkup };
+function lightBoxMarkup(data) {
+  console.log(data);
+  const markup = modalMarkup(data);
+
+  refs.lightBoxContentRef.innerHTML = '';
+  refs.lightBoxContentRef.insertAdjacentHTML('beforeend', markup);
+}
+
+export default { moviesMarkup, clearMarkup, lightBoxMarkup };

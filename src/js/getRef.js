@@ -4,5 +4,11 @@ export default function getRefs() {
     logo: document.querySelector('.nav-logo'),
     homeBtn: document.querySelector('[data-index="home"]'),
     searchForm: document.querySelector('.film-search'),
+    posterImage: document.querySelector('.movie-image'),
+    lightBoxContainerRef: document.querySelector('.js-lightbox'),
+    lightBoxCloseRef: document.querySelector('.lightbox__button'),
+    lightBoxContentRef: document.querySelector('.lightbox__content'),
+    spinner: document.querySelector('.spinner'),
+
   };
 }
