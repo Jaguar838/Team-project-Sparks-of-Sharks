@@ -2,17 +2,17 @@
   <nav class="nav">
     <a href="" class="nav-logo logo-style">
       <img class="nav-logo-icon" src="./images/header/logo.svg" alt="film" />
-      <span class="logo-text">Filmoteka</span>
+      <span class="logo-text hidden-logo">Filmoteka</span>
     </a>
     <!-- <div class=""> -->
     <!-- место для личного кабинета -->
     <!-- </div>  -->
     <div class="flex">
       <button class="nav-btn current" data-index="home" id="homeBtn">HOME</button>
-      <button class="nav-btn" data-index="mylibrary">MY LIBRARY</button>
+      <button class="nav-btn" data-index="libraryBtn">MY LIBRARY</button>
     </div>
   </nav>
-  <div data-index="headerDinamicContent">
+  <div data-index="headerContent">
     <form class="film-search" action="">
       <input
         class="film-search-input"
@@ -23,7 +23,10 @@
       <p>
         <!-- fetch status -->
       </p>
-      <ul></ul>
     </form>
+    <div class="btn-container is-hidden">
+      <button class="lib-btn watched">Watched</button>
+      <button class="lib-btn queue">Queue</button>
+    </div>
   </div>
 </div>

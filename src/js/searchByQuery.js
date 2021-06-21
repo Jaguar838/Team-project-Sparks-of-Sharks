@@ -31,22 +31,10 @@ function searchingFilms() {
   return apiService
     .getMovieByQuery()
     .then(data => data.results)
-    .then(data => {
-      return apiService.getGenres().then(genresArray => {
-        return data.map(film => ({
-          ...film,
-          release_date: film.release_date.slice(0, 4),
-          genres: film.genre_ids
-            .map(id => genresArray.filter(el => el.id === id))
-            .flat()
-            .slice(0, 3),
-        }));
-      });
-    });
+    .then(data => mainPage.renderGenres(data));
 }
 
 function renderSearchMovies(searchQuery) {
-  console.log(searchQuery);
   apiService.query = searchQuery;
   searchingFilms()
     .then(data => {
@@ -54,7 +42,8 @@ function renderSearchMovies(searchQuery) {
         notify.errorMessage(`Ничего не нашли(`);
         refs.moviesContainer.innerHTML = '';
       } else {
-        renderFilmsCard(data);
+        createMarkup.clearMarkup();
+        createMarkup.moviesMarkup(data);
         notify.successMessage(`Что-то нашли)`);
       }
     })
@@ -62,10 +51,4 @@ function renderSearchMovies(searchQuery) {
       console.log('error in renderSearchMovies');
       notify.errorMessage(`Ничего не нашли(`);
     });
-}
-
-function renderFilmsCard(data) {
-  refs.moviesContainer.innerHTML = '';
-  // createMarkup.clearMarkup;
-  createMarkup.movieMarkup(data);
 }

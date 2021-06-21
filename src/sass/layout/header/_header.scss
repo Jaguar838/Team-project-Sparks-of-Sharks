@@ -1,19 +1,18 @@
 .header {
   position: relative;
   display: block;
-  // display: flex;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  // background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
-  // // url(.../images/header/home_d_x1.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 
   padding-top: 46px;
   padding-bottom: 118px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .flex {
   display: flex;
 }
@@ -42,8 +41,7 @@
 }
 
 .logo-text {
-  // display: none;
-  z-index: 999;
+  display: none;
 }
 .current__myLibraryBtn {
   background-color: $accent-icon;
@@ -57,11 +55,20 @@
   // font-size: 44px;
   width: 18px;
   height: 18px;
-  // @include transition(all);
+  background-color: transparent;
   &:hover,
   &:focus {
-    background-color: $secondary-text-color;
     transform: scale(1.15);
+  }
+}
+.film-search-input {
+  // opacity: 0;
+  background-color: $black;
+}
+
+@media screen and (max-width: 767px) {
+  .hidden-logo {
+    opacity: 0;
   }
 }
 
@@ -100,7 +107,7 @@
   }
 }
 
-@include for-size(desktop) {
+@include for-size($desktop) {
   .nav-logo {
     margin-right: 243px;
   }
@@ -156,17 +163,19 @@
 @include to-size($tablet, $max-tablet) {
   .header__background-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/home/home_d_x1.jpg);
+      url(/images/header/home/home_t_x1.jpg);
     background-color: $black;
   }
 
   .header__background-myLibrary {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/home/home_d_x1.jpg);
+      url(/images/header/libraly/lib_t_1.jpg);
     background-color: $black;
   }
 }
-
+.overlay {
+  background: $black;
+}
 @include for-size($desktop) {
   .header__background-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
@@ -176,7 +185,7 @@
 
   .header__background-myLibrary {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/home/home_d_x1.jpg);
+      url(/images/header/libraly/lib_d_x1.jpg);
     background-color: $black;
   }
 }
