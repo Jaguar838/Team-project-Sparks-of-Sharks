@@ -66,9 +66,14 @@
 .movie-release-date {
   color: $accent-text;
 }
+
 .movie-vote {
-  color: $accent-text;
+  color: $white;
+  background-color: $accent-text;
+  padding: 1px 6px;
+  border-radius: 5px;
 }
+
 .genre-release-date {
   @include flexBox($w: nowrap, $jc: start);
 }
