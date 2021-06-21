@@ -1,8 +1,8 @@
 //Gallery Films
-
-.gallery {
-  @include flexBox($w: wrap);
-}
+.gallery{
+   
+  @include flexBox($w:wrap);
+} 
 
 .movie-card {
   @include for-size(phone) {
@@ -32,6 +32,7 @@
     height: 398px;
   }
 }
+
 .container {
   @include for-size(phone) {
     width: 280px;
@@ -60,20 +61,22 @@
   letter-spacing: 0em;
   text-align: left;
 }
+
 .genre {
   color: $accent-text;
 }
+
 .movie-release-date {
   color: $accent-text;
 }
-
+   
 .movie-vote {
   color: $white;
-  background-color: $accent-text;
+  background-color: $accent-icon;
   padding: 1px 6px;
   border-radius: 5px;
 }
 
-.genre-release-date {
-  @include flexBox($w: nowrap, $jc: start);
-}
+.genre-release-date{
+  @include flexBox($w:nowrap,$jc:start);
+  font-size: 12px;
