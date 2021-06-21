@@ -8,5 +8,7 @@ export default function getRefs() {
     lightBoxContainerRef: document.querySelector('.js-lightbox'),
     lightBoxCloseRef: document.querySelector('.lightbox__button'),
     lightBoxContentRef: document.querySelector('.lightbox__content'),
+    spinner: document.querySelector('.spinner'),
+
   };
 }
