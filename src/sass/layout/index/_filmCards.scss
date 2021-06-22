@@ -1,6 +1,6 @@
 //Gallery Films
 .gallery {
-  @include flexBox($w: wrap);
+  @include flexBox($w: wrap,$jc:start);
 }
 
 .movie-card {
