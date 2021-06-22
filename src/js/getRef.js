@@ -6,7 +6,7 @@ export default function getRefs() {
     searchForm: document.querySelector('.film-search'),
     posterImage: document.querySelector('.movie-image'),
     lightBoxContainerRef: document.querySelector('.js-lightbox'),
-    lightBoxCloseRef: document.querySelector('.lightbox__button'),
+    lightBoxCloseRef: document.querySelector('[data-action="close-lightbox"]'),
     lightBoxContentRef: document.querySelector('.lightbox__content'),
     spinner: document.querySelector('.spinner'),
     paginationElement: document.getElementById('pagination'),
