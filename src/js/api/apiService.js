@@ -10,9 +10,9 @@ export default class ApiService {
     // this.Id = movieId;
   }
 
-  getTrendingMoviesPage(page = 1) {
+  getTrendingMoviesPage() {
     const trendingFilms = axios
-      .get(`/trending/movie/day?api_key=${API_KEY}&page=${page}`)
+      .get(`/trending/movie/day?api_key=${API_KEY}&page=${this.page}`)
       .then(({ data }) => data);
     return trendingFilms;
   }
