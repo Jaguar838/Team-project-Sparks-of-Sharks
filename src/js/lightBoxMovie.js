@@ -8,7 +8,7 @@ const apiService = new ApiService();
 const refs = getRefs();
 
 refs.moviesContainer.addEventListener('click', onGalleryContainerClick);
-refs.lightBoxCloseRef.addEventListener('click', onBtnCloseLightBox);
+window.addEventListener('click', onCloseLightBox);
 
 function onGalleryContainerClick(evt) {
   evt.preventDefault();
@@ -29,16 +29,24 @@ function lightBoxOpen(image) {
   window.addEventListener('keydown', onKeyPress);
 }
 
-function onBtnCloseLightBox() {
-  refs.lightBoxContainerRef.classList.remove('is-open');
-  window.removeEventListener('keydown', onKeyPress);
+function onCloseLightBox(evt) {
+  if (evt.target.classList.contains('lightbox__button')) {
+    onCloseModal();
+  }
 }
 
 function onKeyPress(evt) {
   if (evt.key !== 'Escape') {
     return;
   }
-  onBtnCloseLightBox();
+  onCloseModal();
+  return;
+}
+
+function onCloseModal() {
+  refs.lightBoxContainerRef.classList.remove('is-open');
+  window.removeEventListener('keydown', onKeyPress);
+  refs.lightBoxContentRef.innerHTML = '';
   return;
 }
 
