@@ -63,14 +63,14 @@ export function trendingFilmsPagination() {
 function moviesByPage(wrapper, page) {
   wrapper.innerHTML = '';
   apiService.pageNum = page;
-  trendingMoviesByPage(page)
+  trendingFilms(page)
     .then(createMarkup.moviesMarkup)
     .catch(error => {
       console.log(`Error in moviesByPage`);
     });
 }
 
-function trendingMoviesByPage(page) {
-  apiService.pageNum = page;
-  return trendingFilms();
-}
+// function trendingMoviesByPage(page) {
+//   apiService.pageNum = page;
+//   return trendingFilms();
+// }

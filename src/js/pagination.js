@@ -38,7 +38,7 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
       maxRightPage = totalPages;
     }
 
-    for (let i = 1; i <= totalPages; i++) {
+    for (let i = 1; i <= totalPages; i += 1) {
       if (maxLeftPage !== 1 && i == 1) {
         let btn = paginationButton(i, items);
         wrapper.appendChild(btn);
@@ -127,8 +127,9 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
     if (currentPage < totalPages) {
       //   startSpin();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      currentPage++;
-      setupPagination(listItems, paginationElement, rows);
+      currentPage = currentPage += 1;
+      console.log(currentPage);
+      setupPagination(listItems, refs.paginationElement, rows);
       callback(refs.moviesContainer, currentPage, searchQuery);
     }
     disableArrowBtn(totalPages);
