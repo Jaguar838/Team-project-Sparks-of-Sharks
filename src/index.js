@@ -5,5 +5,6 @@ import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
 
 import './js/main';
+import './js/pagination';
 import '/js/searchByQuery.js';
 import '/js/lightBoxMovie.js';
