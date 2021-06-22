@@ -74,9 +74,11 @@
 //   border-color: transparent;
 // }
 
-.subscribe-input:placeholder {
+.film-search-input:placeholder-shown {
   font-family: $main-font;
+  font-weight: 400;
   color: $white;
+  font-size: 14px;
 }
 
 .film-search {
