@@ -36,7 +36,8 @@ $basicLightbox__timing: ease !default;
   transform: scale(0.95);
   transition: transform var(--animation-duration) var(--timing-function);
 }
-
+.modal_card {
+}
 .lightbox.is-open .lightbox__content {
   transform: scale(1);
 }
@@ -58,22 +59,24 @@ $basicLightbox__timing: ease !default;
   justify-content: center;
   width: 48px;
   height: 48px;
+  background-image: url('../images/sprite.svg#icon-close-button');
   padding: 0;
-  margin: 0;
+  margin: 0; //sprite.svg#icon-close-button');
   border: none;
   border-radius: 50%;
   // background-color: transparent;
+  background-color: tomato;
   color: #fff;
   cursor: pointer;
   transition: background-color var(--animation-duration) var(--timing-function);
   outline: none;
-  background-color: tomato;
+
   background-position: center;
   background-size: 60%;
   background-repeat: no-repeat;
 }
 
-.lightbox__button:hover,
-.lightbox__button:focus {
-  background-color: rgba(0, 0, 0, 0.5);
-}
+// .lightbox__button:hover,
+// .lightbox__button:focus {
+//   background-color: rgba(0, 0, 0, 0.5);
+// }
