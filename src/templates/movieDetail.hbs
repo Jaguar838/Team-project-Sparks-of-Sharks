@@ -1,5 +1,6 @@
 <div class='modal-card'>
-   <button type="button" class="lightbox__button" data-action="close-lightbox"></button>
+   <button type="button" class="lightbox__button" data-action="close-lightbox">
+   </button>
   <img
     class='modal-card__img'
     src='https://image.tmdb.org/t/p/w500{{poster_path}}'
@@ -21,10 +22,10 @@
     <p class='modal-card__details'>Original Title
       <span class='modal-card__original-title'>{{original_title}}</span></p>
 
-    <p class='modal-card__details'>Genre
+    <p class='modal-card__details modal-card__details-genres'>Genre</p>
       {{#each genres}}<span class='modal-card__details-attribute modal-card__genre'>
-          {{name}}
-        </span>{{/each}}</p>
+          {{name }}
+        </span>{{/each}}
 
     <h3 class='modal-card__about'>About</h3>
 
