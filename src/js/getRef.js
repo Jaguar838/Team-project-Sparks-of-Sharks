@@ -9,6 +9,8 @@ export default function getRefs() {
     lightBoxCloseRef: document.querySelector('.lightbox__button'),
     lightBoxContentRef: document.querySelector('.lightbox__content'),
     spinner: document.querySelector('.spinner'),
-
+    paginationElement: document.getElementById('pagination'),
+    arrowLeft: document.querySelector('.arrow_left'),
+    arrowRight: document.querySelector('.arrow_right'),
   };
 }
