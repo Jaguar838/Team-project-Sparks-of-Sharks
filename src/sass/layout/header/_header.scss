@@ -2,13 +2,13 @@
   position: relative;
   display: block;
 
+  height: 230px;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56));
 
   padding-top: 46px;
-  padding-bottom: 118px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -65,17 +65,24 @@
   // opacity: 0;
   background-color: $black;
 }
+.film-search {
+  margin-top: 41px;
+}
 
 @media screen and (max-width: 767px) {
   .hidden-logo {
     opacity: 0;
   }
+  .film-search {
+    width: 280px;
+    text-align: center;
+  }
 }
 
 @include for-size(tablet) {
-  .header {
-    padding-bottom: 118px;
-  }
+  // .header {
+  //   padding-bottom: 118px;
+  // }
 
   .nav-logo {
     margin-right: 114px;
@@ -86,11 +93,11 @@
 
   .film-search {
     text-align: center;
-    margin: auto;
+    // margin: auto;
   }
 
   .film-search-input {
-    width: 330px;
+    width: 336px;
   }
 
   .logo-text {
@@ -150,17 +157,24 @@
 
 .header__background-home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(/images/header/home/home_d_x1.jpg);
-  background-color: $black;
+    url(/images/header/home/home_m_x1.jpg);
+  // background-color: $black;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('/images/header/home/home_m_x2.jpg');
+  }
 }
 
 .header__background-myLibrary {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(/images/header/home/home_d_x1.jpg);
+    url(/images/header/libraly/lib_m_x1.jpg);
   background-color: $black;
 }
 
-@include to-size($tablet, $max-tablet) {
+// @include to-size($tablet, $max-tablet) {
+@media screen and (min-width: 768px) {
   .header__background-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/header/home/home_t_x1.jpg);
@@ -169,14 +183,15 @@
 
   .header__background-myLibrary {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/libraly/lib_t_1.jpg);
+      url(/images/header/libraly/lib__t_1.jpg);
     background-color: $black;
   }
 }
 .overlay {
   background: $black;
 }
-@include for-size($desktop) {
+// @include for-size($desktop) {
+@media screen and (min-width: 1024px) {
   .header__background-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/header/home/home_d_x1.jpg);
@@ -187,5 +202,25 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/header/libraly/lib_d_x1.jpg);
     background-color: $black;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .myLibraryButtons {
+    margin-top: 121px;
+    margin-bottom: 65px;
+    margin-left: 369px;
+  }
+}
+.btn-lib {
+  width: 136px;
+  height: 44px;
+
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 5px;
+  &:hover,
+  &:focus {
+    background-color: $accent-icon;
+    transform: scale(1.15);
   }
 }
