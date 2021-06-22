@@ -36,8 +36,7 @@ $basicLightbox__timing: ease !default;
   transform: scale(0.95);
   transition: transform var(--animation-duration) var(--timing-function);
 }
-.modal_card {
-}
+
 .lightbox.is-open .lightbox__content {
   transform: scale(1);
 }
