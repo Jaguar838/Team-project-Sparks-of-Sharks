@@ -1,8 +1,7 @@
 //Gallery Films
-.gallery{
-   
-  @include flexBox($w:wrap);
-} 
+.gallery {
+  @include flexBox($w: wrap);
+}
 
 .movie-card {
   @include for-size(phone) {
@@ -69,7 +68,7 @@
 .movie-release-date {
   color: $accent-text;
 }
-   
+
 .movie-vote {
   color: $white;
   background-color: $accent-icon;
@@ -77,6 +76,7 @@
   border-radius: 5px;
 }
 
-.genre-release-date{
-  @include flexBox($w:nowrap,$jc:start);
+.genre-release-date {
+  @include flexBox($w: nowrap, $jc: start);
   font-size: 12px;
+}
