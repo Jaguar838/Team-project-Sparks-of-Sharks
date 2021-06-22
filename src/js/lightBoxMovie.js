@@ -7,12 +7,10 @@ const apiService = new ApiService();
 
 const refs = getRefs();
 
+
 refs.moviesContainer.addEventListener('click', onGalleryContainerClick);
-refs.lightBoxCloseRef.addEventListener('click', onBtnCloseLightBox);
-
-// const movieId = 602063;
-
-// movieInfoById(movieId);
+refs.backdropModal.addEventListener('click', onBackdropClick);
+window.addEventListener('click', onCloseLightBox);
 
 function onGalleryContainerClick(evt) {
   evt.preventDefault();
@@ -29,24 +27,36 @@ function onGalleryContainerClick(evt) {
 function lightBoxOpen(image) {
   refs.lightBoxContainerRef.classList.add('is-open');
   const movieId = image.dataset.id;
-  console.log(movieId);
   const dataModalMovie = movieInfoById(movieId).then(data => data);
-  // console.log(dataModalMovie);
-  // createMarkup.lightBoxMarkup(dataModalMovie);
   window.addEventListener('keydown', onKeyPress);
 }
 
-function onBtnCloseLightBox() {
-  refs.lightBoxContainerRef.classList.remove('is-open');
-  //   lightBoxImageRef.src = '';
-  window.removeEventListener('keydown', onKeyPress);
+function onCloseLightBox(evt) {
+  if (evt.target.classList.contains('lightbox__button')) {
+    onCloseModal();
+  }
+}
+
+function onBackdropClick(evt) {
+  if (evt.target.classList.contains('lightbox__overlay')) {
+    onCloseModal();
+  }
 }
 
 function onKeyPress(evt) {
   if (evt.key !== 'Escape') {
     return;
   }
-  onBtnCloseLightBox();
+  onCloseModal();
+  return;
+}
+
+//закрытие модалки
+function onCloseModal() {
+  refs.lightBoxContainerRef.classList.remove('is-open');
+  window.removeEventListener('keydown', onKeyPress);
+  refs.backdropModal.removeEventListener;
+  refs.lightBoxContentRef.innerHTML = '';
   return;
 }
 
