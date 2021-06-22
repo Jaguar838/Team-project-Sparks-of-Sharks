@@ -1,54 +1,58 @@
 .pagination-style {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
 }
 .pagination__container_pages {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.pagenumbers {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+.page-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
-.pagenumbers button.active {
-    background-color: $accent-icon;
-    color: $white;
-    border-radius: 5px;
+.page-numbers button.active {
+  background-color: $accent-icon;
+  color: $white;
+  border-radius: 5px;
 }
-.pagenumbers button {
-    width: 40px;
-    height: 40px;
-    appearance: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    margin: 5px;
-    transition: 0.5s;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1.33;
-    font-style: normal;
-    border-radius: 5px;
+.page-numbers button {
+  width: 40px;
+  height: 40px;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin: 5px;
+  transition: 0.5s;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  font-style: normal;
+  border-radius: 5px;
 }
-.pagenumbers button:hover {
-    background-color: $accent-icon;
-    color: $white;
-    border-radius: 5px;
+.page-numbers button:hover {
+  background-color: $accent-icon;
+  color: $white;
+  border-radius: 5px;
 }
 .btn-dots {
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    border: none;
-    background-color: $white;
-    text-align: center;
-    line-height: 65px;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border: none;
+  background-color: $white;
+  text-align: center;
+  line-height: 65px;
+}
+.icon-pagination {
+  color: $black;
+  font-size: 18px;
 }

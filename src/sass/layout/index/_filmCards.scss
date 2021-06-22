@@ -1,91 +1,82 @@
 //Gallery Films
+.gallery {
+  @include flexBox($w: wrap);
+}
 
-.gallery{
-  @include flexBox($w:wrap);
-} 
-
-.movie-card{
-  @include for-size(phone){
-    
-    
+.movie-card {
+  @include for-size(phone) {
     margin: 15px;
   }
-  @include for-size(tablet){
-    
+  @include for-size(tablet) {
     width: calc((100% - 4 * 15px) / 2);
     margin: 15px;
   }
-  @include for-size(desktop){
-    
+  @include for-size(desktop) {
     width: calc((100% - 6 * 15px) / 3);
     margin: 15px;
   }
- 
 }
-.movie-image{
+.movie-image {
   border-radius: 5px;
-  @include for-size (phone){
-    width:280px;
+  @include for-size(phone) {
+    width: 280px;
     height: 402px;
-
   }
-  @include for-size(tablet){
+  @include for-size(tablet) {
     width: 294px;
     height: 398px;
   }
-  @include for-size(desktop){
-    width: 274px ;
+  @include for-size(desktop) {
+    width: 274px;
     height: 398px;
   }
 }
-.container{
-  @include for-size (phone){
-    width:280px;
-    
 
+.container {
+  @include for-size(phone) {
+    width: 280px;
   }
-  @include for-size(tablet){
+  @include for-size(tablet) {
     width: 618px;
-    
   }
-  @include for-size(desktop){
-    
+  @include for-size(desktop) {
     width: 882px;
-    
-
   }
 }
-.movie-title{
-  
+.movie-title {
   width: 113px;
-height: 31px;
+  height: 31px;
 
-font-style: normal;
-font-weight: 600;
+  font-style: normal;
+  font-weight: 500;
 
-text-transform: uppercase;
+  text-transform: uppercase;
 
-color: #000000;
-font-family: Roboto;
-font-size: 12px;
+  color: #000000;
+  font-family: Roboto;
+  font-size: 12px;
 
-line-height: 16px;
-letter-spacing: 0em;
-text-align: left;
-
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
 }
-.genre{
-  color: $accent-text;
 
-} 
-.movie-release-date{
+.genre {
   color: $accent-text;
 }
- .movie-vote {
+
+.movie-release-date {
   color: $accent-text;
-
 }
-.orangeText{
-  @include flexBox($w:nowrap,$jc:start);  
 
+.movie-vote {
+  color: $white;
+  background-color: $accent-icon;
+  padding: 1px 6px;
+  border-radius: 5px;
+}
+
+.genre-release-date {
+  @include flexBox($w: nowrap, $jc: start);
+  font-size: 12px;
 }
