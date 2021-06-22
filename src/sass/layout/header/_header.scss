@@ -1,3 +1,28 @@
+// .container-hed {
+//   position: relative;
+//   // width: 100%;
+//   padding-right: 20px;
+//   padding-left: 20px;
+//   margin-right: auto;
+//   margin-left: auto;
+
+//   @include for-size($phone) {
+//     width: 480px;
+//   }
+
+//   @include for-size($tablet) {
+//     width: 768px;
+//     padding-right: 76px;
+//     padding-left: 76px;
+//   }
+
+//   @include for-size($desktop) {
+//     width: 1024px;
+//     padding-right: 71px;
+//     padding-left: 71px;
+//   }
+// }
+
 .header {
   position: relative;
   display: block;
@@ -50,20 +75,40 @@
 .material-icons {
   margin: 0;
   color: $white;
-  // border: 2px solid $white;
+  // border: 1px solid $white;
   border-radius: 50%;
-  // font-size: 44px;
+  font-size: 18px;
   width: 18px;
   height: 18px;
   background-color: transparent;
+  text-transform: none;
+  display: inline-block;
+  direction: ltr;
+
   &:hover,
   &:focus {
     transform: scale(1.15);
   }
 }
+
+.search-icon {
+  position: absolute;
+  right: -70;
+  top: -5;
+}
 .film-search-input {
   // opacity: 0;
-  background-color: $black;
+  background: transparent;
+  border: transparent;
+  border-bottom: 1px solid $white;
+  font-size: 14px;
+  line-height: 1.17;
+  color: $white;
+  transition: border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.film-search-input:focus {
+  outline: none;
+  border-bottom: 1px solid $accent-icon;
 }
 .film-search {
   margin-top: 41px;
@@ -76,6 +121,8 @@
   .film-search {
     width: 280px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
