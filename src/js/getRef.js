@@ -8,6 +8,7 @@ export default function getRefs() {
     lightBoxContainerRef: document.querySelector('.js-lightbox'),
     lightBoxCloseRef: document.querySelector('[data-action="close-lightbox"]'),
     lightBoxContentRef: document.querySelector('.lightbox__content'),
+    backdropModal: document.querySelector('.js-lightbox'),
     spinner: document.querySelector('.spinner'),
     paginationElement: document.getElementById('pagination'),
     arrowLeft: document.querySelector('.arrow_left'),

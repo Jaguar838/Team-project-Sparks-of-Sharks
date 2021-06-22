@@ -7,7 +7,9 @@ const apiService = new ApiService();
 
 const refs = getRefs();
 
+
 refs.moviesContainer.addEventListener('click', onGalleryContainerClick);
+refs.backdropModal.addEventListener('click', onBackdropClick);
 window.addEventListener('click', onCloseLightBox);
 
 function onGalleryContainerClick(evt) {
@@ -35,6 +37,12 @@ function onCloseLightBox(evt) {
   }
 }
 
+function onBackdropClick(evt) {
+  if (evt.target.classList.contains('lightbox__overlay')) {
+    onCloseModal();
+  }
+}
+
 function onKeyPress(evt) {
   if (evt.key !== 'Escape') {
     return;
@@ -43,9 +51,11 @@ function onKeyPress(evt) {
   return;
 }
 
+//закрытие модалки
 function onCloseModal() {
   refs.lightBoxContainerRef.classList.remove('is-open');
   window.removeEventListener('keydown', onKeyPress);
+  refs.backdropModal.removeEventListener;
   refs.lightBoxContentRef.innerHTML = '';
   return;
 }
