@@ -2,6 +2,8 @@ import ApiService from './api/apiService';
 import createMarkup from './createMarkup';
 import getRefs from './getRef';
 import { renderPagination } from './pagination';
+import watchedQueue from '../js/header/watchedQueue';
+import logicHeader from'../js/header/LogicHeader';
 
 const apiService = new ApiService();
 

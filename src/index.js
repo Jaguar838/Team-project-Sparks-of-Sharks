@@ -10,4 +10,5 @@ import '/js/searchByQuery.js';
 import '/js/lightBoxMovie.js';
 
 
-import './js/header/LogicHeader'
+import './js/header/LogicHeader';
+import './js/header/watchedQueue';
