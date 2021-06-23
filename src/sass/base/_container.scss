@@ -10,14 +10,12 @@
   }
 
   @include for-size($tablet) {
-    width: 768px;
-    padding-right: 76px;
-    padding-left: 76px;
+    padding-right: 75px;
+    padding-left: 75px;
   }
 
   @include for-size($desktop) {
-    width: 1024px;
-    padding-right: 71px;
-    padding-left: 71px;
+    padding-right: 70px;
+    padding-left: 70px;
   }
 }
