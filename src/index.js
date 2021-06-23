@@ -8,3 +8,6 @@ import './js/main';
 import './js/pagination';
 import '/js/searchByQuery.js';
 import '/js/lightBoxMovie.js';
+
+
+import './js/header/LogicHeader'

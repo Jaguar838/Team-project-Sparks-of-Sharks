@@ -50,24 +50,39 @@
 .material-icons {
   margin: 0;
   color: $white;
-  // border: 2px solid $white;
+  // border: 1px solid $white;
   border-radius: 50%;
-  // font-size: 44px;
+  font-size: 18px;
   width: 18px;
   height: 18px;
   background-color: transparent;
+  text-transform: none;
+  display: inline-block;
+  direction: ltr;
+
   &:hover,
   &:focus {
     transform: scale(1.15);
   }
 }
+
+.search-icon {
+  position: absolute;
+  right: -70;
+  top: -5;
+}
 .film-search-input {
-  font-family: $main-font;
-  color: $white;
-  background-color: transparent;
-  border: none;
+  background: transparent;
+  border: transparent;
   border-bottom: 1px solid $white;
   font-size: 14px;
+  line-height: 1.17;
+  color: $white;
+  transition: border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.film-search-input:focus {
+  outline: none;
+  border-bottom: 1px solid $accent-icon;
 }
 // .film-search-input:focus,
 // .film-search-input:hover {
@@ -92,6 +107,8 @@
   .film-search {
     width: 280px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -220,11 +237,23 @@
     background-color: $black;
   }
 }
+.myLibraryButtons {
+  margin-top: 49px;
+  margin-bottom: 65px;
+}
 @media screen and (min-width: 1024px) {
   .myLibraryButtons {
-    margin-top: 121px;
-    margin-bottom: 65px;
     margin-left: 369px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .myLibraryButtons {
+    margin-left: 241px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .btn-lib {
+    width: 129px;
   }
 }
 .btn-lib {
