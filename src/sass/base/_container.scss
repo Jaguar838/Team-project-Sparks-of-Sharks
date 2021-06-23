@@ -5,10 +5,6 @@
   margin-right: auto;
   margin-left: auto;
   width: 100vw;
-  
-  @include for-size($phone) {
-    width: 480px;
-  }
 
   @include for-size($tablet) {
     padding-right: 75px;
