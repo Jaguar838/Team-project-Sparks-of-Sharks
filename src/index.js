@@ -11,3 +11,4 @@ import '/js/lightBoxMovie.js';
 
 
 import './js/header/LogicHeader'
+import './js/header/renderHeader'
