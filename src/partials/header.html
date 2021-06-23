@@ -1,4 +1,4 @@
-<div class="container header header__background-home container" data-index="header">
+<div class="container header header__background-home " data-index="header">
   <nav class="nav">
     <a href="" class="nav-logo logo-style">
       <img class="nav-logo-icon" src="./images/header/logo.svg" alt="film" />
@@ -25,8 +25,13 @@
       </p>
     </form>
     <div class="btn-container is-hidden">
-      <button class="lib-btn watched">Watched</button>
-      <button class="lib-btn queue">Queue</button>
+      <button class="lib-btn btn watched current__myLibraryBtn" data-index="watched">Watched</button>
+      <button class="lib-btn btn queue" data-index="queue">Queue</button>
+<!-- <div class="myLibraryButtons">
+  <button class="btn-lib" data-index="watched">WATCHED</button>
+  <button class="btn-lib" data-index="queue">QUEUE</button>
+</div> -->
+
     </div>
   </div>
 </div>
