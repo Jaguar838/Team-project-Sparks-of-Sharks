@@ -285,3 +285,8 @@
 .modal-buttons-wrapper {
   display: inline-flex;
 }
+
+.no-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
