@@ -1,7 +1,7 @@
 import ApiService from './api/apiService';
 import createMarkup from './createMarkup';
 import getRefs from './getRef';
-import oneMovieTemplate from '../templates/oneMovieTemplate.hbs';
+import { renderPagination } from './pagination';
 
 const apiService = new ApiService();
 
@@ -13,6 +13,8 @@ const page = 1;
 
 renderPage();
 
+trendingFilmsPagination(); //
+
 export function renderHomePage(e) {
   e.preventDefault();
   createMarkup.clearMarkup();
@@ -21,7 +23,7 @@ export function renderHomePage(e) {
 
 function trendingFilms() {
   return apiService
-    .getTrendingMoviesPage()
+    .getTrendingMoviesPage(page)
     .then(data => data.results)
     .then(data => renderGenres(data));
 }
@@ -45,3 +47,30 @@ export function renderGenres(data) {
     }));
   });
 }
+
+export function trendingFilmsPagination() {
+  apiService
+    .getTrendingMoviesPage(page)
+    .then(data => {
+      console.log(data);
+      renderPagination(data.total_pages, data.results, moviesByPage);
+    })
+    .catch(error => {
+      console.log(`Error in trendingFilmsPagination`);
+    });
+}
+
+function moviesByPage(wrapper, page) {
+  wrapper.innerHTML = '';
+  apiService.pageNum = page;
+  trendingFilms(page)
+    .then(createMarkup.moviesMarkup)
+    .catch(error => {
+      console.log(`Error in moviesByPage`);
+    });
+}
+
+// function trendingMoviesByPage(page) {
+//   apiService.pageNum = page;
+//   return trendingFilms();
+// }

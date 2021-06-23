@@ -1,6 +1,6 @@
 //Gallery Films
 .gallery {
-  @include flexBox($w: wrap);
+  @include flexBox($w: wrap, $jc: start);
 }
 
 .movie-card {
@@ -44,7 +44,7 @@
   }
 }
 .movie-title {
-  width: 113px;
+  // width: 113px;
   height: 31px;
 
   font-style: normal;

@@ -72,7 +72,6 @@
   top: -5;
 }
 .film-search-input {
-  // opacity: 0;
   background: transparent;
   border: transparent;
   border-bottom: 1px solid $white;
@@ -85,6 +84,18 @@
   outline: none;
   border-bottom: 1px solid $accent-icon;
 }
+// .film-search-input:focus,
+// .film-search-input:hover {
+//   border-color: transparent;
+// }
+
+.film-search-input:placeholder-shown {
+  font-family: $main-font;
+  font-weight: 400;
+  color: $white;
+  font-size: 14px;
+}
+
 .film-search {
   margin-top: 41px;
 }

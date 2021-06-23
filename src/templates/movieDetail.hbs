@@ -1,5 +1,5 @@
 <div class='modal-card'>
-  <button class='btn-close'></button>
+   <button type="button" class="lightbox__button" data-action="close-lightbox"></button>
   <img
     class='modal-card__img'
     src='https://image.tmdb.org/t/p/w500{{poster_path}}'
@@ -7,21 +7,33 @@
   />
 
   <div class='modal-card__content'>
-    <h2 class=''>{{original_title}}</h2>
-    <p class=''>'Vote / Votes' {{vote_average}} / {{vote_count}}</p>
-    <p class=''>'Popularity' {{popularity}}</p>
-    <p class=''>'Original Title' {{original_title}}</p>
-    <p class=''>'Genre' {{genres.name}}</p>
-    <span class='genres'>
-      {{#each genres}}
-        <span class='genreItem'>{{this.name}}</span>
-      {{/each}}
-    </span>
-    <h3 class=''>'About'</h3>
-    <p class=''> {{overview}}</p>
 
-    <button class=''>add to Watched</button>
-    <button class=''>add to queue</button>
-  </div>
+    <h2 class='modal-card__title'>{{original_title}}</h2>
+
+    <p class='modal-card__details'>Vote / Votes
+      <span class='votes-attribute'>{{vote_average}}</span>
+      /
+      <span class='modal-card__details-attribute'>{{vote_count}}</span></p>
+
+    <p class='modal-card__details'>Popularity
+      <span class='modal-card__details-attribute modal-card__popularity'>{{popularity}}</span></p>
+
+    <p class='modal-card__details'>Original Title
+      <span class='modal-card__original-title'>{{original_title}}</span></p>
+
+    <p class='modal-card__details'>Genre
+      {{#each genres}}<span class='modal-card__details-attribute modal-card__genre'>
+          {{name}}
+        </span>{{/each}}</p>
+
+    <h3 class='modal-card__about'>About</h3>
+
+    <p class='modal-card__overview'> {{overview}}</p>
+    <div class='modal-buttons-wrapper'>
+
+      <button class='modal-card__watched-btn'>add to Watched</button>
+
+      <button class='modal-card__queue-btn'>add to queue</button>
+    </div>
 
 </div>

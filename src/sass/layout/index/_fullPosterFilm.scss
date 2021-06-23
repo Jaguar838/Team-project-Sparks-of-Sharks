@@ -1,18 +1,259 @@
-// <div class='modal-card'>
-//   <button class='btn-close'></button>
-//   <img class='modal-card__img' alt='{{poster_path}}' />
+.lightbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--animation-duration) var(--timing-function);
+}
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+.lightbox__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: $black;
+  opacity: 0.25;
+}
+.lightbox__content {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  margin: 0px;
 
-//   <div class='modal-card__content'>
-//     <h2 class=''>{{original_title}}</h2>
-//     <p class=''>'Vote / Votes' {{vote_average}} / {{vote_count}}</p>
-//     <p class=''>'Popularity' {{popularity}}</p>
-//     <p class=''>'Original Title' {{original_title}}</p>
-//     <p class=''>'Genre' {{genres.name}}</p>
-//     <h3 class=''>'About'</h3>
-//     <p class=''> {{overview}}</p>
+  width: 280px;
+  background-color: $white;
+  transform: translateX(-50%) scale(1);
 
-//     <button class=''>add to Watched</button>
-//     <button class=''>add to queue</button>
-//   </div>
+  @include for-size(tablet) {
+    top: 231px;
+    width: 618px;
+  }
+  @include for-size(desktop) {
+    top: 100px;
+    width: 882px;
+  }
+}
+.lightbox__button {
+  position: absolute;
+  top: 38px;
+  right: 38px;
+  display: flex;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  background-repeat: no-repeat;
+}
 
-// </div>
+.modal-card {
+  width: 240px;
+  padding: 48px 20px;
+  margin-right: 0px;
+
+  @include for-size(tablet) {
+    padding: 42px 29px;
+    display: flex;
+    width: 560px;
+  }
+  @include for-size(desktop) {
+    width: 822px;
+    padding: 50px 30px;
+  }
+}
+.modal-card__content {
+  @include for-size(tablet) {
+    margin-left: 30px;
+  }
+}
+.modal-card__img {
+  margin: 0;
+  width: 240px;
+  height: 356.57px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  @include for-size(phone) {
+    width: 240px;
+    height: 357px;
+    margin-bottom: 0;
+  }
+  @include for-size(tablet) {
+    width: 264px;
+    height: 374px;
+  }
+  @include for-size(desktop) {
+    width: 396px;
+    height: 478px;
+  }
+}
+.modal-card__title {
+  margin-bottom: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  @include for-size(desktop) {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
+.modal-card__details {
+  display: block;
+  margin-bottom: 10px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  color: $modal-text-color;
+}
+.votes-attribute {
+  display: block;
+  width: 36px;
+  height: 16px;
+  margin-left: 41px;
+
+  background: $accent-text;
+  border-radius: 5px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: $white;
+  @include for-size(desktop) {
+    margin-left: 85px;
+  }
+}
+.modal-card__details-attribute {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  color: $black;
+}
+.modal-card__popularity {
+  margin-left: 53px;
+  @include for-size(desktop) {
+    margin-left: 97px;
+  }
+}
+.modal-card__original-title {
+  margin-left: 39px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+
+  color: #000000;
+  @include for-size(desktop) {
+    margin-left: 83px;
+  }
+}
+.modal-card__genre {
+  margin-left: 78px;
+  margin-bottom: 10px;
+  @include for-size(desktop) {
+    margin-left: 120px;
+  }
+}
+.modal-card__about {
+  margin-bottom: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  text-transform: uppercase;
+}
+.modal-card__overview {
+  margin-bottom: 21px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.66;
+}
+.modal-card__watched-btn {
+  width: 112.58px;
+  height: 44px;
+  padding: 8.28px;
+  margin-right: 14.85px;
+
+  background: #ff6b01;
+  border-radius: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: $white;
+
+  border: transparent;
+  @include for-size(desktop) {
+    width: 136px;
+  }
+}
+.modal-card__queue-btn {
+  margin: 0;
+  width: 112.58px;
+  height: 44px;
+  background: $white;
+
+  border-radius: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+
+  border: 1px solid #000000;
+  box-sizing: border-box;
+
+  color: $black;
+  @include for-size(desktop) {
+    width: 136px;
+  }
+}
+.modal-buttons-wrapper {
+  display: inline-flex;
+}
