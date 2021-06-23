@@ -96,4 +96,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("normalize.css"),require("./sass/main.scss"),require("@pnotify/core/dist/BrightTheme.css"),require("@pnotify/core/dist/PNotify.css"),require("./js/main"),require("./js/pagination"),require("/js/searchByQuery.js"),require("/js/lightBoxMovie.js"),require("./js/header/LogicHeader");
 },{"normalize.css":"DOAq","./sass/main.scss":"clu1","@pnotify/core/dist/BrightTheme.css":"DOAq","@pnotify/core/dist/PNotify.css":"DOAq","./js/main":"d6sW","./js/pagination":"o8lo","/js/searchByQuery.js":"NAHm","/js/lightBoxMovie.js":"thwr","./js/header/LogicHeader":"TDWP"}]},{},["Focm"], null)
-//# sourceMappingURL=/Team-project-Sparks-of-Sharks/src.08b7b70d.js.map
+//# sourceMappingURL=/Team-project-Sparks-of-Sharks/src.8c897927.js.map
