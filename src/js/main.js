@@ -4,6 +4,7 @@ import getRefs from './getRef';
 import { renderPagination } from './pagination';
 import watchedQueue from '../js/header/watchedQueue';
 import { homePageMarkupUpdate } from './header/LogicHeader'
+import { renderHeader } from './header/renderHeader';
 import spin from './plugins/spinner';
 
 
@@ -26,6 +27,7 @@ export function renderHomePage(e) {
   createMarkup.clearMarkup();
   renderPage();
   homePageMarkupUpdate();
+  renderHeader();
 }
 
 function trendingFilms() {
