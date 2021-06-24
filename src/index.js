@@ -9,5 +9,6 @@ import './js/pagination';
 import '/js/searchByQuery.js';
 import '/js/lightBoxMovie.js';
 
-
 import './js/header/LogicHeader'
+import './js/header/renderHeader'
+import './js/header/watchedQueue';

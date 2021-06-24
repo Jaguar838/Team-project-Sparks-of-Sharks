@@ -2,7 +2,10 @@ import ApiService from './api/apiService';
 import createMarkup from './createMarkup';
 import getRefs from './getRef';
 import { renderPagination } from './pagination';
+import watchedQueue from '../js/header/watchedQueue';
+import { homePageMarkupUpdate } from './header/LogicHeader'
 import spin from './plugins/spinner';
+
 
 const apiService = new ApiService();
 
@@ -22,6 +25,7 @@ export function renderHomePage(e) {
   e.preventDefault();
   createMarkup.clearMarkup();
   renderPage();
+  homePageMarkupUpdate();
 }
 
 function trendingFilms() {

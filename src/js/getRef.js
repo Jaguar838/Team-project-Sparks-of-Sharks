@@ -2,7 +2,9 @@ export default function getRefs() {
   return {
     moviesContainer: document.querySelector('#gallery'),
     logo: document.querySelector('.nav-logo'),
+    header: document.querySelector('[data-index="header"]'),
     homeBtn: document.querySelector('[data-index="home"]'),
+    mylibraryBtn: document.querySelector('[data-index="libraryBtn"]'),
     searchForm: document.querySelector('.film-search'),
     posterImage: document.querySelector('.movie-image'),
     lightBoxContainerRef: document.querySelector('.js-lightbox'),
@@ -23,3 +25,6 @@ export default function getRefs() {
     queueAdd: document.querySelector('.modal-card__queue-btn'),
   };
 }
+
+
+
