@@ -8,6 +8,7 @@ const apiService = new ApiService();
 const refs = getRefs();
 
 refs.moviesContainer.addEventListener('click', onGalleryContainerClick);
+refs.backdropModal.addEventListener('click', onBackdropClick);
 window.addEventListener('click', onCloseLightBox);
 
 function onGalleryContainerClick(evt) {
@@ -24,6 +25,7 @@ function onGalleryContainerClick(evt) {
 
 function lightBoxOpen(image) {
   refs.lightBoxContainerRef.classList.add('is-open');
+  document.body.classList.add('no-scrolling');
   const movieId = image.dataset.id;
   const dataModalMovie = movieInfoById(movieId).then(data => data);
   window.addEventListener('keydown', onKeyPress);
@@ -31,6 +33,12 @@ function lightBoxOpen(image) {
 
 function onCloseLightBox(evt) {
   if (evt.target.classList.contains('lightbox__button')) {
+    onCloseModal();
+  }
+}
+
+function onBackdropClick(evt) {
+  if (evt.target.classList.contains('lightbox__overlay')) {
     onCloseModal();
   }
 }
@@ -43,9 +51,12 @@ function onKeyPress(evt) {
   return;
 }
 
+//закрытие модалки
 function onCloseModal() {
+  document.body.classList.remove('no-scrolling');
   refs.lightBoxContainerRef.classList.remove('is-open');
   window.removeEventListener('keydown', onKeyPress);
+  refs.backdropModal.removeEventListener;
   refs.lightBoxContentRef.innerHTML = '';
   return;
 }
