@@ -2,7 +2,9 @@ export default function getRefs() {
   return {
     moviesContainer: document.querySelector('#gallery'),
     logo: document.querySelector('.nav-logo'),
+    header: document.querySelector('[data-index="header"]'),
     homeBtn: document.querySelector('[data-index="home"]'),
+    mylibraryBtn: document.querySelector('[data-index="libraryBtn"]'),
     searchForm: document.querySelector('.film-search'),
     posterImage: document.querySelector('.movie-image'),
     lightBoxContainerRef: document.querySelector('.js-lightbox'),
@@ -19,10 +21,8 @@ export default function getRefs() {
     headerContent: document.querySelector('[data-index="headerContent"]'),
     watched: document.querySelector('[data-index="watched"]'),
     queue: document.querySelector('[data-index="queue"]'),
-    watchedAdd:document.querySelector('.modal-card__watched-btn'),
+    watchedAdd: document.querySelector('.modal-card__watched-btn'),
     queueAdd: document.querySelector('.modal-card__queue-btn'),
-    
-
   };
 }
 

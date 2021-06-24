@@ -2,55 +2,52 @@
 // * {
 //     outline: 1px solid tomato;
 // }
+
 .header {
-  background-color: #000;
-  position: relative;
   display: block;
-
   height: 230px;
-
+  position: relative;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  background-color: #000;
   padding-top: 46px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .material-icons {
-  // margin: 0;
   color: $white;
   font-size: 18px;
-
-&-search {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
 
   &:hover,
   &:focus {
     transform: scale(1.15);
-    // color: $black;
+    color: $accent-icon;
   }
+
+  //   &-search {
+  //     position: absolute;
+  //     right: 0;
+  //     top: -5px;
+  //   }
 }
 
 .film-search {
-  position: relative;
   width: 280px;
-  margin-top: 41px;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  user-select: none;
+  margin-top: 45px;
 
   &-input {
     width: 100%;
     color: $white;
     background: transparent;
     border: transparent;
-    border-bottom: 1px solid $white;
+    border-bottom: 2px solid $white;
     font-size: 14px;
     line-height: 1.17;
+
     transition: border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -95,6 +92,18 @@
     text-indent: 500px;
     transition: text-indent 0.3s ease;
   }
+
+  &-btn {
+    background: transparent;
+    border: transparent;
+    border: none;
+    outline: none;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -4px;
+    cursor: pointer;
+  }
 }
 
 .flex {
@@ -132,17 +141,34 @@
   border: 1px solid transparent;
 }
 
+button {
+  display: block;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
 
 @media screen and (max-width: 767px) {
   .hidden-logo {
     opacity: 0;
   }
+  .film-search {
+    width: 280px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @include for-size(tablet) {
-  .header {
-    padding-bottom: 118px;
-  }
+  // .header {
+  //   padding-bottom: 118px;
+  // }
 
   .nav-logo {
     margin-right: 114px;
@@ -151,10 +177,10 @@
     margin-right: 10px;
   }
 
-  // .film-search {
-  //   text-align: center;
-  //   // margin: auto;
-  // }
+  .film-search {
+    text-align: center;
+    // margin: auto;
+  }
 
   .film-search-input {
     width: 336px;
@@ -188,8 +214,7 @@
   position: relative;
 
   padding: 0;
-  border: none;
-  outline: none;
+  border: 0;
   background: none;
   cursor: pointer;
   display: block;
@@ -297,3 +322,41 @@
     transform: scale(1.15);
   }
 }
+
+<div class="container header__background-home" data-index="header">
+  <nav class="nav">
+    <a href="" class="nav-logo logo-style">
+      <img class="nav-logo-icon" src="./images/header/logo.svg" alt="film" />
+      <span class="logo-text hidden-logo">Filmoteka</span>
+    </a>
+    <!-- <div class=""> -->
+    <!-- место для личного кабинета -->
+    <!-- </div>  -->
+    <ul class="flex">
+      <li class="nav-btn current" data-index="home" id="homeBtn">HOME</li>
+      <li class="nav-btn" data-index="libraryBtn">MY LIBRARY</li>
+    </ul>
+  </nav>
+  <div data-index="headerContent">
+    <form class="film-search">
+      <input class="film-search-input" type="text" placeholder="Search films" autocomplete="off" />
+      <button type="submit" class="film-search-btn">
+        <i class="material-icons material-icons-search">search</i>
+      </button>
+
+      <p>
+        <!-- fetch status -->
+      </p>
+    </form>
+    <div class="btn-container is-hidden">
+      <button class="lib-btn btn watched current__myLibraryBtn" data-index="watched">
+        Watched
+      </button>
+      <button class="lib-btn btn queue" data-index="queue">Queue</button>
+      <!-- <div class="myLibraryButtons">
+    <button class="btn-lib" data-index="watched">WATCHED</button>
+    <button class="btn-lib" data-index="queue">QUEUE</button>
+    </div> -->
+    </div>
+  </div>
+</div>
