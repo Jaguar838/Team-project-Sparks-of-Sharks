@@ -2,10 +2,13 @@ import ApiService from './api/apiService';
 import createMarkup from './createMarkup';
 import getRefs from './getRef';
 import { renderPagination } from './pagination';
+import spin from './plugins/spinner';
 
 const apiService = new ApiService();
 
 const refs = getRefs();
+
+spin.run();
 
 refs.logo.addEventListener('click', renderHomePage);
 refs.homeBtn.addEventListener('click', renderHomePage);
@@ -28,11 +31,13 @@ function trendingFilms() {
     .then(data => renderGenres(data));
 }
 
-export function renderPage(data) {
+export async function renderPage(data) {
   apiService.page = 1;
-  trendingFilms(data)
+  spin.run();
+  await trendingFilms(data)
     .then(data => data)
     .then(createMarkup.moviesMarkup);
+  spin.stop();
 }
 
 export function renderGenres(data) {
@@ -60,14 +65,17 @@ export function trendingFilmsPagination() {
     });
 }
 
-function moviesByPage(wrapper, page) {
+async function moviesByPage(wrapper, page) {
   wrapper.innerHTML = '';
+  spin.run();
   apiService.pageNum = page;
-  trendingFilms(page)
+  await trendingFilms(page)
     .then(createMarkup.moviesMarkup)
     .catch(error => {
       console.log(`Error in moviesByPage`);
+      spin.stop();
     });
+  spin.stop();
 }
 
 // function trendingMoviesByPage(page) {

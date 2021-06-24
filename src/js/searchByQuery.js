@@ -4,6 +4,7 @@ import getRefs from './getRef';
 import * as mainPage from './main';
 import notify from './error';
 import debounce from 'lodash.debounce';
+import spin from './plugins/spinner';
 
 const apiService = new ApiService();
 
@@ -34,9 +35,10 @@ function searchingFilms() {
     .then(data => mainPage.renderGenres(data));
 }
 
-function renderSearchMovies(searchQuery) {
+async function renderSearchMovies(searchQuery) {
   apiService.query = searchQuery;
-  searchingFilms()
+  spin.run();
+  await searchingFilms()
     .then(data => {
       if (data == '') {
         notify.errorMessage(`Ничего не нашли(`);
@@ -51,4 +53,5 @@ function renderSearchMovies(searchQuery) {
       console.log('error in renderSearchMovies');
       notify.errorMessage(`Ничего не нашли(`);
     });
+  spin.stop();
 }
