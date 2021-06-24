@@ -23,11 +23,11 @@
   color: $white;
   font-size: 18px;
 
-&-search {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
+  &-search {
+    position: absolute;
+    right: 50;
+    top: 0;
+  }
 
   &:hover,
   &:focus {
@@ -44,7 +44,7 @@
   margin-right: auto;
 
   &-input {
-    width: 100%;
+    width: 90%;
     color: $white;
     background: transparent;
     border: transparent;
@@ -132,7 +132,6 @@
   border: 1px solid transparent;
 }
 
-
 @media screen and (max-width: 767px) {
   .hidden-logo {
     opacity: 0;
@@ -151,14 +150,9 @@
     margin-right: 10px;
   }
 
-  // .film-search {
-  //   text-align: center;
-  //   // margin: auto;
+  // .film-search-input {
+  //   width: 336px;
   // }
-
-  .film-search-input {
-    width: 336px;
-  }
 
   .logo-text {
     display: block;
@@ -266,9 +260,10 @@
   }
 }
 .myLibraryButtons {
-  margin-top: 49px;
-  margin-bottom: 65px;
+  padding-top: 49px;
+  padding-bottom: 65px;
 }
+
 @media screen and (min-width: 1024px) {
   .myLibraryButtons {
     margin-left: 369px;
@@ -276,16 +271,17 @@
 }
 @media screen and (min-width: 768px) {
   .myLibraryButtons {
-    margin-left: 241px;
+    margin-left: 240px;
   }
 }
+
 @media screen and (max-width: 767px) {
-  .btn-lib {
-    width: 129px;
+  .myLibraryButtons {
+    display: flex;
   }
 }
 .btn-lib {
-  width: 136px;
+  width: 130px;
   height: 44px;
 
   border: 1px solid #ffffff;
@@ -295,5 +291,8 @@
   &:focus {
     background-color: $accent-icon;
     transform: scale(1.15);
+  }
+  &:not(:last-child) {
+    margin-right: 20px;
   }
 }
