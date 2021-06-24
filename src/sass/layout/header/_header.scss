@@ -1,7 +1,7 @@
 /* Test maketa */
-* {
-    // outline: 1px solid tomato;
-}
+// * {
+//     outline: 1px solid tomato;
+// }
 .header {
   background-color: #000;
   position: relative;
@@ -32,7 +32,7 @@
   &:hover,
   &:focus {
     transform: scale(1.15);
-    color: $accent-icon;
+    // color: $black;
   }
 }
 
