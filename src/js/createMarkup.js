@@ -3,7 +3,6 @@ import modalMarkup from '../templates/movieDetail.hbs';
 import getRefs from './getRef';
 
 const refs = getRefs();
-
 function moviesMarkup(data) {
   const markup = oneMovieTemplate(data);
   refs.moviesContainer.insertAdjacentHTML('beforeend', markup);
