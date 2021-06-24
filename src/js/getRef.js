@@ -13,5 +13,10 @@ export default function getRefs() {
     paginationElement: document.getElementById('pagination'),
     arrowLeft: document.querySelector('.arrow_left'),
     arrowRight: document.querySelector('.arrow_right'),
+    header: document.querySelector('[data-index="header"]'),
+  homeBtn: document.querySelector('[data-index="home"]'),
+  mylibraryBtn: document.querySelector('[data-index="libraryBtn"]'),
+  headerContent: document.querySelector('[data-index="headerContent"]'
+  ),
   };
 }

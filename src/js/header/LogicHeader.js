@@ -1,13 +1,7 @@
 //  export default
+import getRefs from'../getRef';
 
-
-const refs = {
-  header: document.querySelector('[data-index="header"]'),
-  homeBtn: document.querySelector('[data-index="home"]'),
-  mylibraryBtn: document.querySelector('[data-index="libraryBtn"]'),
-  headerContent: document.querySelector('[data-index="headerContent"]'
-  ),
-};
+const refs = getRefs();
 
 refs.mylibraryBtn.addEventListener('click', myLibraryPageMarkupUpdate);
 refs.homeBtn.addEventListener('click', homePageMarkupUpdate);

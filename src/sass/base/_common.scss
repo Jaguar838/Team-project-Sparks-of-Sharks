@@ -1,9 +1,14 @@
-$main-font: 'Roboto', sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   font-family: $main-font;
   font-style: normal;
 }
+
 a {
   text-decoration: none;
 }
