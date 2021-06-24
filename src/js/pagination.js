@@ -1,4 +1,4 @@
-// import { startSpin, stopSpin } from './spinner/spinner';
+import spin from './plugins/spinner';
 
 import getRefs from './getRef';
 const refs = getRefs();
@@ -76,7 +76,7 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
         wrapper.insertBefore(threeDotsEl, wrapper[1]);
       }
     }
-    // stopSpin();
+    // spin.stop();
   }
 
   // точки в пагинацию
@@ -94,10 +94,9 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
     if (currentPage == page) button.classList.add('active');
 
     button.addEventListener('click', function () {
-      //   startSpin();
+      //spin.run();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       currentPage = page;
-      // console.log(currentPage);
       callback(refs.moviesContainer, currentPage, searchQuery);
 
       let current_btn = document.querySelector('.pagenumbers button.active');
@@ -112,7 +111,7 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
 
   function onArrowLeftClick() {
     if (currentPage > 1) {
-      //   startSpin();
+      // spin.run();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       currentPage--;
 
@@ -125,7 +124,7 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
 
   function onArrowRightClick() {
     if (currentPage < totalPages) {
-      //   startSpin();
+      //spin.run();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       currentPage = currentPage += 1;
       console.log(currentPage);
@@ -152,7 +151,7 @@ function disableArrowBtnAfterPageClick(e) {
   }
 }
 
-// deactivate btns
+//
 function disableArrowBtn(totalPages) {
   if (currentPage === 1) {
     refs.arrowLeft.classList.add('disabled-arrow');

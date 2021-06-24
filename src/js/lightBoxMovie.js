@@ -29,6 +29,7 @@ function lightBoxOpen(image) {
   const movieId = image.dataset.id;
   const dataModalMovie = movieInfoById(movieId).then(data => data);
   window.addEventListener('keydown', onKeyPress);
+  console.log(refs.queueAdd);
 }
 
 function onCloseLightBox(evt) {

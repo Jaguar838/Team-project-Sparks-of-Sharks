@@ -1,11 +1,12 @@
-import getRefs from './getRef';
+import getRefs from '../getRef';
 const refs = getRefs();
-export const spinner = () => {
-    window.onload = function () {
-        refs.moviesContainer.innerHTML = '';
-        refs.spinner.classList.remove('visually-hidden');
-        window.setTimeout(function () {
-            refs.spinner.classList.add('visually-hidden');
-        }, 500);
-    };
-}
+const run = () => {
+  refs.moviesContainer.innerHTML = '';
+  refs.spinner.classList.remove('visually-hidden');
+};
+
+const stop = () => {
+  refs.spinner.classList.add('visually-hidden');
+};
+
+export default { run, stop };
