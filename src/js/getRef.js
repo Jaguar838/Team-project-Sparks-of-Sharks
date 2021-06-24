@@ -14,9 +14,12 @@ export default function getRefs() {
     arrowLeft: document.querySelector('.arrow_left'),
     arrowRight: document.querySelector('.arrow_right'),
     header: document.querySelector('[data-index="header"]'),
-  homeBtn: document.querySelector('[data-index="home"]'),
-  mylibraryBtn: document.querySelector('[data-index="libraryBtn"]'),
-  headerContent: document.querySelector('[data-index="headerContent"]'
-  ),
+    homeBtn: document.querySelector('[data-index="home"]'),
+    mylibraryBtn: document.querySelector('[data-index="libraryBtn"]'),
+    headerContent: document.querySelector('[data-index="headerContent"]'),
+    watched: document.querySelector('[data-index="watched"]'),
+    queue: document.querySelector('[data-index="queue"]'),
+    watchedAdd: document.querySelector('.modal-card__watched-btn'),
+    queueAdd: document.querySelector('.modal-card__queue-btn'),
   };
 }
