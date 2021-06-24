@@ -7,7 +7,6 @@ const apiService = new ApiService();
 
 const refs = getRefs();
 
-
 refs.moviesContainer.addEventListener('click', onGalleryContainerClick);
 refs.backdropModal.addEventListener('click', onBackdropClick);
 window.addEventListener('click', onCloseLightBox);
@@ -26,9 +25,11 @@ function onGalleryContainerClick(evt) {
 
 function lightBoxOpen(image) {
   refs.lightBoxContainerRef.classList.add('is-open');
+  document.body.classList.add('no-scrolling');
   const movieId = image.dataset.id;
   const dataModalMovie = movieInfoById(movieId).then(data => data);
   window.addEventListener('keydown', onKeyPress);
+  console.log(refs.queueAdd);
 }
 
 function onCloseLightBox(evt) {
@@ -53,6 +54,7 @@ function onKeyPress(evt) {
 
 //закрытие модалки
 function onCloseModal() {
+  document.body.classList.remove('no-scrolling');
   refs.lightBoxContainerRef.classList.remove('is-open');
   window.removeEventListener('keydown', onKeyPress);
   refs.backdropModal.removeEventListener;

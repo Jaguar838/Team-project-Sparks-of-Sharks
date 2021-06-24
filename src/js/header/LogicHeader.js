@@ -1,8 +1,6 @@
-import getRefs from "../getRef";
-
+import getRefs from '../getRef';
 
 const refs = getRefs();
-
 
 refs.mylibraryBtn.addEventListener('click', myLibraryPageMarkupUpdate);
 refs.homeBtn.addEventListener('click', homePageMarkupUpdate);
