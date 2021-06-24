@@ -1,5 +1,4 @@
-//  export default
-import getRefs from'../getRef';
+import getRefs from '../getRef';
 
 const refs = getRefs();
 
