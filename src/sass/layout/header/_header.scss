@@ -1,4 +1,9 @@
+/* Test maketa */
+* {
+    // outline: 1px solid tomato;
+}
 .header {
+  background-color: #000;
   position: relative;
   display: block;
 
@@ -11,6 +16,85 @@
   padding-top: 46px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.material-icons {
+  // margin: 0;
+  color: $white;
+  font-size: 18px;
+
+&-search {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+  &:hover,
+  &:focus {
+    transform: scale(1.15);
+    color: $accent-icon;
+  }
+}
+
+.film-search {
+  position: relative;
+  width: 280px;
+  margin-top: 41px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &-input {
+    width: 100%;
+    color: $white;
+    background: transparent;
+    border: transparent;
+    border-bottom: 1px solid $white;
+    font-size: 14px;
+    line-height: 1.17;
+    transition: border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &-input:focus,
+  &-input:hover {
+    outline: none;
+    border-bottom: 2px solid $accent-icon;
+  }
+
+  &-input::placeholder {
+    color: $white;
+  }
+  &-input::-webkit-input-placeholder {
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+  }
+  &-input::-moz-placeholder {
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+  }
+  &-input:-moz-placeholder {
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+  }
+  &-input:-ms-input-placeholder {
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+  }
+  &-input:focus::-webkit-input-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+  }
+  &-input:focus::-moz-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+  }
+  &-input:focus:-moz-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+  }
+  &-input:focus:-ms-input-placeholder {
+    text-indent: 500px;
+    transition: text-indent 0.3s ease;
+  }
 }
 
 .flex {
@@ -47,75 +131,18 @@
   background-color: $accent-icon;
   border: 1px solid transparent;
 }
-.material-icons {
-  margin: 0;
-  color: $white;
-  // border: 1px solid $white;
-  border-radius: 50%;
-  font-size: 18px;
-  width: 18px;
-  height: 18px;
-  background-color: transparent;
-  text-transform: none;
-  display: inline-block;
-  direction: ltr;
 
-  &:hover,
-  &:focus {
-    transform: scale(1.15);
-  }
-}
-
-.search-icon {
-  position: absolute;
-  right: -70;
-  top: -5;
-}
-.film-search-input {
-  background: transparent;
-  border: transparent;
-  border-bottom: 1px solid $white;
-  font-size: 14px;
-  line-height: 1.17;
-  color: $white;
-  transition: border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.film-search-input:focus {
-  outline: none;
-  border-bottom: 1px solid $accent-icon;
-}
-// .film-search-input:focus,
-// .film-search-input:hover {
-//   border-color: transparent;
-// }
-
-.film-search-input:placeholder-shown {
-  font-family: $main-font;
-  font-weight: 400;
-  color: $white;
-  font-size: 14px;
-}
-
-.film-search {
-  margin-top: 41px;
-}
 
 @media screen and (max-width: 767px) {
   .hidden-logo {
     opacity: 0;
   }
-  .film-search {
-    width: 280px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 @include for-size(tablet) {
-  // .header {
-  //   padding-bottom: 118px;
-  // }
+  .header {
+    padding-bottom: 118px;
+  }
 
   .nav-logo {
     margin-right: 114px;
@@ -124,10 +151,10 @@
     margin-right: 10px;
   }
 
-  .film-search {
-    text-align: center;
-    // margin: auto;
-  }
+  // .film-search {
+  //   text-align: center;
+  //   // margin: auto;
+  // }
 
   .film-search-input {
     width: 336px;
@@ -161,7 +188,8 @@
   position: relative;
 
   padding: 0;
-  border: 0;
+  border: none;
+  outline: none;
   background: none;
   cursor: pointer;
   display: block;
