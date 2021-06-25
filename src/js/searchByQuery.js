@@ -17,8 +17,6 @@ function onInput(elem) {
   elem.preventDefault();
   apiService.pageNum = 1;
   const searchQuery = elem.target.value;
-  console.log('searchQuery', searchQuery);
-
   if (!searchQuery) {
     //   markup.clearMarkup();
     return;
