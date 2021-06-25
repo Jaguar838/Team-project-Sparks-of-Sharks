@@ -12,7 +12,7 @@ export default class ApiService {
 
   getTrendingMoviesPage() {
     const trendingFilms = axios
-      .get(`/trending/movie/day?api_key=${API_KEY}&page=${this.page}`)
+      .get(`/trending/movie/week?api_key=${API_KEY}&page=${this.page}`)
       .then(({ data }) => data);
     return trendingFilms;
   }
