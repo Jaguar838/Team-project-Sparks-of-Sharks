@@ -25,6 +25,9 @@
   &-search {
     position: absolute;
     right: 50px;
+    @include for-size(tablet) {
+      right: -55px;
+    }
     top: 0;
   }
 
