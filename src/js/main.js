@@ -3,10 +3,9 @@ import createMarkup from './createMarkup';
 import getRefs from './getRef';
 import { renderPagination } from './pagination';
 import watchedQueue from '../js/header/watchedQueue';
-import { homePageMarkupUpdate } from './header/LogicHeader'
+import { homePageMarkupUpdate } from './header/LogicHeader';
 import { renderHeader } from './header/renderHeader';
 import spin from './plugins/spinner';
-
 
 const apiService = new ApiService();
 
@@ -26,6 +25,7 @@ export function renderHomePage(e) {
   e.preventDefault();
   createMarkup.clearMarkup();
   renderPage();
+  trendingFilmsPagination();
   homePageMarkupUpdate();
   renderHeader();
 }
@@ -37,10 +37,10 @@ function trendingFilms() {
     .then(data => renderGenres(data));
 }
 
-export async function renderPage(data) {
+export function renderPage(data) {
   apiService.page = 1;
   spin.run();
-  await trendingFilms(data)
+  trendingFilms(data)
     .then(data => data)
     .then(createMarkup.moviesMarkup);
   spin.stop();
