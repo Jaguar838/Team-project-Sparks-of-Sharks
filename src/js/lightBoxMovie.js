@@ -2,6 +2,7 @@ import ApiService from './api/apiService';
 import getRefs from './getRef';
 import notify from './error';
 import createMarkup from './createMarkup';
+import {addWatched,addQueue, openData} from '../js/header/watchedQueue';
 
 const apiService = new ApiService();
 
@@ -11,7 +12,7 @@ refs.moviesContainer.addEventListener('click', onGalleryContainerClick);
 refs.backdropModal.addEventListener('click', onBackdropClick);
 window.addEventListener('click', onCloseLightBox);
 
-function onGalleryContainerClick(evt) {
+ function onGalleryContainerClick(evt) {
   evt.preventDefault();
 
   const isGalleryMovieEl = evt.target.classList.contains('movie-image'); //проверка источника клика
@@ -21,21 +22,32 @@ function onGalleryContainerClick(evt) {
   const openedMovie = evt.target;
 
   lightBoxOpen(openedMovie);
+    
+  
 }
 
 function lightBoxOpen(image) {
   refs.lightBoxContainerRef.classList.add('is-open');
   document.body.classList.add('no-scrolling');
   const movieId = image.dataset.id;
+  
   const dataModalMovie = movieInfoById(movieId).then(data => data);
   window.addEventListener('keydown', onKeyPress);
-  console.log(refs.queueAdd);
+
+ 
 }
 
 function onCloseLightBox(evt) {
   if (evt.target.classList.contains('lightbox__button')) {
     onCloseModal();
+  } else if (evt.target.classList.contains('modal-card__watched-btn')){
+    addWatched();
+
+  } else if (evt.target.classList.contains('modal-card__queue-btn')){
+    addQueue();
+
   }
+  
 }
 
 function onBackdropClick(evt) {
@@ -72,3 +84,6 @@ function movieInfoById(movieId) {
       notify.errorMessage(`Ничего не нашли По ИД(`);
     });
 }
+
+
+export default{openData}

@@ -19,13 +19,12 @@
 }
 
 .material-icons {
-  // margin: 0;
   color: $white;
   font-size: 18px;
 
   &-search {
     position: absolute;
-    right: 0;
+    right: 50px;
     top: 0;
   }
 
@@ -44,7 +43,7 @@
   margin-right: auto;
 
   &-input {
-    width: 100%;
+    width: 90%;
     color: $white;
     background: transparent;
     border: transparent;
@@ -153,9 +152,8 @@
     margin-right: 10px;
   }
 
-  // .film-search {
-  //   text-align: center;
-  //   // margin: auto;
+  // .film-search-input {
+  //   width: 336px;
   // }
 
   .logo-text {
@@ -264,8 +262,8 @@
   }
 }
 .myLibraryButtons {
-  margin-top: 49px;
-  margin-bottom: 65px;
+  padding-top: 49px;
+  padding-bottom: 65px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -276,18 +274,18 @@
 
 @media screen and (min-width: 768px) {
   .myLibraryButtons {
-    margin-left: 241px;
+    margin-left: 240px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .btn-lib {
-    width: 129px;
+  .myLibraryButtons {
+    display: flex;
   }
 }
 
 .btn-lib {
-  width: 136px;
+  width: 130px;
   height: 44px;
 
   border: 1px solid #ffffff;
@@ -297,5 +295,8 @@
   &:focus {
     background-color: $accent-icon;
     transform: scale(1.15);
+  }
+  &:not(:last-child) {
+    margin-right: 20px;
   }
 }
