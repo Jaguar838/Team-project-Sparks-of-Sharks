@@ -57,12 +57,12 @@
 }
 
 .time-switch__toggle:checked + .time-switch__track {
-  background-color: #ff6b08;
+  background-color: gray;
 }
 
-.time-switch__toggle:checked + .time-switch__marker {
-  background-color: black;
-}
+// .time-switch__toggle:checked + .time-switch__marker {
+//   background-color: black;
+// }
 
 .time-switch__toggle:checked ~ .time-switch__marker {
   transform: translateX(35px);
