@@ -59,42 +59,10 @@ export function renderGenres(data) {
     }));
   });
 }
-
-// async function reMapFilmsArray(array) {
-//   let genres = await getRenres();
-//   if (!array) {
-//     return;
-//   }
-//   array.results.map(result => {
-//     let releaseYear = '';
-//     if (!result.release_date) {
-//       releaseYear = '';
-//     } else {
-//       releaseYear = result.release_date.slice(0, 4);
-//     }
-//     let genresArr = [];
-//     result.genre_ids.forEach(genreID => {
-//       genres.forEach(genOBJ => {
-//         if (genreID === genOBJ.id) {
-//           genresArr.push(` ${genOBJ.name}`);
-//         }
-//       });
-//     });
-//     if (genresArr.length > 3) {
-//       genresArr = genresArr.slice(0, 2);
-//       genresArr.push(' other..');
-//     }
-//     result.genre_ids = genresArr;
-//     result.release_date = releaseYear;
-//   });
-//   return array;
-// }
-
 export function trendingFilmsPagination() {
   apiService
     .getTrendingMoviesPage(page)
     .then(data => {
-      console.log(data);
       renderPagination(data.total_pages, data.results, moviesByPage);
     })
     .catch(error => {
