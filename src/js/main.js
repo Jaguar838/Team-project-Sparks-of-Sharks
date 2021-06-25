@@ -3,10 +3,9 @@ import createMarkup from './createMarkup';
 import getRefs from './getRef';
 import { renderPagination } from './pagination';
 import watchedQueue from '../js/header/watchedQueue';
-import { homePageMarkupUpdate } from './header/LogicHeader'
+import { homePageMarkupUpdate } from './header/LogicHeader';
 import { renderHeader } from './header/renderHeader';
 import spin from './plugins/spinner';
-
 
 const apiService = new ApiService();
 
@@ -26,6 +25,7 @@ export function renderHomePage(e) {
   e.preventDefault();
   createMarkup.clearMarkup();
   renderPage();
+  trendingFilmsPagination();
   homePageMarkupUpdate();
   renderHeader();
 }
@@ -37,10 +37,10 @@ function trendingFilms() {
     .then(data => renderGenres(data));
 }
 
-export async function renderPage(data) {
+export function renderPage(data) {
   apiService.page = 1;
   spin.run();
-  await trendingFilms(data)
+  trendingFilms(data)
     .then(data => data)
     .then(createMarkup.moviesMarkup);
   spin.stop();
@@ -50,7 +50,8 @@ export function renderGenres(data) {
   return apiService.getGenres().then(genresArray => {
     return data.map(film => ({
       ...film,
-      release_date: film.release_date.slice(0, 4),
+      release_date: film.release_date ? film.release_date.slice(0, 4) : 'No Date',
+
       genres: film.genre_ids
         .map(id => genresArray.filter(el => el.id === id))
         .flat()
@@ -58,6 +59,36 @@ export function renderGenres(data) {
     }));
   });
 }
+
+// async function reMapFilmsArray(array) {
+//   let genres = await getRenres();
+//   if (!array) {
+//     return;
+//   }
+//   array.results.map(result => {
+//     let releaseYear = '';
+//     if (!result.release_date) {
+//       releaseYear = '';
+//     } else {
+//       releaseYear = result.release_date.slice(0, 4);
+//     }
+//     let genresArr = [];
+//     result.genre_ids.forEach(genreID => {
+//       genres.forEach(genOBJ => {
+//         if (genreID === genOBJ.id) {
+//           genresArr.push(` ${genOBJ.name}`);
+//         }
+//       });
+//     });
+//     if (genresArr.length > 3) {
+//       genresArr = genresArr.slice(0, 2);
+//       genresArr.push(' other..');
+//     }
+//     result.genre_ids = genresArr;
+//     result.release_date = releaseYear;
+//   });
+//   return array;
+// }
 
 export function trendingFilmsPagination() {
   apiService
@@ -71,14 +102,14 @@ export function trendingFilmsPagination() {
     });
 }
 
-async function moviesByPage(wrapper, page) {
+function moviesByPage(wrapper, page) {
   wrapper.innerHTML = '';
   spin.run();
   apiService.pageNum = page;
-  await trendingFilms(page)
+  trendingFilms(page)
     .then(createMarkup.moviesMarkup)
     .catch(error => {
-      console.log(`Error in moviesByPage`);
+      console.log(`Error in moviesByPage`, error);
       spin.stop();
     });
   spin.stop();
