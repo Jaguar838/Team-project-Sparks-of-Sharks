@@ -23,11 +23,11 @@
   color: $white;
   font-size: 18px;
 
-&-search {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
+  &-search {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 
   &:hover,
   &:focus {
@@ -52,12 +52,15 @@
     font-size: 14px;
     line-height: 1.17;
     transition: border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  }
 
-  &-input:focus,
-  &-input:hover {
-    outline: none;
-    border-bottom: 2px solid $accent-icon;
+    &:focus,
+    &:hover {
+      outline: none;
+      border-bottom: 2px solid $accent-icon;
+    }
+    @include for-size(tablet) {
+      width: 336px;
+    }
   }
 
   &-input::placeholder {
@@ -132,7 +135,6 @@
   border: 1px solid transparent;
 }
 
-
 @media screen and (max-width: 767px) {
   .hidden-logo {
     opacity: 0;
@@ -155,10 +157,6 @@
   //   text-align: center;
   //   // margin: auto;
   // }
-
-  .film-search-input {
-    width: 336px;
-  }
 
   .logo-text {
     display: block;
@@ -269,21 +267,25 @@
   margin-top: 49px;
   margin-bottom: 65px;
 }
+
 @media screen and (min-width: 1024px) {
   .myLibraryButtons {
     margin-left: 369px;
   }
 }
+
 @media screen and (min-width: 768px) {
   .myLibraryButtons {
     margin-left: 241px;
   }
 }
+
 @media screen and (max-width: 767px) {
   .btn-lib {
     width: 129px;
   }
 }
+
 .btn-lib {
   width: 136px;
   height: 44px;
