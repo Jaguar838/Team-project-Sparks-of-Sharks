@@ -1,9 +1,11 @@
 import oneMovieTemplate from '../templates/oneMovieTemplate.hbs';
 import modalMarkup from '../templates/movieDetail.hbs';
 import getRefs from './getRef';
+import { openData } from './header/watchedQueue';
 
 const refs = getRefs();
 function moviesMarkup(data) {
+  
   const markup = oneMovieTemplate(data);
   refs.moviesContainer.insertAdjacentHTML('beforeend', markup);
 }
@@ -13,11 +15,12 @@ function clearMarkup() {
 }
 
 function lightBoxMarkup(data) {
-  //console.log(data);
+  console.log(data);
   const markup = modalMarkup(data);
   
 
   refs.lightBoxContentRef.insertAdjacentHTML('beforeend', markup);
+  openData(data);
 }
 
 export default { moviesMarkup, clearMarkup, lightBoxMarkup };

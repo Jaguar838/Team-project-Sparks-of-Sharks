@@ -22,7 +22,7 @@ function onGalleryContainerClick(evt) {
   const openedMovie = evt.target;
 
   lightBoxOpen(openedMovie);
-  openData(openedMovie);
+//   openData(openedMovie);
 }
 
 function lightBoxOpen(image) {
@@ -78,3 +78,4 @@ function movieInfoById(movieId) {
       notify.errorMessage(`Ничего не нашли По ИД(`);
     });
 }
+// export default{openData}

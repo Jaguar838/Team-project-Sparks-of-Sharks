@@ -19,13 +19,15 @@
 }
 
 .material-icons {
-  // margin: 0;
   color: $white;
   font-size: 18px;
 
   &-search {
     position: absolute;
-    right: 50;
+    right: 50px;
+    @include for-size(tablet) {
+      right: -55px;
+    }
     top: 0;
   }
 
@@ -52,12 +54,15 @@
     font-size: 14px;
     line-height: 1.17;
     transition: border-bottom 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  }
 
-  &-input:focus,
-  &-input:hover {
-    outline: none;
-    border-bottom: 2px solid $accent-icon;
+    &:focus,
+    &:hover {
+      outline: none;
+      border-bottom: 2px solid $accent-icon;
+    }
+    @include for-size(tablet) {
+      width: 336px;
+    }
   }
 
   &-input::placeholder {
@@ -269,6 +274,7 @@
     margin-left: 369px;
   }
 }
+
 @media screen and (min-width: 768px) {
   .myLibraryButtons {
     margin-left: 240px;
@@ -280,6 +286,7 @@
     display: flex;
   }
 }
+
 .btn-lib {
   width: 130px;
   height: 44px;
