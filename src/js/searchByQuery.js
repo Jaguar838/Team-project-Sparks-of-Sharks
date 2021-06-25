@@ -43,6 +43,7 @@ async function renderSearchMovies(searchQuery) {
       if (data == '') {
         notify.errorMessage(`Ничего не нашли(`);
         refs.moviesContainer.innerHTML = '';
+        refs.moviesContainer.style.height = '70vh';
       } else {
         createMarkup.clearMarkup();
         createMarkup.moviesMarkup(data);
