@@ -98,7 +98,6 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       currentPage = page;
       callback(refs.moviesContainer, currentPage, searchQuery);
-
       let current_btn = document.querySelector('.pagenumbers button.active');
       current_btn.classList.remove('active');
 
