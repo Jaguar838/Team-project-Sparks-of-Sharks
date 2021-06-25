@@ -12,3 +12,4 @@ import '/js/lightBoxMovie.js';
 import './js/header/LogicHeader'
 import './js/header/renderHeader'
 import './js/header/watchedQueue';
+import './js/teamLightbox';
