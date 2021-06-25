@@ -1,17 +1,18 @@
 import getRefs from "../getRef";
-import btnLib from '../../templates/header/mylibery.hbs';
-import moviesMarkup from '../createMarkup';
-//import oneMovieTemplate from '../../templates/header/oneMovieTemplate.hbs';
+import modalMarkup from '../../templates/movieDetail.hbs';
+import btnLib from '../../templates/header/mylibrary.hbs';
+import { moviesMarkup, clearMarkup, lightBoxMarkup } from '../createMarkup';
+import oneMovieTemplate from '../../templates/oneMovieTemplate.hbs';
+
 
 
 const refs=getRefs();
-console.log(refs.queue);
-console.log(refs.watched);
+
 
 refs.mylibraryBtn.addEventListener('click',renderButtonLibery);
 function renderButtonLibery(){
     refs.headerContent.innerHTML=btnLib();
-    refs.moviesContainer.innerHTML='';
+    
     
     
 }
@@ -21,30 +22,50 @@ let queueFilm=[];
 
 export function openData(data){
      
-    const objFilm=data;
-    console.log(objFilm) 
-    const string =JSON.stringify(objFilm);
-    
+    const objFilm=data;  
+    const string =JSON.stringify(objFilm);    
     localStorage.setItem('filmy', string); 
    
 }
 
 export function addWatched(){ 
+ 
     const save=localStorage.getItem('filmy');  
     const objSave=JSON.parse(save)   
     watchedfilm.push(objSave);
-  console.log(watchedfilm); 
+    const string =JSON.stringify(watchedfilm);  
+    localStorage.setItem('watched',string)
     
 }
 
 export function addQueue(){
-    const save=localStorage.getItem('filmy');  
-    const objSave=JSON.parse(save)  
-    queueFilm.push(objSave);
-  console.log(queueFilm);
+  const save=localStorage.getItem('filmy');  
+  const objSave=JSON.parse(save)   
+  watchedfilm.push(objSave);
+  const string =JSON.stringify(watchedfilm);  
+  localStorage.setItem('queue',string)
 
 }
 
+export function renderWathedFilm(){
+  const save=localStorage.getItem('watched');
+  const objSave=JSON.parse(save);
+  console.log(objSave)
+  const watchedFilm=oneMovieTemplate(objSave);
+  refs.moviesContainer.innerHTML=watchedFilm;
+
+  
+  
+}
+export function renderQueueFilm(){
+  const save=localStorage.getItem('queue');
+  const objSave=JSON.parse(save);
+  console.log(objSave)
+  const queueFilm=oneMovieTemplate(objSave);
+  refs.moviesContainer.innerHTML=queueFilm;
+}
+ 
+console.log(refs.moviesContainer);
 
 
 
