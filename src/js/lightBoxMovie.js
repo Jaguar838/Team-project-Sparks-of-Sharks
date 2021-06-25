@@ -22,7 +22,8 @@ window.addEventListener('click', onCloseLightBox);
   const openedMovie = evt.target;
 
   lightBoxOpen(openedMovie);
-  openData(openedMovie)
+    
+  
 }
 
 function lightBoxOpen(image) {
@@ -32,12 +33,8 @@ function lightBoxOpen(image) {
   
   const dataModalMovie = movieInfoById(movieId).then(data => data);
   window.addEventListener('keydown', onKeyPress);
-<<<<<<< Updated upstream
-  console.log(refs.queueAdd);
-=======
 
  
->>>>>>> Stashed changes
 }
 
 function onCloseLightBox(evt) {
@@ -88,3 +85,5 @@ function movieInfoById(movieId) {
     });
 }
 
+
+export default{openData}

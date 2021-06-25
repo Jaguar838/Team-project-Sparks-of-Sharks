@@ -1,32 +1,51 @@
 import getRefs from "../getRef";
+import btnLib from '../../templates/header/mylibery.hbs';
+import moviesMarkup from '../createMarkup';
+//import oneMovieTemplate from '../../templates/header/oneMovieTemplate.hbs';
 
 
 const refs=getRefs();
 console.log(refs.queue);
 console.log(refs.watched);
+
+refs.mylibraryBtn.addEventListener('click',renderButtonLibery);
+function renderButtonLibery(){
+    refs.headerContent.innerHTML=btnLib();
+    refs.moviesContainer.innerHTML='';
+    
+    
+}
+
+let watchedfilm= [];
+let queueFilm=[];
+
 export function openData(data){
-    let idFilms=data.dataset.id;  
+     
+    const objFilm=data;
+    console.log(objFilm) 
+    const string =JSON.stringify(objFilm);
     
-    localStorage.setItem(idFilms, JSON.stringify(idFilms));
-    idFilms = JSON.parse(localStorage.getItem(idFilms));
-  
-    
-    console.log(idFilms); // [1, 2, 3]   
+    localStorage.setItem('filmy', string); 
+   
 }
 
 export function addWatched(){ 
-  
-
-  
-    console.log(18); 
-    
+    const save=localStorage.getItem('filmy');  
+    const objSave=JSON.parse(save)   
+    watchedfilm.push(objSave);
+  console.log(watchedfilm); 
     
 }
 
 export function addQueue(){
-console.log(26);
+    const save=localStorage.getItem('filmy');  
+    const objSave=JSON.parse(save)  
+    queueFilm.push(objSave);
+  console.log(queueFilm);
 
 }
+
+
 
 
 
