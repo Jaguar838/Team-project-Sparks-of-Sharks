@@ -6,7 +6,6 @@ import { renderPagination } from './pagination';
 import { homePageMarkupUpdate } from './header/LogicHeader';
 import { renderHeader } from './header/renderHeader';
 import spin from './plugins/spinner';
-import spin from './plugins/spinner';
 
 const apiService = new ApiService();
 
