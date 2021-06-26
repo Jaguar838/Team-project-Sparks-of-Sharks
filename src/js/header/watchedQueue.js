@@ -22,6 +22,7 @@ export function openData(data) {
 
 export function addWatched() {
   console.log('addWatched() ');
+
   const save = localStorage.getItem('filmy');
   const objSave = JSON.parse(save);
   watchedfilm.push(objSave);
@@ -36,6 +37,12 @@ export function addQueue() {
   watchedfilm.push(objSave);
   const string = JSON.stringify(watchedfilm);
   localStorage.setItem('queue', string);
+}
+export function removeWatched() {
+  console.log('removeWatched() ');
+}
+export function removeQueue() {
+  console.log('removeQueue() ');
 }
 
 export function renderWatсhedFilm() {
