@@ -6,11 +6,14 @@ import { renderPagination } from './pagination';
 import { homePageMarkupUpdate } from './header/LogicHeader';
 import { renderHeader } from './header/renderHeader';
 import spin from './plugins/spinner';
+import typeOfTime from './plugins/switchTime';
 
 document.addEventListener('DOMContentLoaded', spin.stop());
 const apiService = new ApiService();
 
 const refs = getRefs();
+
+typeOfTime();
 
 spin.run();
 
