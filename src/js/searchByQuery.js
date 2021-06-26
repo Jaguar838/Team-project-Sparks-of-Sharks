@@ -21,8 +21,8 @@ function onInput(elem) {
     //   markup.clearMarkup();
     return;
   } else {
-    renderSearchMovies(searchQuery);
-    searchingFilmPagin(searchQuery);
+    renderFirstPage(searchQuery);
+    renderPages(searchQuery);
 
     elem.target.value = '';
     return;
@@ -36,14 +36,13 @@ function searchingFilms() {
     .then(data => mainPage.renderGenres(data));
 }
 
-function searchingFilmPagin(searchQuery) {
+function renderPages(searchQuery) {
   apiService.query = searchQuery;
   apiService.page = 1;
-
   apiService
     .getMovieByQuery()
     .then(data => {
-      renderPagination(data.total_pages, data.results, searchMoviesByPage, searchQuery);
+      renderPagination(data.total_pages, data.results, renderMarkupPageByQuery, searchQuery);
       if (data.total_pages === 0) {
         mainPage.trendingFilmsPagination();
         return;
@@ -54,13 +53,13 @@ function searchingFilmPagin(searchQuery) {
     });
 }
 
-function searchMoviesByPage(wrapper, page, searchQuery) {
+function renderMarkupPageByQuery(wrapper, page, searchQuery) {
   wrapper.innerHTML = '';
   searchingFilmsByPage(page, searchQuery)
     .then(data => data)
     .then(data => createMarkup.moviesMarkup(data))
     .catch(error => {
-      console.log('error in searchMoviesByPage', error);
+      console.log('error in renderMarkupPageByQuery', error);
     });
 }
 
@@ -73,7 +72,7 @@ function searchingFilmsByPage(page, searchQuery) {
     .then(data => mainPage.renderGenres(data));
 }
 
-function renderSearchMovies(searchQuery) {
+function renderFirstPage(searchQuery) {
   apiService.query = searchQuery;
   spin.run();
   searchingFilms()
@@ -81,6 +80,7 @@ function renderSearchMovies(searchQuery) {
       if (data == '') {
         notify.errorMessage(`Ничего не нашли(`);
         refs.moviesContainer.innerHTML = '';
+
         refs.moviesContainer.style.height = '70vh';
       } else {
         createMarkup.clearMarkup();

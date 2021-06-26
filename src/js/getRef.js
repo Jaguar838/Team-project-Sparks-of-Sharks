@@ -23,8 +23,6 @@ export default function getRefs() {
     queue: document.querySelector('[data-index="queue"]'),
     watchedAdd: document.querySelector('.modal-card__watched-btn'),
     queueAdd: document.querySelector('.modal-card__queue-btn'),
+    switchTime: document.querySelector('#time-switch__toggle'),
   };
 }
-
-
-

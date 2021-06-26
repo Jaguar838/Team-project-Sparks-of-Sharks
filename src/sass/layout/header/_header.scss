@@ -290,14 +290,18 @@
 .btn-lib {
   width: 130px;
   height: 44px;
+  color: $white;
+
 
   border: 1px solid #ffffff;
   box-sizing: border-box;
   border-radius: 5px;
-  &:hover,
+  background: transparent;
+    &:hover,
   &:focus {
     background-color: $accent-icon;
     transform: scale(1.15);
+    color: $black;
   }
   &:not(:last-child) {
     margin-right: 20px;
