@@ -57,6 +57,7 @@ export function renderGenres(data) {
         .map(id => genresArray.filter(el => el.id === id))
         .flat()
         .slice(0, 2),
+      vote_average: film.vote_average.toFixed(1),
     }));
   });
 }
