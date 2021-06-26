@@ -213,7 +213,7 @@
 .header__background-home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url(/images/header/home/home_m_x1.jpg);
-  // background-color: $black;
+  background-color: $black;
 
   @media screen and (min-device-pixel-ratio: 2),
     screen and (min-resolution: 192dpi),
@@ -226,6 +226,13 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
     url(/images/header/library/lib_m_x1.jpg);
   background-color: $black;
+
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('/images/header/library/lib_m_2x.jpg');
+  }
+
 }
 
 // @include to-size($tablet, $max-tablet) {
@@ -234,29 +241,54 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/header/home/home_t_x1.jpg);
     background-color: $black;
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('/images/header/home/home_t_x2.jpg');
+  }
   }
 
   .header__background-myLibrary {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/header/library/lib__t_x1.jpg);
     background-color: $black;
+
+    
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('/images/header/library/lib_t_x2.jpg');
+  }
   }
 }
-.overlay {
-  background: $black;
-}
+// .overlay {
+//   background: $black;
+// }
 // @include for-size($desktop) {
 @media screen and (min-width: 1024px) {
   .header__background-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/header/home/home_d_x1.jpg);
     background-color: $black;
+
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('/images/header/home/home_d_x2.jpg');
+  }
   }
 
   .header__background-myLibrary {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(/images/header/library/lib_d_x1.jpg);
     background-color: $black;
+
+    
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('/images/header/library/lib_d_x2.jpg');
+  }
   }
 }
 .myLibraryButtons {
