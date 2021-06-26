@@ -2,11 +2,12 @@ import ApiService from './api/apiService';
 import createMarkup from './createMarkup';
 import getRefs from './getRef';
 import { renderPagination } from './pagination';
-// import watchedQueue from '../js/header/watchedQueue';
+//import watchedQueue from '../js/header/watchedQueue';
 import { homePageMarkupUpdate } from './header/LogicHeader';
 import { renderHeader } from './header/renderHeader';
 import spin from './plugins/spinner';
 
+document.addEventListener('DOMContentLoaded', spin.stop());
 const apiService = new ApiService();
 
 const refs = getRefs();
@@ -37,10 +38,10 @@ function trendingFilms() {
     .then(data => renderGenres(data));
 }
 
-export function renderPage(data) {
+export async function renderPage(data) {
   apiService.page = 1;
   spin.run();
-  trendingFilms(data)
+  await trendingFilms(data)
     .then(data => data)
     .then(createMarkup.moviesMarkup);
   spin.stop();

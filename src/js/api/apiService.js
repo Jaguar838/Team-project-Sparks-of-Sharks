@@ -3,6 +3,8 @@ import axios from 'axios';
 const API_KEY = 'e0f5a2b3f12c3f7ea9352edce7e33432';
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 
+// let TIME_DATA = localStorage.getItem('time');
+
 export default class ApiService {
   constructor() {
     this.searchQuery = '';
@@ -11,8 +13,9 @@ export default class ApiService {
   }
 
   getTrendingMoviesPage() {
+    const TIME_DATA = localStorage.getItem('time');
     const trendingFilms = axios
-      .get(`/trending/movie/week?api_key=${API_KEY}&page=${this.page}`)
+      .get(`/trending/movie/${TIME_DATA}?api_key=${API_KEY}&page=${this.page}`)
       .then(({ data }) => data);
     return trendingFilms;
   }
