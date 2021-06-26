@@ -2,7 +2,7 @@ import ApiService from './api/apiService';
 import getRefs from './getRef';
 import notify from './error';
 import createMarkup from './createMarkup';
-import { addWatched, addQueue, openData } from '../js/header/watchedQueue';
+import { addWatched, addQueue, openData, renderWathedFilm, renderQueueFilm } from '../js/header/watchedQueue';
 
 const apiService = new ApiService();
 
@@ -41,6 +41,10 @@ function onCloseLightBox(evt) {
     addWatched();
   } else if (evt.target.classList.contains('modal-card__queue-btn')) {
     addQueue();
+  } else if(evt.target.classList.contains('watched')){
+    renderWathedFilm()
+  } else if(evt.target.classList.contains('queue')){
+    renderQueueFilm()
   }
 }
 

@@ -2,7 +2,7 @@ import ApiService from './api/apiService';
 import createMarkup from './createMarkup';
 import getRefs from './getRef';
 import { renderPagination } from './pagination';
-// import watchedQueue from '../js/header/watchedQueue';
+//import watchedQueue from '../js/header/watchedQueue';
 import { homePageMarkupUpdate } from './header/LogicHeader';
 import { renderHeader } from './header/renderHeader';
 import spin from './plugins/spinner';
