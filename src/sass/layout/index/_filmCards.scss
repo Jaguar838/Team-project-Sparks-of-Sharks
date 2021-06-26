@@ -65,16 +65,27 @@
 
 .genre {
   color: $accent-text;
+  margin-right: 3px;
 }
 
 .movie-release-date {
   color: $accent-text;
+  margin-right: 3px;
+}
+.movie-release-date::before {
+  content: '|';
+}
+
+.genre:first-child::after {
+  content: ', ';
+  color: #ff6b08;
 }
 
 .movie-vote {
   color: $white;
   background-color: $accent-icon;
-  padding: 1px 6px;
+  margin-left: 10px;
+  padding: 2px 9px 1px;
   border-radius: 5px;
 }
 
