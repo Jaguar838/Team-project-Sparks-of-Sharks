@@ -2,12 +2,12 @@ import ApiService from './api/apiService';
 import createMarkup from './createMarkup';
 import getRefs from './getRef';
 import { renderPagination } from './pagination';
-import watchedQueue from '../js/header/watchedQueue';
-import { homePageMarkupUpdate } from './header/LogicHeader'
+// import watchedQueue from '../js/header/watchedQueue';
+import { homePageMarkupUpdate } from './header/LogicHeader';
 import { renderHeader } from './header/renderHeader';
 import spin from './plugins/spinner';
 
-
+document.addEventListener('DOMContentLoaded', spin.stop());
 const apiService = new ApiService();
 
 const refs = getRefs();
@@ -26,6 +26,7 @@ export function renderHomePage(e) {
   e.preventDefault();
   createMarkup.clearMarkup();
   renderPage();
+  trendingFilmsPagination();
   homePageMarkupUpdate();
   renderHeader();
 }
@@ -50,7 +51,8 @@ export function renderGenres(data) {
   return apiService.getGenres().then(genresArray => {
     return data.map(film => ({
       ...film,
-      release_date: film.release_date.slice(0, 4),
+      release_date: film.release_date ? film.release_date.slice(0, 4) : 'No Date',
+
       genres: film.genre_ids
         .map(id => genresArray.filter(el => el.id === id))
         .flat()
@@ -58,12 +60,10 @@ export function renderGenres(data) {
     }));
   });
 }
-
 export function trendingFilmsPagination() {
   apiService
     .getTrendingMoviesPage(page)
     .then(data => {
-      console.log(data);
       renderPagination(data.total_pages, data.results, moviesByPage);
     })
     .catch(error => {
@@ -71,14 +71,14 @@ export function trendingFilmsPagination() {
     });
 }
 
-async function moviesByPage(wrapper, page) {
+function moviesByPage(wrapper, page) {
   wrapper.innerHTML = '';
   spin.run();
   apiService.pageNum = page;
-  await trendingFilms(page)
+  trendingFilms(page)
     .then(createMarkup.moviesMarkup)
     .catch(error => {
-      console.log(`Error in moviesByPage`);
+      console.log(`Error in moviesByPage`, error);
       spin.stop();
     });
   spin.stop();

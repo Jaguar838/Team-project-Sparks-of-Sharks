@@ -16,7 +16,7 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
   resetCurrentPage();
   refs.arrowLeft.removeEventListener('click', onArrowLeftClick);
   refs.arrowRight.removeEventListener('click', onArrowRightClick);
-
+  spin.run();
   function setupPagination(items, wrapper, rowsPerPage) {
     wrapper.innerHTML = '';
 
@@ -76,7 +76,7 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
         wrapper.insertBefore(threeDotsEl, wrapper[1]);
       }
     }
-    // spin.stop();
+    spin.stop();
   }
 
   // точки в пагинацию
@@ -94,11 +94,10 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
     if (currentPage == page) button.classList.add('active');
 
     button.addEventListener('click', function () {
-      //spin.run();
+      spin.run();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       currentPage = page;
       callback(refs.moviesContainer, currentPage, searchQuery);
-
       let current_btn = document.querySelector('.pagenumbers button.active');
       current_btn.classList.remove('active');
 
@@ -111,7 +110,7 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
 
   function onArrowLeftClick() {
     if (currentPage > 1) {
-      // spin.run();
+      spin.run();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       currentPage--;
 
@@ -124,7 +123,7 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
 
   function onArrowRightClick() {
     if (currentPage < totalPages) {
-      //spin.run();
+      spin.run();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       currentPage = currentPage += 1;
       console.log(currentPage);

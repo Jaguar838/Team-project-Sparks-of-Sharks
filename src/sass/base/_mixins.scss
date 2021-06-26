@@ -56,3 +56,13 @@
   $transition: str-slice($transition, 1, -2);
   transition: unquote($transition);
 }
+
+@mixin background-settings(
+  $repeat: no-repeat,
+  $position: center,
+  $size: cover
+) {
+  background-repeat: $repeat;
+  background-position: $position;
+  background-size: $size;
+}
