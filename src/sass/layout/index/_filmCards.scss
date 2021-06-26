@@ -67,7 +67,9 @@
   color: $accent-text;
   margin-right: 3px;
 }
-
+.genre:not(:first-child) {
+  margin-left: 3px;
+}
 .movie-release-date {
   color: $accent-text;
   margin-right: 3px;
