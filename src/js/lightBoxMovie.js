@@ -2,7 +2,13 @@ import ApiService from './api/apiService';
 import getRefs from './getRef';
 import notify from './error';
 import createMarkup from './createMarkup';
-import { addWatched, addQueue, openData, renderWathedFilm, renderQueueFilm } from '../js/header/watchedQueue';
+import {
+  addWatched,
+  addQueue,
+  openData,
+  renderWatсhedFilm,
+  renderQueueFilm,
+} from '../js/header/watchedQueue';
 
 const apiService = new ApiService();
 
@@ -37,14 +43,15 @@ function lightBoxOpen(image) {
 function onCloseLightBox(evt) {
   if (evt.target.classList.contains('lightbox__button')) {
     onCloseModal();
+    return;
   } else if (evt.target.classList.contains('modal-card__watched-btn')) {
     addWatched();
   } else if (evt.target.classList.contains('modal-card__queue-btn')) {
     addQueue();
-  } else if(evt.target.classList.contains('watched')){
-    renderWathedFilm()
-  } else if(evt.target.classList.contains('queue')){
-    renderQueueFilm()
+  } else if (evt.target.classList.contains('watched')) {
+    renderWatсhedFilm();
+  } else if (evt.target.classList.contains('queue')) {
+    renderQueueFilm();
   }
 }
 
@@ -82,4 +89,4 @@ function movieInfoById(movieId) {
       notify.errorMessage(`Ничего не нашли По ИД(`);
     });
 }
-export default { openData }
+export default { openData };
