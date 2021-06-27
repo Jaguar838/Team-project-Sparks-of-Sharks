@@ -85,7 +85,9 @@ export function getQueuedMovies() {
 }
 
 function getMovies(name) {
-  return JSON.parse(localStorage.getItem(name));
+  console.log('getMovies(name)', name);
+  const data = JSON.parse(localStorage.getItem(name));
+  return data;
 }
 
 function setMovies(name, list) {
@@ -103,10 +105,10 @@ export function checkMovie(movie) {
   if (inWatched(movie.id)) {
     movie.watched = true;
   }
-  console.log(inWatched(movie.id));
+  console.log('inWatched(movie.id)', inWatched(movie.id));
   if (inQueue(movie.id)) {
     movie.queued = true;
   }
-  console.log(inQueue(movie.id));
+  console.log('inQueue(movie.id)', inQueue(movie.id));
   return movie;
 }

@@ -93,7 +93,7 @@ function movieInfoById(movieId) {
     .then(data => data)
     .then(data => renderLightBoxModal(data))
     .catch(error => {
-      console.log('error in ID');
+      console.log('error in ID', error);
       notify.errorMessage(`Ничего не нашли По ИД(`);
     });
 }
@@ -101,7 +101,9 @@ function movieInfoById(movieId) {
 function renderLightBoxModal(data) {
   console.log('data', data);
   data = lib.checkMovie(data);
+
   createMarkup.lightBoxMarkup(data);
+
   checkTextOnBtns();
 
   document.querySelector('.modal-card__queue-btn').addEventListener('click', evt => {
