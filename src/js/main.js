@@ -20,10 +20,21 @@ spin.run();
 refs.logo.addEventListener('click', renderHomePage);
 refs.homeBtn.addEventListener('click', renderHomePage);
 const page = 1;
-
+checkLibrary();
 renderPage();
 
 trendingFilmsPagination(); //
+
+function checkLibrary() {
+  const watchedLibrary = localStorage.getItem('watched');
+  const queueLibrary = localStorage.getItem('queue');
+  if (watchedLibrary && queueLibrary !== null) {
+    return;
+  } else {
+    localStorage.setItem('watched', JSON.stringify({}));
+    localStorage.setItem('queue', JSON.stringify({}));
+  }
+}
 
 export function renderHomePage(e) {
   e.preventDefault();
@@ -64,6 +75,7 @@ export function renderGenres(data) {
     }));
   });
 }
+
 export function trendingFilmsPagination() {
   apiService
     .getTrendingMoviesPage(page)
@@ -87,8 +99,3 @@ function moviesByPage(wrapper, page) {
     });
   spin.stop();
 }
-
-// function trendingMoviesByPage(page) {
-//   apiService.pageNum = page;
-//   return trendingFilms();
-// }

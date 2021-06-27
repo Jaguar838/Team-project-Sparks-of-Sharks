@@ -19,10 +19,9 @@ export default function getRefs() {
     homeBtn: document.querySelector('[data-index="home"]'),
     mylibraryBtn: document.querySelector('[data-index="libraryBtn"]'),
     headerContent: document.querySelector('[data-index="headerContent"]'),
-    watched: document.querySelector('[data-index="watched"]'),
-    queue: document.querySelector('[data-index="queue"]'),
-    watchedAdd: document.querySelector('.modal-card__watched-btn'),
-    queueAdd: document.querySelector('.modal-card__queue-btn'),
+
+    // watchedAdd: document.querySelector('.modal-card__watched-btn'),
+    // queueAdd: document.querySelector('.modal-card__queue-btn'),
     switchTime: document.querySelector('#time-switch__toggle'),
   };
 }

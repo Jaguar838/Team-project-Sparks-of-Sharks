@@ -1,18 +1,29 @@
 .toolbar_time {
-  padding-top: 5px;
+  padding: 10px;
 }
 .time-switch {
   display: flex;
   align-items: center;
 }
+.time-name {
+  display: block;
+  margin-left: 36px;
+  margin-bottom: 2px;
 
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+}
 .time-switch__control {
+  margin-left: 4px;
+  margin-right: 4px;
   display: flex;
   align-items: center;
   flex-shrink: 0;
   position: relative;
   width: 64px;
-  height: 32px;
+  height: 18px;
   border-radius: 50em;
   padding: 3px 0;
 }
@@ -46,22 +57,19 @@
 .time-switch__marker {
   position: relative;
   background-color: #ff6b08;
-  width: 22px;
-  height: 22px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   z-index: 2;
   pointer-events: none;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 1px rgba(71, 67, 67, 0.25);
   transform: translateX(3px);
   transition: transform 250ms var(--timing-function);
+  outline: none;
 }
 
-.time-switch__toggle:checked + .time-switch__track {
-  background-color: gray;
-}
-
-// .time-switch__toggle:checked + .time-switch__marker {
-//   background-color: black;
+// .time-switch__toggle:checked + .time-switch__track {
+//   background-color: gray;
 // }
 
 .time-switch__toggle:checked ~ .time-switch__marker {
@@ -70,5 +78,19 @@
 
 .time-switch__toggle:focus + .time-switch__track,
 .time-switch__toggle:active + .time-switch__track {
-  box-shadow: 0 0 0 3px gray;
+  box-shadow: 0 0 0 1px gray;
+}
+.week-time {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: $black;
+  text-transform: uppercase;
+}
+.day-time {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: $black;
+  text-transform: uppercase;
 }

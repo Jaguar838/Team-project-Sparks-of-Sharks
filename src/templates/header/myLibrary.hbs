@@ -1,4 +1,9 @@
-<div class="myLibraryButtons">
-    <button class="btn-lib watched" data-index="watched">WATCHED</button>
-    <button class="btn-lib queue" data-index="queue">QUEUE</button>
+<div class='myLibraryButtons'>
+  <button class='btn-lib watched js-watched-btn' data-index='watched'>WATCHED</button>
+  <button class='btn-lib queue js-queue-btn' data-index='queue'>QUEUE</button>
 </div>
+{{! <script>
+  const watchedHeader = document.querySelector('[data-index="watched"]'); const queueHeader =
+  document.querySelector('[data-index="queue"]'); console.log(watchedHeader, queueHeader);
+
+</script> }}

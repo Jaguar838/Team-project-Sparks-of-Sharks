@@ -1,8 +1,7 @@
-import getRefs from "../getRef";
-import { renderHeader } from "./renderHeader";
+import getRefs from '../getRef';
+import { renderHeader } from './renderHeader';
 
 const refs = getRefs();
-
 
 refs.mylibraryBtn.addEventListener('click', myLibraryPageMarkupUpdate);
 
@@ -21,4 +20,4 @@ function homePageMarkupUpdate() {
   refs.homeBtn.classList.add('current');
 }
 
-export { myLibraryPageMarkupUpdate, homePageMarkupUpdate }
+export { myLibraryPageMarkupUpdate, homePageMarkupUpdate };
