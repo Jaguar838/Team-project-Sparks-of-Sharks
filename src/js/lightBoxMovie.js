@@ -2,7 +2,7 @@ import ApiService from './api/apiService';
 import getRefs from './getRef';
 import notify from './error';
 import createMarkup from './createMarkup';
-import { addWatched, addQueue, openData, renderWathedFilm, renderQueueFilm } from '../js/header/watchedQueue';
+import * as lib from '../js/header/watchedQueue';
 
 const apiService = new ApiService();
 
@@ -22,29 +22,50 @@ function onGalleryContainerClick(evt) {
   const openedMovie = evt.target;
 
   lightBoxOpen(openedMovie);
-  openData(openedMovie);
+  lib.openData(openedMovie);
 }
 
 function lightBoxOpen(image) {
   refs.lightBoxContainerRef.classList.add('is-open');
-  document.body.classList.add('no-scrolling');
-  const movieId = image.dataset.id;
 
+  const movieId = image.dataset.id;
   const dataModalMovie = movieInfoById(movieId).then(data => data);
   window.addEventListener('keydown', onKeyPress);
+  document.body.classList.add('no-scrolling');
 }
 
 function onCloseLightBox(evt) {
+  const refsWatchBtn = document.querySelector('.modal-card__watched-btn');
+  const refsQueueBtn = document.querySelector('.modal-card__queue-btn');
   if (evt.target.classList.contains('lightbox__button')) {
     onCloseModal();
-  } else if (evt.target.classList.contains('modal-card__watched-btn')) {
-    addWatched();
-  } else if (evt.target.classList.contains('modal-card__queue-btn')) {
-    addQueue();
-  } else if(evt.target.classList.contains('watched')){
-    renderWathedFilm()
-  } else if(evt.target.classList.contains('queue')){
-    renderQueueFilm()
+    return;
+  }
+  if (evt.target.classList.contains('modal-card__watched-btn')) {
+    if (refsWatchBtn.classList.contains('addedWatched-btn')) {
+      refsWatchBtn.textContent = 'ADD TO WATCHED';
+      refsWatchBtn.classList.toggle('addedWatched-btn');
+      lib.removeWatched();
+    } else {
+      refsWatchBtn.textContent = 'REMOVE';
+      refsWatchBtn.classList.toggle('addedWatched-btn');
+      lib.addWatched();
+    }
+  }
+  if (evt.target.classList.contains('modal-card__queue-btn')) {
+    if (refsQueueBtn.classList.contains('addedQueue-btn')) {
+      refsQueueBtn.textContent = 'ADD TO QUEUE';
+      refsQueueBtn.classList.toggle('addedQueue-btn');
+      lib.removeQueue();
+    } else {
+      refsQueueBtn.textContent = 'REMOVE';
+      refsQueueBtn.classList.toggle('addedQueue-btn');
+      lib.addQueue();
+    }
+  } else if (evt.target.classList.contains('watched')) {
+    lib.renderWatсhedFilm();
+  } else if (evt.target.classList.contains('queue')) {
+    lib.renderQueueFilm();
   }
 }
 
@@ -82,4 +103,4 @@ function movieInfoById(movieId) {
       notify.errorMessage(`Ничего не нашли По ИД(`);
     });
 }
-export default { openData }
+// export default { lib.openData };

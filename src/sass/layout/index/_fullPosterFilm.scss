@@ -1,4 +1,5 @@
 .lightbox {
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,16 +18,24 @@
   opacity: 1;
   pointer-events: initial;
 }
+.no-scrolling {
+  position: fixed;
+  overflow: hidden;
+}
+
 .lightbox__overlay {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100vw;
   height: 100vh;
   background: $black;
   opacity: 0.25;
 }
 .lightbox__content {
+  overflow: auto;
   position: absolute;
   top: 20px;
   left: 50%;
@@ -37,7 +46,7 @@
   transform: translateX(-50%) scale(1);
 
   @include for-size(tablet) {
-    top: 276px;
+    top: 231px;
     width: 618px;
   }
   @include for-size(desktop) {
@@ -50,8 +59,8 @@
   top: 18px;
   right: 18px;
   display: flex;
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
   padding: 0;
   margin: 0;
   border: none;
@@ -62,8 +71,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.modal-closing-button:hover {
+  fill: $accent-text;
+}
 .modal-card {
+  // overflow: auto;
   width: 240px;
   padding: 48px 20px;
   margin-right: 0px;
@@ -84,6 +96,12 @@
   }
 }
 .modal-card__img {
+  display: block;
+  //   width: auto;
+  //   height: auto;
+  max-height: 100vh;
+  max-width: 100vw;
+
   margin: 0;
   width: 240px;
   height: 356.57px;
@@ -145,6 +163,7 @@
 
   display: inline-block;
   align-items: center;
+  align-content: center;
   text-align: center;
   text-transform: uppercase;
 
@@ -236,6 +255,11 @@
     width: 136px;
   }
 }
+
+.addedWatched-btn {
+  background: #b8a190;
+}
+
 .modal-card__queue-btn {
   margin: 0;
   width: 112.58px;
@@ -261,6 +285,11 @@
     width: 136px;
   }
 }
+
+.addedQueue-btn {
+  background: #b8a190;
+}
+
 .modal-buttons-wrapper {
   display: inline-flex;
 }

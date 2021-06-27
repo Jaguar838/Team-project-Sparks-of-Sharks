@@ -13,7 +13,7 @@
     padding: 15px;
   }
   .list .item:hover {
-    background-color: rgb(0, 0, 0, 0.05);
+    background-color: black;
   }
 }
 .pagenumbers {
@@ -149,7 +149,7 @@
   background-color: #ff9100;
   transform: scale(1.03);
   transition: 400ms cubic-bezier(0.1, 0.9, 0.9, 1.5);
-  box-shadow: -2px 7px 42px 34px rgb(240 85 0 / 35%);
+  // box-shadow: -2px 7px 42px 34px rgb(240 85 0 / 35%);
 }
 
 .back_to_top-show {
@@ -167,5 +167,5 @@
 }
 
 .icon-navigate {
-color: $white;
+  color: $white;
 }

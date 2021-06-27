@@ -6,11 +6,14 @@ import { renderPagination } from './pagination';
 import { homePageMarkupUpdate } from './header/LogicHeader';
 import { renderHeader } from './header/renderHeader';
 import spin from './plugins/spinner';
+import typeOfTime from './plugins/switchTime';
 
 document.addEventListener('DOMContentLoaded', spin.stop());
 const apiService = new ApiService();
 
 const refs = getRefs();
+
+typeOfTime();
 
 spin.run();
 
@@ -57,6 +60,7 @@ export function renderGenres(data) {
         .map(id => genresArray.filter(el => el.id === id))
         .flat()
         .slice(0, 2),
+      vote_average: film.vote_average.toFixed(1),
     }));
   });
 }
