@@ -40,28 +40,6 @@ function onCloseLightBox(evt) {
     onCloseModal();
     return;
   }
-  // if (evt.target.classList.contains('modal-card__watched-btn')) {
-  //   if (refsWatchBtn.classList.contains('addedWatched-btn')) {
-  //     refsWatchBtn.textContent = 'ADD TO WATCHED';
-  //     refsWatchBtn.classList.toggle('addedWatched-btn');
-  //     lib.removeWatched();
-  //   } else {
-  //     refsWatchBtn.textContent = 'REMOVE';
-  //     refsWatchBtn.classList.toggle('addedWatched-btn');
-  //     lib.addWatched();
-  //   }
-  // }
-  // if (evt.target.classList.contains('modal-card__queue-btn')) {
-  //   if (refsQueueBtn.classList.contains('addedQueue-btn')) {
-  //     refsQueueBtn.textContent = 'ADD TO QUEUE';
-  //     refsQueueBtn.classList.toggle('addedQueue-btn');
-  //     lib.removeQueue();
-  //   } else {
-  //     refsQueueBtn.textContent = 'REMOVE';
-  //     refsQueueBtn.classList.toggle('addedQueue-btn');
-  //     lib.addQueue();
-  //   }
-  // }
 }
 function onBackdropClick(evt) {
   if (evt.target.classList.contains('lightbox__overlay')) {
@@ -99,7 +77,6 @@ function movieInfoById(movieId) {
 }
 
 function renderLightBoxModal(data) {
-  console.log('data', data);
   data = lib.checkMovie(data);
 
   createMarkup.lightBoxMarkup(data);

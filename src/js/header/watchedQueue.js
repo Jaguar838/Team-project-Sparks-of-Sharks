@@ -85,8 +85,8 @@ export function getQueuedMovies() {
 }
 
 function getMovies(name) {
-  console.log('getMovies(name)', name);
   const data = JSON.parse(localStorage.getItem(name));
+  console.log('getMovies(name), data', name, data);
   return data;
 }
 
