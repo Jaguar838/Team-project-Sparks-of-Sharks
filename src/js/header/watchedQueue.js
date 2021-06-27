@@ -60,7 +60,7 @@ export function addQueue(movie) {
   } else {
     delete list[movie.id];
   }
-  setMovies('watched', list);
+  setMovies('queue', list);
 }
 
 export function removeWatched() {
