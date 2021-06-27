@@ -54,7 +54,7 @@ export function addWatched(movie) {
 export function addQueue(movie) {
   console.log('addQueue()');
 
-  let list = getMovies('watched');
+  let list = getMovies('queue');
   if (!list[movie.id]) {
     list[movie.id] = movie;
   } else {
