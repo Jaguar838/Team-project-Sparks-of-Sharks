@@ -28,14 +28,15 @@ function onHeaderClick(evt) {
 }
 
 export function renderMarkupByBtn(libraryType) {
-  console.log('renderMarkupByBtn', libraryType);
   createMarkup.clearMarkup();
-  refs.paginationContainer.innerHTML = '';
+  refs.paginationContainer.classList.add('is-hidden');
   refs.toolbarTime.classList.add('is-hidden');
   const markup = createMarkup.moviesMarkup(
     libraryType.map(film => ({
       ...film,
       release_date: film.release_date.slice(0, 4),
+      genres: film.genres.slice(0, 2),
+      vote_average: film.vote_average.toFixed(1),
     })),
   );
   return markup;
