@@ -6,10 +6,12 @@ const refs = getRefs();
 refs.mylibraryBtn.addEventListener('click', myLibraryPageMarkupUpdate);
 
 function myLibraryPageMarkupUpdate() {
+  localStorage.setItem('current', 'watched');
   refs.header.classList.remove('header__background-home');
   refs.header.classList.add('header__background-myLibrary');
   refs.homeBtn.classList.remove('current');
   refs.mylibraryBtn.classList.add('current');
+
   renderHeader();
 }
 
