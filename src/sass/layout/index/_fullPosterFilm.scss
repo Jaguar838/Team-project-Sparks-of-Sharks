@@ -234,8 +234,8 @@
   height: 44px;
   padding: 8.28px;
   margin-right: 14.85px;
+  background: $white;
 
-  background: #ff6b01;
   border-radius: 5px;
   font-family: Roboto;
   font-style: normal;
@@ -247,11 +247,15 @@
   text-align: center;
   text-transform: uppercase;
 
-  color: $white;
+  color: $black;
 
-  border: transparent;
+  border: 1px solid #000000;
+  box-sizing: border-box;
   @include for-size(desktop) {
     width: 136px;
+  }
+  &:hover {
+    background: #ff6b01;
   }
 }
 .modal-card__queue-btn {
@@ -278,7 +282,17 @@
   @include for-size(desktop) {
     width: 136px;
   }
+  &:hover {
+    background: #ff6b01;
+  }
 }
 .modal-buttons-wrapper {
   display: inline-flex;
+}
+
+.addedWatched-btn {
+  background: #ff6b01;
+}
+.addedQueue-btn {
+  background: #ff6b01;
 }
