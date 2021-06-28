@@ -28,9 +28,8 @@ function onHeaderClick(evt) {
 }
 
 export function renderMarkupByBtn(libraryType) {
-  console.log('renderMarkupByBtn', libraryType);
   createMarkup.clearMarkup();
-  refs.paginationContainer.innerHTML = '';
+  refs.paginationContainer.classList.add('is-hidden');
   refs.toolbarTime.classList.add('is-hidden');
   const markup = createMarkup.moviesMarkup(
     libraryType.map(film => ({
