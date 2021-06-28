@@ -13,6 +13,7 @@ export default function getRefs() {
     backdropModal: document.querySelector('.js-lightbox'),
     spinner: document.querySelector('.spinner'),
     paginationElement: document.getElementById('pagination'),
+    paginationContainer: document.querySelector('.pagination__container_pages'),
     arrowLeft: document.querySelector('.arrow_left'),
     arrowRight: document.querySelector('.arrow_right'),
     header: document.querySelector('[data-index="header"]'),

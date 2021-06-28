@@ -30,7 +30,7 @@ function lightBoxOpen(image) {
   const movieId = Number(image.dataset.id);
   console.log(movieId);
 
-  const dataModalMovie = movieInfoById(movieId).then(data => data);
+  movieInfoById(movieId).then(data => data);
   window.addEventListener('keydown', onKeyPress);
   document.body.classList.add('no-scrolling');
 }
@@ -78,6 +78,7 @@ function movieInfoById(movieId) {
 
 function renderLightBoxModal(data) {
   data = lib.checkMovie(data);
+  console.log('checkMovie', data);
 
   createMarkup.lightBoxMarkup(data);
 

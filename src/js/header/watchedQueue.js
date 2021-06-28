@@ -30,6 +30,7 @@ function onHeaderClick(evt) {
 export function renderMarkupByBtn(libraryType) {
   console.log('renderMarkupByBtn', libraryType);
   createMarkup.clearMarkup();
+  refs.paginationContainer.innerHTML = '';
   const markup = createMarkup.moviesMarkup(
     libraryType.map(film => ({
       ...film,
@@ -106,6 +107,7 @@ export function checkMovie(movie) {
     movie.watched = true;
   }
   console.log('inWatched(movie.id)', inWatched(movie.id));
+
   if (inQueue(movie.id)) {
     movie.queued = true;
   }
