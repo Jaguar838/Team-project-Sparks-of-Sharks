@@ -1,65 +1,117 @@
 import getRefs from '../getRef';
 import modalMarkup from '../../templates/movieDetail.hbs';
 import btnLib from '../../templates/header/mylibrary.hbs';
-import { moviesMarkup, clearMarkup, lightBoxMarkup } from '../createMarkup';
+import createMarkup from '../createMarkup';
 import oneMovieTemplate from '../../templates/oneMovieTemplate.hbs';
 
 const refs = getRefs();
 
-refs.mylibraryBtn.addEventListener('click', renderButtonLibery);
-function renderButtonLibery() {
+refs.headerContent.addEventListener('click', onHeaderClick);
+refs.mylibraryBtn.addEventListener('click', renderButtonLibrary);
+
+function renderButtonLibrary() {
+  console.log('function renderButtonLibrary()');
   refs.headerContent.innerHTML = btnLib();
+  createMarkup.clearMarkup();
+  renderMarkupByBtn(getWatchedMovies());
 }
 
-let watchedfilm = [];
-let queueFilm = [];
-
-export function openData(data) {
-  const objFilm = data;
-  const string = JSON.stringify(objFilm);
-  localStorage.setItem('filmy', string);
+function onHeaderClick(evt) {
+  if (evt.target.classList.contains('js-watched-btn')) {
+    renderMarkupByBtn(getWatchedMovies());
+    return;
+  }
+  if (evt.target.classList.contains('js-queue-btn')) {
+    renderMarkupByBtn(getQueuedMovies());
+    return;
+  }
 }
 
-export function addWatched() {
+export function renderMarkupByBtn(libraryType) {
+  console.log('renderMarkupByBtn', libraryType);
+  createMarkup.clearMarkup();
+  refs.paginationContainer.innerHTML = '';
+  refs.toolbarTime.classList.add('is-hidden');
+  const markup = createMarkup.moviesMarkup(
+    libraryType.map(film => ({
+      ...film,
+      release_date: film.release_date.slice(0, 4),
+    })),
+  );
+  return markup;
+}
+
+export function addWatched(movie) {
   console.log('addWatched() ');
 
-  const save = localStorage.getItem('filmy');
-  const objSave = JSON.parse(save);
-  watchedfilm.push(objSave);
-  const string = JSON.stringify(watchedfilm);
-  localStorage.setItem('watched', string);
+  let list = getMovies('watched');
+  if (!list[movie.id]) {
+    list[movie.id] = movie;
+  } else {
+    delete list[movie.id];
+  }
+  setMovies('watched', list);
 }
 
-export function addQueue() {
+export function addQueue(movie) {
   console.log('addQueue()');
-  const save = localStorage.getItem('filmy');
-  const objSave = JSON.parse(save);
-  watchedfilm.push(objSave);
-  const string = JSON.stringify(watchedfilm);
-  localStorage.setItem('queue', string);
+
+  let list = getMovies('queue');
+  if (!list[movie.id]) {
+    list[movie.id] = movie;
+  } else {
+    delete list[movie.id];
+  }
+  setMovies('queue', list);
 }
+
 export function removeWatched() {
   console.log('removeWatched() ');
+
+  let list = getMovies('watched');
+  delete list[id];
+  setMovies('watched', list);
 }
-export function removeQueue() {
+export function removeQueue(id) {
   console.log('removeQueue() ');
+  let list = getMovies('queue');
+  delete list[id];
+  setMovies('queue', list);
+}
+export function getWatchedMovies() {
+  return Object.values(getMovies('watched')); //полуение JSON фильмов
 }
 
-export function renderWatсhedFilm() {
-  console.log('renderWatсhedFilm() ');
-  const save = localStorage.getItem('watched');
-  const objSave = JSON.parse(save);
-  console.log(objSave);
-  const watchedFilm = oneMovieTemplate(objSave);
-  refs.moviesContainer.innerHTML = watchedFilm;
-}
-export function renderQueueFilm() {
-  console.log('renderQueueFilm() ');
-  const save = localStorage.getItem('queue');
-  const objSave = JSON.parse(save);
-  console.log(objSave);
-  const queueFilm = oneMovieTemplate(objSave);
-  refs.moviesContainer.innerHTML = queueFilm;
+export function getQueuedMovies() {
+  return Object.values(getMovies('queue')); //полуение JSON фильмов
 }
 
-console.log(refs.moviesContainer);
+function getMovies(name) {
+  const data = JSON.parse(localStorage.getItem(name));
+  console.log('getMovies(name), data', name, data);
+  return data;
+}
+
+function setMovies(name, list) {
+  localStorage.setItem(name, JSON.stringify(list));
+}
+function inQueue(id) {
+  return getMovies('queue')[id];
+}
+function inWatched(id) {
+  return getMovies('watched')[id];
+}
+
+export function checkMovie(movie) {
+  console.log('function checkMovie(movie)', movie);
+  if (inWatched(movie.id)) {
+    movie.watched = true;
+  }
+  console.log('inWatched(movie.id)', inWatched(movie.id));
+
+  if (inQueue(movie.id)) {
+    movie.queued = true;
+  }
+  console.log('inQueue(movie.id)', inQueue(movie.id));
+  return movie;
+}
