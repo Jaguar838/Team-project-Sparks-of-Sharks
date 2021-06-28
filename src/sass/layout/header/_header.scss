@@ -292,12 +292,11 @@
   height: 44px;
   color: $white;
 
-
   border: 1px solid #ffffff;
   box-sizing: border-box;
   border-radius: 5px;
   background: transparent;
-    &:hover,
+  &:hover,
   &:focus {
     background-color: $accent-icon;
     transform: scale(1.15);
