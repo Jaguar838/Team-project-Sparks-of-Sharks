@@ -53,6 +53,7 @@ function trendingFilms() {
 }
 
 export async function renderPage(data) {
+  localStorage.setItem('current', 'home');
   apiService.page = 1;
   spin.run();
   await trendingFilms(data)

@@ -62,6 +62,14 @@ function onCloseModal() {
   window.removeEventListener('keydown', onKeyPress);
   refs.backdropModal.removeEventListener;
   refs.lightBoxContentRef.innerHTML = '';
+
+  if (localStorage.getItem('current') === 'watched') {
+    lib.renderMarkupByBtn(lib.getWatchedMovies());
+  }
+  if (localStorage.getItem('current') === 'queue') {
+    lib.renderMarkupByBtn(lib.getQueuedMovies());
+  }
+
   return;
 }
 
