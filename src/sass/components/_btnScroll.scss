@@ -15,7 +15,7 @@
   transform: translateY(25px);
   //   box-shadow: 0 0px 15px 11px rgb(255 108 9 / 30%), 0 0px 9px 1px #e93f18;
   &:hover {
-    color: rgb(255, 136, 0);
+    color: $accent-icon;
   }
 }
 .material-icons.arrow_up {
