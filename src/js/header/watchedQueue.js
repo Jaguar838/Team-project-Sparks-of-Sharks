@@ -31,6 +31,7 @@ export function renderMarkupByBtn(libraryType) {
   console.log('renderMarkupByBtn', libraryType);
   createMarkup.clearMarkup();
   refs.paginationContainer.innerHTML = '';
+  refs.toolbarTime.classList.add('is-hidden');
   const markup = createMarkup.moviesMarkup(
     libraryType.map(film => ({
       ...film,

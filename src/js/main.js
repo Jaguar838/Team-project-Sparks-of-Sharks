@@ -59,6 +59,9 @@ export async function renderPage(data) {
     .then(data => data)
     .then(createMarkup.moviesMarkup);
   spin.stop();
+  if (refs.toolbarTime.classList.contains('is-hidden')) {
+    refs.toolbarTime.classList.remove('is-hidden');
+  }
 }
 
 export function renderGenres(data) {
