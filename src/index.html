@@ -35,11 +35,24 @@
 
         <include src="./partials/lightbox.html"></include>
         <include src="./partials/pagination.html"></include>
+
+        <div class="scroll-up">
+          <svg class="scroll-up__svg" viewBox="-2 -2 52 52">
+            <path
+              class="scroll-up__svg-path"
+              d="
+        M24,0
+        a24,24 0 0,1 0,48
+        a24,24 0 0,1 0,-48
+        "
+            ></path>
+          </svg>
+          <i class="material-icons arrow_up">keyboard_arrow_up</i>
+        </div>
       </div>
     </main>
     <footer class="footer">
       <include src="./partials/footer.html"></include>
-      <include src="./partials/teamModal.html"></include>
     </footer>
     <!-- 🍅Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
