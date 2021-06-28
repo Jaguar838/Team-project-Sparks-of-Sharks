@@ -80,48 +80,48 @@ function renderLightBoxModal(data) {
   data = lib.checkMovie(data);
 
   createMarkup.lightBoxMarkup(data);
-  const qBtn = document.querySelector('.modal-card__queue-btn');
-  const wBtn = document.querySelector('.modal-card__watched-btn');
-  console.log('watched.data', data);
+  console.log('data Queue', data, data.queued);
   if (data.watched) {
-    wBtn.classList.add('.addedWatched - btn');
+    document.querySelector('.modal-card__watched-btn').classList.add('addedWatched-btn');
   }
-
+  if (data.queued) {
+    document.querySelector('.modal-card__queue-btn').classList.add('addedQueue-btn');
+  }
   checkTextOnBtns();
 
-  qBtn.addEventListener('click', evt => {
+  document.querySelector('.modal-card__queue-btn').addEventListener('click', evt => {
     lib.addQueue(data);
     evt.target.classList.toggle('addedQueue-btn');
     if (evt.target.classList.contains('addedQueue-btn')) {
-      qBtn.textContent = 'REMOVE';
+      document.querySelector('.modal-card__queue-btn').textContent = 'REMOVE';
     } else {
-      qBtn.textContent = 'ADD TO QUEUE';
+      document.querySelector('.modal-card__queue-btn').textContent = 'ADD TO QUEUE';
     }
   });
 
-  wBtn.addEventListener('click', evt => {
+  document.querySelector('.modal-card__watched-btn').addEventListener('click', evt => {
     lib.addWatched(data);
     evt.target.classList.toggle('addedWatched-btn');
 
     if (evt.target.classList.contains('addedWatched-btn')) {
-      wbtn.textContent = 'REMOVE';
+      document.querySelector('.modal-card__watched-btn').textContent = 'REMOVE';
     } else {
-      wBtn.textContent = 'ADD TO WATCHED';
+      document.querySelector('.modal-card__watched-btn').textContent = 'ADD TO WATCHED';
     }
   });
 }
 
 function checkTextOnBtns() {
   console.log('function checkTextOnBtns');
-  if (wBtn.classList.contains('addedWatched-btn')) {
-    wBtn.textContent = 'REMOVE';
+  if (document.querySelector('.modal-card__watched-btn').classList.contains('addedWatched-btn')) {
+    document.querySelector('.modal-card__watched-btn').textContent = 'REMOVE';
   } else {
-    wBtn.textContent = 'ADD TO WATCHED';
+    document.querySelector('.modal-card__watched-btn').textContent = 'ADD TO WATCHED';
   }
 
-  if (qBtn.classList.contains('addedQueue-btn')) {
-    qBtn.textContent = 'REMOVE';
+  if (document.querySelector('.modal-card__queue-btn').classList.contains('addedQueue-btn')) {
+    document.querySelector('.modal-card__queue-btn').textContent = 'REMOVE';
   } else {
-    qBtn.textContent = 'ADD TO QUEUE';
+    document.querySelector('.modal-card__queue-btn').textContent = 'ADD TO QUEUE';
   }
 }
