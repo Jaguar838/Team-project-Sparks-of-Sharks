@@ -78,10 +78,15 @@ function movieInfoById(movieId) {
 
 function renderLightBoxModal(data) {
   data = lib.checkMovie(data);
-  console.log('checkMovie', data);
 
   createMarkup.lightBoxMarkup(data);
-
+  console.log('data Queue', data, data.queued);
+  if (data.watched) {
+    document.querySelector('.modal-card__watched-btn').classList.add('addedWatched-btn');
+  }
+  if (data.queued) {
+    document.querySelector('.modal-card__queue-btn').classList.add('addedQueue-btn');
+  }
   checkTextOnBtns();
 
   document.querySelector('.modal-card__queue-btn').addEventListener('click', evt => {
