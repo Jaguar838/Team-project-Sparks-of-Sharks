@@ -78,45 +78,50 @@ function movieInfoById(movieId) {
 
 function renderLightBoxModal(data) {
   data = lib.checkMovie(data);
-  console.log('checkMovie', data);
 
   createMarkup.lightBoxMarkup(data);
+  const qBtn = document.querySelector('.modal-card__queue-btn');
+  const wBtn = document.querySelector('.modal-card__watched-btn');
+  console.log('watched.data', data);
+  if (data.watched) {
+    wBtn.classList.add('.addedWatched - btn');
+  }
 
   checkTextOnBtns();
 
-  document.querySelector('.modal-card__queue-btn').addEventListener('click', evt => {
+  qBtn.addEventListener('click', evt => {
     lib.addQueue(data);
     evt.target.classList.toggle('addedQueue-btn');
     if (evt.target.classList.contains('addedQueue-btn')) {
-      document.querySelector('.modal-card__queue-btn').textContent = 'REMOVE';
+      qBtn.textContent = 'REMOVE';
     } else {
-      document.querySelector('.modal-card__queue-btn').textContent = 'ADD TO QUEUE';
+      qBtn.textContent = 'ADD TO QUEUE';
     }
   });
 
-  document.querySelector('.modal-card__watched-btn').addEventListener('click', evt => {
+  wBtn.addEventListener('click', evt => {
     lib.addWatched(data);
     evt.target.classList.toggle('addedWatched-btn');
 
     if (evt.target.classList.contains('addedWatched-btn')) {
-      document.querySelector('.modal-card__watched-btn').textContent = 'REMOVE';
+      wbtn.textContent = 'REMOVE';
     } else {
-      document.querySelector('.modal-card__watched-btn').textContent = 'ADD TO WATCHED';
+      wBtn.textContent = 'ADD TO WATCHED';
     }
   });
 }
 
 function checkTextOnBtns() {
   console.log('function checkTextOnBtns');
-  if (document.querySelector('.modal-card__watched-btn').classList.contains('addedWatched-btn')) {
-    document.querySelector('.modal-card__watched-btn').textContent = 'REMOVE';
+  if (wBtn.classList.contains('addedWatched-btn')) {
+    wBtn.textContent = 'REMOVE';
   } else {
-    document.querySelector('.modal-card__watched-btn').textContent = 'ADD TO WATCHED';
+    wBtn.textContent = 'ADD TO WATCHED';
   }
 
-  if (document.querySelector('.modal-card__queue-btn').classList.contains('addedQueue-btn')) {
-    document.querySelector('.modal-card__queue-btn').textContent = 'REMOVE';
+  if (qBtn.classList.contains('addedQueue-btn')) {
+    qBtn.textContent = 'REMOVE';
   } else {
-    document.querySelector('.modal-card__queue-btn').textContent = 'ADD TO QUEUE';
+    qBtn.textContent = 'ADD TO QUEUE';
   }
 }

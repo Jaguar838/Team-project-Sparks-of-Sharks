@@ -28,14 +28,15 @@ function onHeaderClick(evt) {
 }
 
 export function renderMarkupByBtn(libraryType) {
-  console.log('renderMarkupByBtn', libraryType);
   createMarkup.clearMarkup();
-  refs.paginationContainer.innerHTML = '';
+  refs.paginationContainer.classList.add('is-hidden');
   refs.toolbarTime.classList.add('is-hidden');
   const markup = createMarkup.moviesMarkup(
     libraryType.map(film => ({
       ...film,
       release_date: film.release_date.slice(0, 4),
+      genres: film.genres.slice(0, 2),
+      vote_average: film.vote_average.toFixed(1),
     })),
   );
   return markup;
@@ -88,7 +89,7 @@ export function getQueuedMovies() {
 
 function getMovies(name) {
   const data = JSON.parse(localStorage.getItem(name));
-  console.log('getMovies(name), data', name, data);
+
   return data;
 }
 
@@ -103,15 +104,13 @@ function inWatched(id) {
 }
 
 export function checkMovie(movie) {
-  console.log('function checkMovie(movie)', movie);
   if (inWatched(movie.id)) {
     movie.watched = true;
   }
-  console.log('inWatched(movie.id)', inWatched(movie.id));
 
   if (inQueue(movie.id)) {
     movie.queued = true;
   }
-  console.log('inQueue(movie.id)', inQueue(movie.id));
+
   return movie;
 }
