@@ -21,8 +21,6 @@ export default function getRefs() {
     mylibraryBtn: document.querySelector('[data-index="libraryBtn"]'),
     headerContent: document.querySelector('[data-index="headerContent"]'),
     toolbarTime: document.querySelector('.toolbar_time'),
-    // watchedAdd: document.querySelector('.modal-card__watched-btn'),
-    // queueAdd: document.querySelector('.modal-card__queue-btn'),
     switchTime: document.querySelector('#time-switch__toggle'),
   };
 }

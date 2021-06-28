@@ -62,6 +62,9 @@ export async function renderPage(data) {
   if (refs.toolbarTime.classList.contains('is-hidden')) {
     refs.toolbarTime.classList.remove('is-hidden');
   }
+  if (refs.paginationContainer.classList.contains('is-hidden')) {
+    refs.paginationContainer.classList.remove('is-hidden');
+  }
 }
 
 export function renderGenres(data) {
