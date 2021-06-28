@@ -35,6 +35,8 @@ export function renderMarkupByBtn(libraryType) {
     libraryType.map(film => ({
       ...film,
       release_date: film.release_date.slice(0, 4),
+      genres: film.genres.slice(0, 2),
+      vote_average: film.vote_average.toFixed(1),
     })),
   );
   return markup;

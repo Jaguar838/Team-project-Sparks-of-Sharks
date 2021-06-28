@@ -6,7 +6,6 @@ const refs = getRefs();
 refs.switchTime.addEventListener('change', onSwitchTimeChanged);
 
 export default function typeoftime() {
-  console.log('refs.switchTime.checked', refs.switchTime.checked);
   if (localStorage.time === 'week') {
     refs.switchTime.checked = false;
   } else {
@@ -17,9 +16,6 @@ export default function typeoftime() {
 }
 
 function onSwitchTimeChanged() {
-  console.log('refs.switchTime.checked', refs.switchTime.checked);
-  console.log('Click', localStorage.time);
-
   if (localStorage.time === 'day') {
     localStorage.setItem('time', 'week');
     mainPage.renderPage();
@@ -27,6 +23,4 @@ function onSwitchTimeChanged() {
     localStorage.setItem('time', 'day');
     mainPage.renderPage();
   }
-
-  console.log('refs.switchTime.checked', refs.switchTime.checked);
 }
