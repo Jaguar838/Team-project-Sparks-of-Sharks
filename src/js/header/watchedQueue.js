@@ -1,8 +1,6 @@
 import getRefs from '../getRef';
-import modalMarkup from '../../templates/movieDetail.hbs';
 import btnLib from '../../templates/header/mylibrary.hbs';
 import createMarkup from '../createMarkup';
-import oneMovieTemplate from '../../templates/oneMovieTemplate.hbs';
 
 const refs = getRefs();
 
@@ -18,11 +16,18 @@ function renderButtonLibrary() {
 
 function onHeaderClick(evt) {
   if (evt.target.classList.contains('js-watched-btn')) {
+    localStorage.setItem('current', 'watched');
+    document.querySelector('.js-watched-btn').classList.add('active');
+    document.querySelector('.js-queue-btn').classList.remove('active');
     renderMarkupByBtn(getWatchedMovies());
     return;
   }
   if (evt.target.classList.contains('js-queue-btn')) {
+    localStorage.setItem('current', 'queue');
+    document.querySelector('.js-watched-btn').classList.remove('active');
+    document.querySelector('.js-queue-btn').classList.add('active');
     renderMarkupByBtn(getQueuedMovies());
+    localStorage.setItem('current', 'queue');
     return;
   }
 }
@@ -89,7 +94,7 @@ export function getQueuedMovies() {
 
 function getMovies(name) {
   const data = JSON.parse(localStorage.getItem(name));
-  console.log('getMovies(name), data', name, data);
+
   return data;
 }
 
@@ -104,15 +109,13 @@ function inWatched(id) {
 }
 
 export function checkMovie(movie) {
-  console.log('function checkMovie(movie)', movie);
   if (inWatched(movie.id)) {
     movie.watched = true;
   }
-  console.log('inWatched(movie.id)', inWatched(movie.id));
 
   if (inQueue(movie.id)) {
     movie.queued = true;
   }
-  console.log('inQueue(movie.id)', inQueue(movie.id));
+
   return movie;
 }
