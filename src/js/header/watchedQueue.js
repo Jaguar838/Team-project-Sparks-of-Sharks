@@ -11,25 +11,34 @@ function renderButtonLibrary() {
   console.log('function renderButtonLibrary()');
   refs.headerContent.innerHTML = btnLib();
   createMarkup.clearMarkup();
-  renderMarkupByBtn(getWatchedMovies());
+  renderWatched();
 }
 
 function onHeaderClick(evt) {
   if (evt.target.classList.contains('js-watched-btn')) {
-    localStorage.setItem('current', 'watched');
-    document.querySelector('.js-watched-btn').classList.add('active');
-    document.querySelector('.js-queue-btn').classList.remove('active');
-    renderMarkupByBtn(getWatchedMovies());
+    renderWatched();
     return;
   }
   if (evt.target.classList.contains('js-queue-btn')) {
-    localStorage.setItem('current', 'queue');
-    document.querySelector('.js-watched-btn').classList.remove('active');
-    document.querySelector('.js-queue-btn').classList.add('active');
-    renderMarkupByBtn(getQueuedMovies());
-    localStorage.setItem('current', 'queue');
+    renderQueue();
     return;
   }
+}
+
+function renderWatched() {
+  localStorage.setItem('current', 'watched');
+  document.querySelector('.js-watched-btn').classList.add('active');
+  if (document.querySelector('.js-queue-btn').classList.contains('active')) {
+    document.querySelector('.js-queue-btn').classList.remove('active');
+  }
+  renderMarkupByBtn(getWatchedMovies());
+}
+
+function renderQueue() {
+  localStorage.setItem('current', 'queue');
+  document.querySelector('.js-watched-btn').classList.remove('active');
+  document.querySelector('.js-queue-btn').classList.add('active');
+  renderMarkupByBtn(getQueuedMovies());
 }
 
 export function renderMarkupByBtn(libraryType) {
@@ -71,19 +80,6 @@ export function addQueue(movie) {
   setMovies('queue', list);
 }
 
-export function removeWatched() {
-  console.log('removeWatched() ');
-
-  let list = getMovies('watched');
-  delete list[id];
-  setMovies('watched', list);
-}
-export function removeQueue(id) {
-  console.log('removeQueue() ');
-  let list = getMovies('queue');
-  delete list[id];
-  setMovies('queue', list);
-}
 export function getWatchedMovies() {
   return Object.values(getMovies('watched')); //полуение JSON фильмов
 }

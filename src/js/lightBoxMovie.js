@@ -89,6 +89,7 @@ function renderLightBoxModal(data) {
 
   createMarkup.lightBoxMarkup(data);
   console.log('data Queue', data, data.queued);
+  //добавление классов если фильм в библиотеке
   if (data.watched) {
     document.querySelector('.modal-card__watched-btn').classList.add('addedWatched-btn');
   }
@@ -97,18 +98,25 @@ function renderLightBoxModal(data) {
   }
   checkTextOnBtns();
 
+  //клик на кнопки на модалке
   document.querySelector('.modal-card__queue-btn').addEventListener('click', evt => {
     lib.addQueue(data);
+    lib.checkMovie(data);
     evt.target.classList.toggle('addedQueue-btn');
     if (evt.target.classList.contains('addedQueue-btn')) {
       document.querySelector('.modal-card__queue-btn').textContent = 'REMOVE';
     } else {
       document.querySelector('.modal-card__queue-btn').textContent = 'ADD TO QUEUE';
     }
+    // if (data.watched) {
+    //   lib.addWatched(data);
+    //   document.querySelector('.modal-card__watched-btn').textContent = 'ADD TO WATCHED';
+    // }
   });
 
   document.querySelector('.modal-card__watched-btn').addEventListener('click', evt => {
     lib.addWatched(data);
+    lib.checkMovie(data);
     evt.target.classList.toggle('addedWatched-btn');
 
     if (evt.target.classList.contains('addedWatched-btn')) {
@@ -116,9 +124,14 @@ function renderLightBoxModal(data) {
     } else {
       document.querySelector('.modal-card__watched-btn').textContent = 'ADD TO WATCHED';
     }
+    // if (data.queued) {
+    //   lib.addQueue(data);
+    //   document.querySelector('.modal-card__queue-btn').textContent = 'ADD TO QUEUE';
+    // }
   });
 }
 
+//проверка надписей на кнопках если фильм уже в библиотеке
 function checkTextOnBtns() {
   console.log('function checkTextOnBtns');
   if (document.querySelector('.modal-card__watched-btn').classList.contains('addedWatched-btn')) {

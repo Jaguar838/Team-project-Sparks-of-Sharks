@@ -12,12 +12,10 @@ document.addEventListener('DOMContentLoaded', spin.stop());
 const apiService = new ApiService();
 
 const refs = getRefs();
-
 typeOfTime();
-
 spin.run();
-
-refs.logo.addEventListener('click', renderHomePage);
+// localStorage.setItem('time', 'day');
+refs.logo.addEventListener('click', e => location.reload());
 refs.homeBtn.addEventListener('click', renderHomePage);
 const page = 1;
 checkLibrary();
@@ -38,11 +36,12 @@ function checkLibrary() {
 
 export function renderHomePage(e) {
   e.preventDefault();
+  typeOfTime();
   createMarkup.clearMarkup();
   renderPage();
   trendingFilmsPagination();
   homePageMarkupUpdate();
-  renderHeader();
+  // renderHeader();
 }
 
 function trendingFilms() {
