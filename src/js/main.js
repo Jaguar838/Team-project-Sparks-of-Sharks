@@ -41,7 +41,7 @@ export function renderHomePage(e) {
   renderPage();
   trendingFilmsPagination();
   homePageMarkupUpdate();
-  // renderHeader();
+  renderHeader();
 }
 
 function trendingFilms() {

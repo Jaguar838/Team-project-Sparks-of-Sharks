@@ -1,7 +1,7 @@
 /* Test maketa */
-// * {
-//     outline: 1px solid tomato;
-// }
+* {
+  outline: 1px solid tomato;
+}
 .header {
   background-color: #000;
   position: relative;
@@ -60,9 +60,9 @@
       outline: none;
       border-bottom: 2px solid $accent-icon;
     }
-    @include for-size(tablet) {
-      width: 336px;
-    }
+    // @include for-size(tablet) {
+    //   width: 336px;
+    // }
   }
 
   &-input::placeholder {
@@ -161,7 +161,7 @@
     font-size: 30px;
     color: $white;
     &:hover {
-      transition:3s;
+      transition: 3s;
       color: $accent-text;
     }
   }
