@@ -18,4 +18,4 @@ import './js/plugins/btnScroll';
 
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
-import 'material-icons';
+// import 'material-icons';
