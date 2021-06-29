@@ -160,6 +160,10 @@
     font-weight: 500;
     font-size: 30px;
     color: $white;
+    &:hover {
+      transition:3s;
+      color: $accent-text;
+    }
   }
 
   .film-search-input-error {
