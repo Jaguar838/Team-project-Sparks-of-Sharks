@@ -1,3 +1,4 @@
+import 'material-icons';
 import 'normalize.css';
 import './sass/main.scss';
 
