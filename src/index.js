@@ -1,9 +1,8 @@
-import 'material-icons';
+
 import 'normalize.css';
 import './sass/main.scss';
 
-import '@pnotify/core/dist/BrightTheme.css';
-import '@pnotify/core/dist/PNotify.css';
+
 
 import './js/main';
 import './js/pagination';
@@ -16,3 +15,7 @@ import './js/header/renderHeader';
 import './js/header/watchedQueue';
 import './js/teamLightbox';
 import './js/plugins/btnScroll';
+
+import '@pnotify/core/dist/BrightTheme.css';
+import '@pnotify/core/dist/PNotify.css';
+import 'material-icons';
