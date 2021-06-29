@@ -48,7 +48,7 @@ export function renderMarkupByBtn(libraryType) {
   const markup = createMarkup.moviesMarkup(
     libraryType.map(film => ({
       ...film,
-      release_date: film.release_date.slice(0, 4),
+      release_date: film.release_date ? film.release_date.slice(0, 4) : 'No Date',
       genres: film.genres.slice(0, 2),
       vote_average: film.vote_average.toFixed(1),
     })),

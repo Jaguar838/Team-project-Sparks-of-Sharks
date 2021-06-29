@@ -155,10 +155,6 @@
     margin-right: 10px;
   }
 
-  // .film-search-input {
-  //   width: 336px;
-  // }
-
   .logo-text {
     display: block;
     font-weight: 500;
@@ -267,24 +263,8 @@
 .myLibraryButtons {
   padding-top: 49px;
   padding-bottom: 65px;
-}
-
-@media screen and (min-width: 1024px) {
-  .myLibraryButtons {
-    margin-left: 369px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .myLibraryButtons {
-    margin-left: 240px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .myLibraryButtons {
-    display: flex;
-  }
+  display: flex;
+  justify-content: center;
 }
 
 .btn-lib {
