@@ -1,6 +1,7 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import 'basiclightbox/dist/basicLightbox.min.js';
+import showConfetti from './plugins/confetti.js';
 import olegUrl from '/images/photo/Oleg.jpg';
 import sergiiUrl from '/images/photo/Sergii.jpg';
 import andriyUrl from '/images/photo/Andriy.jpg';
@@ -59,7 +60,8 @@ container.addEventListener('click', openModal);
 const modal = basicLightbox.create(markup);
 
 function openModal(e) {
-  modal.show();
+    modal.show();
+    showConfetti();
 
   window.addEventListener('keydown', closeModalHandler);
 
