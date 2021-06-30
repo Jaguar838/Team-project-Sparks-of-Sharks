@@ -1,7 +1,8 @@
 /* Test maketa */
 // * {
-//     outline: 1px solid tomato;
+//   outline: 1px solid tomato;
 // }
+
 .header {
   background-color: #000;
   position: relative;
@@ -34,7 +35,6 @@
   &:hover,
   &:focus {
     transform: scale(1.15);
-    // color: $black;
   }
 }
 
@@ -59,9 +59,6 @@
     &:hover {
       outline: none;
       border-bottom: 2px solid $accent-icon;
-    }
-    @include for-size(tablet) {
-      width: 336px;
     }
   }
 
@@ -160,6 +157,10 @@
     font-weight: 500;
     font-size: 30px;
     color: $white;
+    &:hover {
+      transition: 3s;
+      color: $accent-text;
+    }
   }
 
   .film-search-input-error {
