@@ -6,16 +6,21 @@ import notify from './error';
 import debounce from 'lodash.debounce';
 import spin from './plugins/spinner';
 import { renderPagination } from './pagination';
+import message from './plugins/message';
 
 const apiService = new ApiService();
 
 const refs = getRefs();
 
-refs.searchForm.addEventListener('input', debounce(onInput, 1500));
+refs.searchForm.addEventListener('input', debounce(onInput, 1000));
+// refs.searchForm.addEventListener('submit', onInput(elem));
 
 function onInput(elem) {
   elem.preventDefault();
   apiService.pageNum = 1;
+  if (!refs.toolbarTime.classList.contains('is-hidden')) {
+    refs.toolbarTime.classList.add('is-hidden');
+  }
   const searchQuery = elem.target.value;
   if (!searchQuery) {
     //   markup.clearMarkup();
@@ -78,14 +83,22 @@ function renderFirstPage(searchQuery) {
   searchingFilms()
     .then(data => {
       if (data == '') {
-        notify.errorMessage(`Ничего не нашли(`);
+        refs.error.classList.remove('visually-hidden');
+        refs.paginationContainer.classList.add('visually-hidden');
+        message('Search result not successful. Enter the correct movie name.', 'red');
+        setTimeout(() => {
+          refs.error.classList.add('visually-hidden');
+          refs.paginationContainer.classList.remove('visually-hidden');
+          mainPage.renderPage();
+        }, 3000);
+
         refs.moviesContainer.innerHTML = '';
 
-        refs.moviesContainer.style.height = '70vh';
+        // refs.moviesContainer.style.height = '70vh';
       } else {
         createMarkup.clearMarkup();
         createMarkup.moviesMarkup(data);
-        notify.successMessage(`Что-то нашли)`);
+        message(`We find movies by query: ` + searchQuery, 'green');
       }
     })
     .catch(error => {

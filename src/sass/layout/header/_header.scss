@@ -25,7 +25,7 @@
 
   &-search {
     position: absolute;
-    right: 28px;
+    right: 0;
     top: 0;
   }
 
@@ -41,9 +41,10 @@
   margin-top: 41px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 22px;
 
   &-input {
-    width: 90%;
+    width: 100%;
     color: $white;
     background: transparent;
     border: transparent;
@@ -209,55 +210,178 @@
   }
 }
 
-.header__background-home {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(/images/header/home/home_m_x1.jpg);
-  // background-color: $black;
+// .header__background-home {
+//   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+//     url(/images/header/home/home_m_x1.jpg);
+//   // background-color: $black;
 
-  @media screen and (min-device-pixel-ratio: 2),
-    screen and (min-resolution: 192dpi),
-    screen and (min-resolution: 2dppx) {
-    background-image: url('/images/header/home/home_m_x2.jpg');
+//   @media screen and (min-device-pixel-ratio: 2),
+//     screen and (min-resolution: 192dpi),
+//     screen and (min-resolution: 2dppx) {
+//     background-image: url('/images/header/home/home_m_x2.jpg');
+//   }
+// }
+
+// .header__background-myLibrary {
+//   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+//     url(/images/header/library/lib_m_x1.jpg);
+//   background-color: $black;
+// }
+
+// // @include to-size($tablet, $max-tablet) {
+// @media screen and (min-width: 768px) {
+//   .header__background-home {
+//     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+//       url(/images/header/home/home_t_x1.jpg);
+//     background-color: $black;
+//   }
+
+//   .header__background-myLibrary {
+//     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+//       url(/images/header/library/lib_t_x1.jpg);
+//     background-color: $black;
+//   }
+// }
+
+// // @include for-size($desktop) {
+// @media screen and (min-width: 1024px) {
+//   .header__background-home {
+//     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+//       url(/images/header/home/home_d_x1.jpg);
+//     background-color: $black;
+//   }
+
+//   .header__background-myLibrary {
+//     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+//       url(/images/header/library/lib_d_x1.jpg);
+//     background-color: $black;
+//   }
+// }
+
+// *****
+
+.header__background-home {
+  background-position: top;
+  background-size: cover;
+}
+
+@media screen and (max-width: 767px) {
+  .header__background-home {
+    max-width: 767px;
+    padding-top: 46px;
+    padding-bottom: 43px;
+    background-image: url(/images/header/home/home_m_x1.jpg);
   }
 }
+
+@media screen and (max-width: 767px) and (min-device-pixel-ratio: 2), screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 767px) and (min-resolution: 192dpi), screen and (max-width: 767px) and (min-resolution: 2dppx) {
+  .header__background-home {
+    background-image: url(/images/header/home/home_m_x2.jpg);
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header__background-home {
+    max-width: 1023px;
+    padding-top: 41px;
+    padding-bottom: 59px;
+    background-image: url(/images/header/home/home_t_x1.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (max-width: 1023px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (max-width: 1023px) and (min-resolution: 2dppx) {
+  .header__background-home {
+    background-image: url(/images/header/home/home_t_x2.jpg);
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .header__background-home {
+    max-width: 100wv;
+    padding-top: 41px;
+    padding-bottom: 59px;
+    background-image: url(/images/header/home/home_d_x1.jpg);
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
+  .header__background-home {
+    background-image: url(/images/header/home/home_d_x2.jpg);
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 3), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 3), screen and (min-width: 1024px) and (min-resolution: 288dpi), screen and (min-width: 1024px) and (min-resolution: 3dppx) {
+  .header__container--home-bg {
+    background-image: url(/images/header/home/home_d_x3.jpg);
+  }
+}
+
+
 
 .header__background-myLibrary {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(/images/header/library/lib_m_x1.jpg);
-  background-color: $black;
+  background-position: bottom;
+  background-size: cover;
 }
 
-// @include to-size($tablet, $max-tablet) {
-@media screen and (min-width: 768px) {
-  .header__background-home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/home/home_t_x1.jpg);
-    background-color: $black;
-  }
-
+@media screen and (max-width: 767px) {
   .header__background-myLibrary {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/library/lib__t_x1.jpg);
-    background-color: $black;
+    max-width: 767px;
+    padding-top: 46px;
+    padding-bottom: 43px;
+    background-image: url(/images/header/library/lib_m_x1.jpg);
   }
 }
+
+@media screen and (max-width: 767px) and (min-device-pixel-ratio: 2), screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), screen and (max-width: 767px) and (min-resolution: 192dpi), screen and (max-width: 767px) and (min-resolution: 2dppx) {
+  .header__background-myLibrary {
+    background-image: url(/images/header/library/lib_m_x2.jpg);
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header__background-myLibrary {
+    max-width: 1023px;
+    padding-top: 41px;
+    padding-bottom: 59px;
+    background-image: url(/images/header/library/lib_t_x1.jpg);
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (max-width: 1023px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (max-width: 1023px) and (min-resolution: 2dppx) {
+  .header__background-myLibrary {
+    background-image: url(/images/header/library/lib_t_x2.jpg);
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .header__background-myLibrary {
+    max-width: 100wv;
+    padding-top: 41px;
+    padding-bottom: 59px;
+    background-image: url(/images/header/library/lib_d_x1.jpg);
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
+  .header__background-myLibrary {
+    background-image: url(/images/header/library/lib_d_x2.jpg);
+  }
+}
+
+@media screen and (max-width: 767px) and (min-device-pixel-ratio: 3), screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 3), screen and (max-width: 767px) and (min-resolution: 288dpi), screen and (max-width: 767px) and (min-resolution: 3dppx) {
+  .header__container--my-library-bg {
+    background-image: url(/images/header/library/lib_d_x3.jpg);
+  }
+}
+// *****
 .overlay {
   background: $black;
 }
-// @include for-size($desktop) {
-@media screen and (min-width: 1024px) {
-  .header__background-home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/home/home_d_x1.jpg);
-    background-color: $black;
-  }
 
-  .header__background-myLibrary {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/header/library/lib_d_x1.jpg);
-    background-color: $black;
-  }
-}
 .myLibraryButtons {
   padding-top: 49px;
   padding-bottom: 65px;
@@ -287,4 +411,8 @@
 }
 .active {
   background-color: $accent-icon;
+}
+
+.js-message {
+  text-align: center;
 }

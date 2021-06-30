@@ -1,6 +1,18 @@
 //Gallery Films
+.movies {
+  padding-top: 20px;
+  @media screen and (min-width: 768px) {
+    padding-top: 30px;
+  }
+}
 .gallery {
-  @include flexBox($w: wrap, $jc: start);
+    @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+//   @include flexBox($w: wrap, $jc: start);
 }
 
 .movie-card {
@@ -13,6 +25,12 @@
   }
   @include for-size(desktop) {
     width: calc((100% - 6 * 15px) / 3);
+    transition: box-shadow 0.4s cubic-bezier(.22,.64,.83,.67),
+    transform 0.5s cubic-bezier(.52,-0.06,1,1);
+  &:hover,
+  &:focus {
+    transform: scale(1.02);
+}
     margin: 15px;
   }
 }
@@ -22,15 +40,14 @@
 
   @include for-size(phone) {
     width: 280px;
-    // height: 402px;
   }
   @include for-size(tablet) {
     width: 294px;
-    // height: 398px;
+    height: 398px;
   }
   @include for-size(desktop) {
     width: 274px;
-    // height: 398px;
+    height: 398px;
   }
   &:hover {
     transition: 0.25s;
@@ -40,14 +57,14 @@
 }
 
 .container {
-  // @include for-size(phone) {
-  //   width: 280px;
-  // }
+  @include for-size(phone) {
+    width: 280px;
+  }
   @include for-size(tablet) {
-    width: 768px;
+    width: 618px;
   }
   @include for-size(desktop) {
-    width: 1024px;
+    width: 882px;
   }
 }
 .movie-title {
