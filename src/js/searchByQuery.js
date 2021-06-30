@@ -84,7 +84,7 @@ function renderFirstPage(searchQuery) {
         refs.error.classList.remove('visually-hidden');
         refs.paginationContainer.innerHTML = '';
         setTimeout(() => {
-          // refs.error.classList.add('visually-hidden');
+          refs.error.classList.add('visually-hidden');
           mainPage.renderHomePage();
         }, 3000);
 
