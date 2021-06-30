@@ -85,7 +85,7 @@ function renderFirstPage(searchQuery) {
         refs.paginationContainer.innerHTML = '';
         setTimeout(() => {
           refs.error.classList.add('visually-hidden');
-          mainPage.renderHomePage();
+          mainPage.renderPage();
         }, 3000);
 
         // notify.errorMessage(`Ничего не нашли(`);
