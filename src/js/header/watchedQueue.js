@@ -57,7 +57,7 @@ export function renderMarkupByBtn(libraryType) {
 }
 
 export function addWatched(movie) {
-  console.log('addWatched() ');
+  // console.log('addWatched() ');
 
   let list = getMovies('watched');
   if (!list[movie.id]) {
