@@ -254,8 +254,11 @@
   @include for-size(desktop) {
     width: 136px;
   }
+  transition: background, color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background: #ff6b01;
+    color: $white;
+    cursor: pointer;
   }
 }
 .modal-card__queue-btn {
@@ -282,8 +285,11 @@
   @include for-size(desktop) {
     width: 136px;
   }
+  transition: background, color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background: #ff6b01;
+    color: $white;
+    cursor: pointer;
   }
 }
 .modal-buttons-wrapper {

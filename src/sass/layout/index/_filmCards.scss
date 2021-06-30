@@ -33,6 +33,7 @@
     height: 398px;
   }
   &:hover {
+    transition: 0.25s;
     transform: scale(1.05);
     cursor: pointer;
   }
