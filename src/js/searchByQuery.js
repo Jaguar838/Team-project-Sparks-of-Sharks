@@ -88,7 +88,7 @@ function renderFirstPage(searchQuery) {
           mainPage.renderHomePage();
         }, 3000);
 
-        notify.errorMessage(`Ничего не нашли(`);
+        // notify.errorMessage(`Ничего не нашли(`);
         refs.moviesContainer.innerHTML = '';
 
         // refs.moviesContainer.style.height = '70vh';
