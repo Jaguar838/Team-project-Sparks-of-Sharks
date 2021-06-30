@@ -11,16 +11,13 @@
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
-    <link rel="preload" href="/fonts/roboto-v27-latin-500.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="/fonts/roboto-v27-latin-regular.woff2" as="font" crossorigin="anonymous">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
     
-    <!-- <link
+    <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
-    /> -->
+    />
   </head>
 
   <body>
@@ -30,6 +27,7 @@
     </header>
 
     <main>
+      <section class="movies">
       <div class="container">
         <include src="./partials/spinner.html"></include>
         <include src="./partials/swichTime.html"></include>
@@ -39,21 +37,10 @@
 
         <include src="./partials/lightbox.html"></include>
         <include src="./partials/pagination.html"></include>
+<include src="./partials/btnScroll.html"></include>
 
-        <div class="scroll-up">
-          <svg class="scroll-up__svg" viewBox="-2 -2 52 52">
-            <path
-              class="scroll-up__svg-path"
-              d="
-        M24,0
-        a24,24 0 0,1 0,48
-        a24,24 0 0,1 0,-48
-        "
-            ></path>
-          </svg>
-          <i class="material-icons arrow_up">keyboard_arrow_up</i>
-        </div>
       </div>
+    </section>
     </main>
     <footer class="footer">
       <include src="./partials/footer.html"></include>
