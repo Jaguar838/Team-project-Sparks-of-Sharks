@@ -49,7 +49,7 @@ export function renderMarkupByBtn(libraryType) {
       ...film,
       release_date: film.release_date ? film.release_date.slice(0, 4) : 'No Date',
       genres: film.genres ? film.genres.slice(0, 2) : 'No Genres',
-      vote_average: film.vote_average.toFixed(1),
+      vote_average: film.vote_average ? film.vote_average.toFixed(1) : '',
     })),
   );
   return markup;
