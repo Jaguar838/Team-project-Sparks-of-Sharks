@@ -22,15 +22,15 @@
 
   @include for-size(phone) {
     width: 280px;
-    height: 402px;
+    // height: 402px;
   }
   @include for-size(tablet) {
     width: 294px;
-    height: 398px;
+    // height: 398px;
   }
   @include for-size(desktop) {
     width: 274px;
-    height: 398px;
+    // height: 398px;
   }
   &:hover {
     transition: 0.25s;
@@ -40,14 +40,14 @@
 }
 
 .container {
-  @include for-size(phone) {
-    width: 280px;
-  }
+  // @include for-size(phone) {
+  //   width: 280px;
+  // }
   @include for-size(tablet) {
-    width: 618px;
+    width: 768px;
   }
   @include for-size(desktop) {
-    width: 882px;
+    width: 1024px;
   }
 }
 .movie-title {
