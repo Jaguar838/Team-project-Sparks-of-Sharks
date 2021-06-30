@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
-    
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+</head>
 
 <body>
   <header class="overlay">
@@ -16,26 +13,28 @@
     <include src="./partials/header.html"></include>
   </header>
 
-    <main>
-      <section class="movies">
+  <main>
+    <section class="movies">
       <div class="container">
         <include src="./partials/spinner.html"></include>
         <include src="./partials/swichTime.html"></include>
+        <include src="./partials/error.html"></include>
         <ul id="gallery" class="gallery">
           <!-- Вывод filmCards -->
         </ul>
 
         <include src="./partials/lightbox.html"></include>
         <include src="./partials/pagination.html"></include>
-<include src="./partials/btnScroll.html"></include>
+        <include src="./partials/btnScroll.html"></include>
 
       </div>
     </section>
-    </main>
-    <footer class="footer">
-      <include src="./partials/footer.html"></include>
-    </footer>
-    <!-- 🍅Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
-    <script src="./index.js"></script>
-  </body>
+  </main>
+  <footer class="footer">
+    <include src="./partials/footer.html"></include>
+  </footer>
+  <!-- 🍅Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
+  <script src="./index.js"></script>
+</body>
+
 </html>
