@@ -8,7 +8,6 @@ refs.headerContent.addEventListener('click', onHeaderClick);
 refs.mylibraryBtn.addEventListener('click', renderButtonLibrary);
 
 function renderButtonLibrary() {
-  console.log('function renderButtonLibrary()');
   refs.headerContent.innerHTML = btnLib();
   createMarkup.clearMarkup();
   renderWatched();
@@ -49,7 +48,7 @@ export function renderMarkupByBtn(libraryType) {
     libraryType.map(film => ({
       ...film,
       release_date: film.release_date ? film.release_date.slice(0, 4) : 'No Date',
-      genres: film.genres.slice(0, 2),
+      genres: film.genres ? film.genres.slice(0, 2) : 'No Genres',
       vote_average: film.vote_average.toFixed(1),
     })),
   );
