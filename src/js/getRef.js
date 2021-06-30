@@ -22,5 +22,6 @@ export default function getRefs() {
     headerContent: document.querySelector('[data-index="headerContent"]'),
     toolbarTime: document.querySelector('.toolbar_time'),
     switchTime: document.querySelector('#time-switch__toggle'),
+    error: document.querySelector('.empty'),
   };
 }
