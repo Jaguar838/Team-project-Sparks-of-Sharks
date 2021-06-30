@@ -11,11 +11,14 @@ const apiService = new ApiService();
 
 const refs = getRefs();
 
-refs.searchForm.addEventListener('input', debounce(onInput, 1500));
+refs.searchForm.addEventListener('input', debounce(onInput, 1000));
 
 function onInput(elem) {
   elem.preventDefault();
   apiService.pageNum = 1;
+  if (!refs.toolbarTime.classList.contains('is-hidden')) {
+    refs.toolbarTime.classList.add('is-hidden');
+  }
   const searchQuery = elem.target.value;
   if (!searchQuery) {
     //   markup.clearMarkup();
@@ -78,10 +81,17 @@ function renderFirstPage(searchQuery) {
   searchingFilms()
     .then(data => {
       if (data == '') {
+        refs.error.classList.remove('visually-hidden');
+        refs.paginationContainer.innerHTML = '';
+        setTimeout(() => {
+          // refs.error.classList.add('visually-hidden');
+          mainPage.renderHomePage();
+        }, 3000);
+
         notify.errorMessage(`Ничего не нашли(`);
         refs.moviesContainer.innerHTML = '';
 
-        refs.moviesContainer.style.height = '70vh';
+        // refs.moviesContainer.style.height = '70vh';
       } else {
         createMarkup.clearMarkup();
         createMarkup.moviesMarkup(data);
