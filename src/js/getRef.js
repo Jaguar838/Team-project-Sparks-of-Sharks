@@ -23,5 +23,6 @@ export default function getRefs() {
     toolbarTime: document.querySelector('.toolbar_time'),
     switchTime: document.querySelector('#time-switch__toggle'),
     error: document.querySelector('.empty'),
+    message: document.querySelector('.js-message'),
   };
 }

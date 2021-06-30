@@ -7,6 +7,7 @@ import { homePageMarkupUpdate } from './header/LogicHeader';
 import { renderHeader } from './header/renderHeader';
 import spin from './plugins/spinner';
 import typeOfTime from './plugins/switchTime';
+import message from './plugins/message';
 
 document.addEventListener('DOMContentLoaded', spin.stop());
 const apiService = new ApiService();
@@ -58,6 +59,7 @@ export async function renderPage(data) {
   await trendingFilms(data)
     .then(data => data)
     .then(createMarkup.moviesMarkup);
+  message('Enjoy best movies of the ' + localStorage.getItem('time') + '!', 'green');
   spin.stop();
   if (refs.toolbarTime.classList.contains('is-hidden')) {
     refs.toolbarTime.classList.remove('is-hidden');
