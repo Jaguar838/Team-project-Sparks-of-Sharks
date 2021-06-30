@@ -25,6 +25,12 @@
   }
   @include for-size(desktop) {
     width: calc((100% - 6 * 15px) / 3);
+    transition: box-shadow 0.4s cubic-bezier(.22,.64,.83,.67),
+    transform 0.5s cubic-bezier(.52,-0.06,1,1);
+  &:hover,
+  &:focus {
+    transform: scale(1.02);
+}
     margin: 15px;
   }
 }
