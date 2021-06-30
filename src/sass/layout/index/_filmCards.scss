@@ -2,7 +2,7 @@
 .movies {
   padding-top: 20px;
   @media screen and (min-width: 768px) {
-    padding-top:30px;
+    padding-top: 30px;
   }
 }
 .gallery {
@@ -28,7 +28,7 @@
 
   @include for-size(phone) {
     width: 280px;
-    height: 402px;
+    // height: 402px;
   }
   @include for-size(tablet) {
     width: 294px;
