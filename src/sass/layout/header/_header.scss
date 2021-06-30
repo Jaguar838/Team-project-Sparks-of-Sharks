@@ -2,6 +2,7 @@
 * {
   outline: 1px solid tomato;
 }
+
 .header {
   background-color: #000;
   position: relative;
@@ -34,7 +35,6 @@
   &:hover,
   &:focus {
     transform: scale(1.15);
-    // color: $black;
   }
 }
 
@@ -60,9 +60,6 @@
       outline: none;
       border-bottom: 2px solid $accent-icon;
     }
-    // @include for-size(tablet) {
-    //   width: 336px;
-    // }
   }
 
   &-input::placeholder {
