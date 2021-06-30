@@ -59,7 +59,7 @@ export async function renderPage(data) {
   await trendingFilms(data)
     .then(data => data)
     .then(createMarkup.moviesMarkup);
-  message('Enjoy best movies of the ' + localStorage.getItem('time') + '!', 'green');
+  message('Enjoy the top movies of the ' + localStorage.getItem('time') + '!', 'green');
   spin.stop();
   if (refs.toolbarTime.classList.contains('is-hidden')) {
     refs.toolbarTime.classList.remove('is-hidden');
