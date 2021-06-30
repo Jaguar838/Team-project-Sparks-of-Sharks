@@ -57,7 +57,7 @@ export function renderMarkupByBtn(libraryType) {
 }
 
 export function addWatched(movie) {
-  console.log('addWatched() ');
+  // console.log('addWatched() ');
 
   let list = getMovies('watched');
   if (!list[movie.id]) {
@@ -81,11 +81,11 @@ export function addQueue(movie) {
 }
 
 export function getWatchedMovies() {
-  return Object.values(getMovies('watched')); //полуение JSON фильмов
+  return Object.values(getMovies('watched')); //получение JSON фильмов
 }
 
 export function getQueuedMovies() {
-  return Object.values(getMovies('queue')); //полуение JSON фильмов
+  return Object.values(getMovies('queue')); //получение JSON фильмов
 }
 
 function getMovies(name) {
