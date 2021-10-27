@@ -9,6 +9,7 @@ import spin from './plugins/spinner';
 import typeOfTime from './plugins/switchTime';
 import message from './plugins/message';
 
+
 document.addEventListener('DOMContentLoaded', spin.stop());
 const apiService = new ApiService();
 

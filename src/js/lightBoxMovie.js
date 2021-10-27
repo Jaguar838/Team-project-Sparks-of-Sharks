@@ -3,6 +3,7 @@ import getRefs from './getRef';
 import notify from './error';
 import createMarkup from './createMarkup';
 import * as lib from '../js/header/watchedQueue';
+import calcScroll from './calcScroll';
 
 const apiService = new ApiService();
 
@@ -25,6 +26,7 @@ function onGalleryContainerClick(evt) {
 }
 
 function lightBoxOpen(image) {
+  const scroll = calcScroll();
   refs.lightBoxContainerRef.classList.add('is-open');
 
   const movieId = Number(image.dataset.id);
@@ -33,6 +35,7 @@ function lightBoxOpen(image) {
   movieInfoById(movieId).then(data => data);
   window.addEventListener('keydown', onKeyPress);
   document.body.classList.add('no-scrolling');
+  document.body.style.marginRight = `${scroll}px`;
 }
 
 function onCloseLightBox(evt) {
@@ -58,6 +61,7 @@ function onKeyPress(evt) {
 //закрытие модалки
 function onCloseModal() {
   document.body.classList.remove('no-scrolling');
+  document.body.style.marginRight = `0px`;
   refs.lightBoxContainerRef.classList.remove('is-open');
   window.removeEventListener('keydown', onKeyPress);
   refs.backdropModal.removeEventListener;
