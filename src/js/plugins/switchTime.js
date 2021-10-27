@@ -1,5 +1,5 @@
 import getRefs from '../getRef';
-import * as mainPage from '../main';
+import { renderPage } from '../main';
 
 const refs = getRefs();
 
@@ -18,9 +18,9 @@ export default function typeoftime() {
 function onSwitchTimeChanged() {
   if (localStorage.time === 'day') {
     localStorage.setItem('time', 'week');
-    mainPage.renderPage();
+    renderPage();
   } else {
     localStorage.setItem('time', 'day');
-    mainPage.renderPage();
+    renderPage();
   }
 }
