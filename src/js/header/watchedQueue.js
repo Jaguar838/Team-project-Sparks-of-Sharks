@@ -56,8 +56,6 @@ export function renderMarkupByBtn(libraryType) {
 }
 
 export function addWatched(movie) {
-  // console.log('addWatched() ');
-
   let list = getMovies('watched');
   if (!list[movie.id]) {
     list[movie.id] = movie;
@@ -68,8 +66,6 @@ export function addWatched(movie) {
 }
 
 export function addQueue(movie) {
-  console.log('addQueue()');
-
   let list = getMovies('queue');
   if (!list[movie.id]) {
     list[movie.id] = movie;

@@ -126,7 +126,6 @@ export function renderPagination(totalPages, listItems, callback, searchQuery) {
       spin.run();
       window.scrollTo({ top: 0, behavior: 'smooth' });
       currentPage = currentPage += 1;
-      console.log(currentPage);
       setupPagination(listItems, refs.paginationElement, rows);
       callback(refs.moviesContainer, currentPage, searchQuery);
     }
