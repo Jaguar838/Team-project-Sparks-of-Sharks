@@ -3,6 +3,7 @@ import getRefs from './getRef';
 import notify from './error';
 import createMarkup from './createMarkup';
 import * as lib from '../js/header/watchedQueue';
+import calcScroll from './calcScroll';
 
 const apiService = new ApiService();
 
@@ -25,14 +26,15 @@ function onGalleryContainerClick(evt) {
 }
 
 function lightBoxOpen(image) {
+  const scroll = calcScroll();
   refs.lightBoxContainerRef.classList.add('is-open');
 
   const movieId = Number(image.dataset.id);
-  console.log(movieId);
 
   movieInfoById(movieId).then(data => data);
   window.addEventListener('keydown', onKeyPress);
   document.body.classList.add('no-scrolling');
+  document.body.style.marginRight = `${scroll}px`;
 }
 
 function onCloseLightBox(evt) {
@@ -58,6 +60,7 @@ function onKeyPress(evt) {
 //закрытие модалки
 function onCloseModal() {
   document.body.classList.remove('no-scrolling');
+  document.body.style.marginRight = `0px`;
   refs.lightBoxContainerRef.classList.remove('is-open');
   window.removeEventListener('keydown', onKeyPress);
   refs.backdropModal.removeEventListener;
@@ -79,7 +82,6 @@ function movieInfoById(movieId) {
     .then(data => data)
     .then(data => renderLightBoxModal(data))
     .catch(error => {
-      console.log('error in ID', error);
       notify.errorMessage(`Ничего не нашли По ИД(`);
     });
 }
@@ -88,7 +90,7 @@ function renderLightBoxModal(data) {
   data = lib.checkMovie(data);
 
   createMarkup.lightBoxMarkup(data);
-  console.log('data Queue', data, data.queued);
+
   //добавление классов если фильм в библиотеке
   if (data.watched) {
     document.querySelector('.modal-card__watched-btn').classList.add('addedWatched-btn');
@@ -133,7 +135,6 @@ function renderLightBoxModal(data) {
 
 //проверка надписей на кнопках если фильм уже в библиотеке
 function checkTextOnBtns() {
-  console.log('function checkTextOnBtns');
   if (document.querySelector('.modal-card__watched-btn').classList.contains('addedWatched-btn')) {
     document.querySelector('.modal-card__watched-btn').textContent = 'REMOVE';
   } else {
