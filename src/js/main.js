@@ -15,13 +15,12 @@ const apiService = new ApiService();
 const refs = getRefs();
 typeOfTime();
 spin.run();
-// localStorage.setItem('time', 'day');
+
 refs.logo.addEventListener('click', e => location.reload());
 refs.homeBtn.addEventListener('click', renderHomePage);
 const page = 1;
 checkLibrary();
 renderPage();
-
 trendingFilmsPagination(); //
 
 function checkLibrary() {
