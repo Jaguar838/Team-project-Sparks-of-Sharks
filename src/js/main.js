@@ -9,15 +9,16 @@ import spin from './plugins/spinner';
 import typeOfTime from './plugins/switchTime';
 import message from './plugins/message';
 
+spin.run();
 document.addEventListener('DOMContentLoaded', spin.stop());
-const apiService = new ApiService();
 
+const apiService = new ApiService();
 const refs = getRefs();
 typeOfTime();
-spin.run();
 
 refs.logo.addEventListener('click', e => location.reload());
 refs.homeBtn.addEventListener('click', renderHomePage);
+// renderHomePage();
 const page = 1;
 checkLibrary();
 renderPage();
