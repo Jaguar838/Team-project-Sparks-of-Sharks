@@ -119,21 +119,21 @@ var t=arguments[3];Object.defineProperty(exports,"__esModule",{value:!0}),export
 },{}],"XyZm":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=r;var e=t(require("canvas-confetti"));function t(e){return e&&e.__esModule?e:{default:e}}function r(){e.default.create(document.getElementById("canvas"),{resize:!0,useWorker:!0})({particleCount:200,spread:150,zIndex:1e3})}
 },{"canvas-confetti":"YvuL"}],"xiyv":[function(require,module,exports) {
-module.exports="/Filmoteka/Oleg.2a0fc9b5.jpg";
+module.exports="/Filmoteka-project/Oleg.2a0fc9b5.jpg";
 },{}],"mwmh":[function(require,module,exports) {
-module.exports="/Filmoteka/Sergii.c2a5f590.jpg";
+module.exports="/Filmoteka-project/Sergii.c2a5f590.jpg";
 },{}],"Mhj8":[function(require,module,exports) {
-module.exports="/Filmoteka/Andriy.d5a10bf8.jpg";
+module.exports="/Filmoteka-project/Andriy.d5a10bf8.jpg";
 },{}],"hdUA":[function(require,module,exports) {
-module.exports="/Filmoteka/Zoryana.a549cd30.jpg";
+module.exports="/Filmoteka-project/Zoryana.a549cd30.jpg";
 },{}],"rKD9":[function(require,module,exports) {
-module.exports="/Filmoteka/Irina.38e8dd3c.jpg";
+module.exports="/Filmoteka-project/Irina.38e8dd3c.jpg";
 },{}],"gP24":[function(require,module,exports) {
-module.exports="/Filmoteka/Sergey.fb0f11d6.jpg";
+module.exports="/Filmoteka-project/Sergey.fb0f11d6.jpg";
 },{}],"WFjr":[function(require,module,exports) {
-module.exports="/Filmoteka/Stanislav.263d69dd.jpg";
+module.exports="/Filmoteka-project/Stanislav.263d69dd.jpg";
 },{}],"Uz3p":[function(require,module,exports) {
-module.exports="/Filmoteka/Alina.1b6aebcf.jpg";
+module.exports="/Filmoteka-project/Alina.1b6aebcf.jpg";
 },{}],"otvH":[function(require,module,exports) {
 "use strict";var e=d(require("basiclightbox"));require("basiclightbox/dist/basicLightbox.min.css"),require("basiclightbox/dist/basicLightbox.min.js");var a=m(require("./plugins/confetti.js")),t=m(require("/images/photo/Oleg.jpg")),r=m(require("/images/photo/Sergii.jpg")),s=m(require("/images/photo/Andriy.jpg")),i=m(require("/images/photo/Zoryana.jpg")),n=m(require("/images/photo/Irina.jpg")),l=m(require("/images/photo/Sergey.jpg")),c=m(require("/images/photo/Stanislav.jpg")),o=m(require("/images/photo/Alina.jpg"));function m(e){return e&&e.__esModule?e:{default:e}}function p(){if("function"!=typeof WeakMap)return null;var e=new WeakMap;return p=function(){return e},e}function d(e){if(e&&e.__esModule)return e;if(null===e||"object"!=typeof e&&"function"!=typeof e)return{default:e};var a=p();if(a&&a.has(e))return a.get(e);var t={},r=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var s in e)if(Object.prototype.hasOwnProperty.call(e,s)){var i=r?Object.getOwnPropertyDescriptor(e,s):null;i&&(i.get||i.set)?Object.defineProperty(t,s,i):t[s]=e[s]}return t.default=e,a&&a.set(e,t),t}const g=`<div class="team-wrapper"><div class="team-card">\n    <img src="${t.default}" alt="Oleg" class="team-image">\n    <p class="team-name">Oleg</p>\n    <p class="team-role">Team Lead</p>    \n</div>\n<div class="team-card">\n    <img src="${r.default}" alt="Sergii" class="team-image">\n    <p class="team-name">Sergii</p>\n    <p class="team-role">Tech Lead</p>\n</div>\n<div class="team-card">\n    <img src="${s.default}" alt="Andriy" class="team-image">\n    <p class="team-name">Andriy</p>\n    <p class="team-role">Scrum Master</p>\n</div>\n<div class="team-card">\n    <img src="${i.default}" alt="Zoryana" class="team-image">\n    <p class="team-name">Zoryana</p>\n    <p class="team-role">Developer</p>\n</div>\n<div class="team-card">\n    <img src="${n.default}" alt="Irina" class="team-image">\n    <p class="team-name">Irina</p>\n    <p class="team-role">Developer</p>\n</div>\n<div class="team-card">\n    <img src="${l.default}" alt="Sergey" class="team-image">\n    <p class="team-name">Sergey</p>\n    <p class="team-role">Developer</p>\n</div>\n<div class="team-card">\n    <img src="${c.default}" alt="Stanislav" class="team-image">\n    <p class="team-name">Stanislav</p>\n    <p class="team-role">Developer</p>\n</div>\n<div class="team-card">\n    <img src="${o.default}" alt="Alina" class="team-image">\n    <p class="team-name">Alina</p>\n    <p class="team-role">Developer</p>\n</div></div>`,u=document.querySelector(".js-team-modal");u.addEventListener("click",f);const v=e.create(g);function f(e){v.show(),(0,a.default)(),window.addEventListener("keydown",function e(a){"Escape"===a.code&&(v.close(),window.removeEventListener("keydown",e))})}
 },{"basiclightbox":"BNjD","basiclightbox/dist/basicLightbox.min.css":"DOAq","basiclightbox/dist/basicLightbox.min.js":"BNjD","./plugins/confetti.js":"XyZm","/images/photo/Oleg.jpg":"xiyv","/images/photo/Sergii.jpg":"mwmh","/images/photo/Andriy.jpg":"Mhj8","/images/photo/Zoryana.jpg":"hdUA","/images/photo/Irina.jpg":"rKD9","/images/photo/Sergey.jpg":"gP24","/images/photo/Stanislav.jpg":"WFjr","/images/photo/Alina.jpg":"Uz3p"}],"L2kX":[function(require,module,exports) {
@@ -141,4 +141,4 @@ const e=100,t=document.querySelector(".scroll-up"),o=document.querySelector(".sc
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("normalize.css"),require("./sass/main.scss"),require("./js/main"),require("./js/pagination"),require("/js/searchByQuery.js"),require("/js/lightBoxMovie.js"),require("/js/plugins/switchTime.js"),require("./js/header/LogicHeader"),require("./js/header/renderHeader"),require("./js/header/watchedQueue"),require("./js/teamLightbox"),require("./js/plugins/btnScroll"),require("@pnotify/core/dist/BrightTheme.css"),require("@pnotify/core/dist/PNotify.css");
 },{"normalize.css":"DOAq","./sass/main.scss":"clu1","./js/main":"d6sW","./js/pagination":"o8lo","/js/searchByQuery.js":"NAHm","/js/lightBoxMovie.js":"thwr","/js/plugins/switchTime.js":"fx0J","./js/header/LogicHeader":"TDWP","./js/header/renderHeader":"b707","./js/header/watchedQueue":"e3c9","./js/teamLightbox":"otvH","./js/plugins/btnScroll":"L2kX","@pnotify/core/dist/BrightTheme.css":"DOAq","@pnotify/core/dist/PNotify.css":"DOAq"}]},{},["Focm"], null)
-//# sourceMappingURL=/Filmoteka/src.2bc924f2.js.map
+//# sourceMappingURL=/Filmoteka-project/src.776b08fc.js.map
