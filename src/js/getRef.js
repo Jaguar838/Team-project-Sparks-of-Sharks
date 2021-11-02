@@ -6,6 +6,7 @@ export default function getRefs() {
     homeBtn: document.querySelector('[data-index="home"]'),
     mylibraryBtn: document.querySelector('[data-index="libraryBtn"]'),
     searchForm: document.querySelector('.film-search'),
+    formInput: document.querySelector('.film-search-input'),
     posterImage: document.querySelector('.movie-image'),
     lightBoxContainerRef: document.querySelector('.js-lightbox'),
     lightBoxCloseRef: document.querySelector('[data-action="close-lightbox"]'),

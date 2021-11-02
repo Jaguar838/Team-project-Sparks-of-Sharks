@@ -12,24 +12,24 @@ const apiService = new ApiService();
 
 const refs = getRefs();
 
-refs.searchForm.addEventListener('input', debounce(onInput, 1000));
-// refs.searchForm.addEventListener('submit', onInput(elem));
+// refs.searchForm.addEventListener('input', debounce(onInput, 3000));
+refs.searchForm.addEventListener('submit', onInput);
 
-function onInput(elem) {
-  elem.preventDefault();
+function onInput(e) {
+  e.preventDefault();
   apiService.pageNum = 1;
   if (!refs.toolbarTime.classList.contains('is-hidden')) {
     refs.toolbarTime.classList.add('is-hidden');
   }
-  const searchQuery = elem.target.value;
+  const searchQuery = refs.formInput.value;
+
   if (!searchQuery) {
-    //   markup.clearMarkup();
     return;
   } else {
     renderFirstPage(searchQuery);
     renderPages(searchQuery);
 
-    elem.target.value = '';
+    refs.formInput.value = '';
     return;
   }
 }
