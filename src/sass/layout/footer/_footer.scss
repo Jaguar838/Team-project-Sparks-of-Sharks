@@ -1,4 +1,6 @@
 .footer {
+  position: sticky; 
+  bottom: 0;
   background-color: $page-footer-color;
   color: $secondary-text-color;
   font-weight: 400;
